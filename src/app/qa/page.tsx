@@ -14,6 +14,9 @@ export default function DataQaPage() {
         <p className="jp">
           選手・チームのサンプルデータから見つかった未対応の確認事項です。
         </p>
+        <p className="es">
+          Hallazgos pendientes en los datos de muestra de jugadores y equipos.
+        </p>
       </div>
 
       <section className="metricGrid">
@@ -40,6 +43,7 @@ export default function DataQaPage() {
           <p className="eyebrow">Review path / 確認の流れ</p>
           <h2>Find the issue, explain it, leave the next fix clear.</h2>
           <p className="jp">不備を見つけて、理由と修正案まで残します。</p>
+          <p className="es">Encontrar el problema, explicar el motivo y dejar clara la corrección.</p>
         </div>
         <ol>
           <li>Catch strange values and missing source fields.</li>
@@ -70,11 +74,15 @@ export default function DataQaPage() {
                 <td>
                   {issue.message}
                   {issue.messageJa ? <span className="jp tableSubline">{issue.messageJa}</span> : null}
+                  {issue.messageEs ? <span className="es tableSubline">{issue.messageEs}</span> : null}
                 </td>
                 <td>
                   {issue.suggestedFix}
                   {issue.suggestedFixJa ? (
                     <span className="jp tableSubline">{issue.suggestedFixJa}</span>
+                  ) : null}
+                  {issue.suggestedFixEs ? (
+                    <span className="es tableSubline">{issue.suggestedFixEs}</span>
                   ) : null}
                 </td>
               </tr>

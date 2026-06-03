@@ -92,10 +92,15 @@ a {
 }
 
 .navLabel small,
-.jp {
+.jp,
+.es {
   font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
   font-weight: 700;
   letter-spacing: 0;
+}
+
+.es {
+  font-family: "Trebuchet MS", "Arial", sans-serif;
 }
 
 .navLabel small {
@@ -229,22 +234,29 @@ a {
   line-height: 1.62;
 }
 
-.jp {
+.jp,
+.es {
   color: var(--muted);
   font-size: 0.92rem;
   line-height: 1.7;
 }
 
 .heroBand .jp,
-.detailHero .jp {
+.detailHero .jp,
+.heroBand .es,
+.detailHero .es {
   max-width: 690px;
   color: rgba(255, 253, 247, 0.86);
 }
 
 .featureCaption .jp,
+.featureCaption .es,
 .miniArticleBody .jp,
+.miniArticleBody .es,
 .qaPanel .jp,
-.sectionHeader .jp {
+.qaPanel .es,
+.sectionHeader .jp,
+.sectionHeader .es {
   margin-top: 8px;
 }
 

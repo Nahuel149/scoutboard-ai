@@ -5,14 +5,14 @@ import "./styles.css";
 
 export const metadata: Metadata = {
   title: "ScoutBoard AI",
-  description: "A bilingual football research and data-checking portfolio app.",
+  description: "A trilingual football research and data-checking portfolio app.",
 };
 
 const navItems = [
-  { href: "/", label: "Dashboard", labelJa: "ダッシュボード", icon: BarChart3 },
-  { href: "/players", label: "Players", labelJa: "選手リスト", icon: Search },
-  { href: "/qa", label: "Data QA", labelJa: "データ確認", icon: ClipboardCheck },
-  { href: "/reports", label: "Reports", labelJa: "レポート", icon: FileText },
+  { href: "/", label: "Dashboard", labelJa: "ダッシュボード", labelEs: "Panel", icon: BarChart3 },
+  { href: "/players", label: "Players", labelJa: "選手リスト", labelEs: "Jugadores", icon: Search },
+  { href: "/qa", label: "Data QA", labelJa: "データ確認", labelEs: "Control de datos", icon: ClipboardCheck },
+  { href: "/reports", label: "Reports", labelJa: "レポート", labelEs: "Reportes", icon: FileText },
 ];
 
 export default function RootLayout({
@@ -29,7 +29,7 @@ export default function RootLayout({
               <span className="brandMark">SB</span>
               <div>
                 <strong>ScoutBoard AI</strong>
-                <span>Football research dispatch</span>
+                <span>Football research desk / Base de scouting</span>
               </div>
             </div>
             <nav aria-label="Main navigation">
@@ -40,7 +40,7 @@ export default function RootLayout({
                     <Icon size={17} aria-hidden="true" />
                     <span className="navLabel">
                       <strong>{item.label}</strong>
-                      <small>{item.labelJa}</small>
+                      <small>{item.labelJa} / {item.labelEs}</small>
                     </span>
                   </Link>
                 );

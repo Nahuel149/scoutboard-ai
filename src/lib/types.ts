@@ -21,6 +21,7 @@ export type Player = {
   lastCheckedAt: string;
   researchNote: string;
   researchNoteJa: string;
+  researchNoteEs: string;
 };
 
 export type Team = {
@@ -46,7 +47,9 @@ export type DataIssue = {
   issueType: "missing" | "range" | "consistency" | "source" | "format";
   message: string;
   messageJa?: string;
+  messageEs?: string;
   suggestedFix: string;
   suggestedFixJa?: string;
+  suggestedFixEs?: string;
   status: "open" | "reviewed";
 };

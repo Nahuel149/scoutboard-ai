@@ -17,6 +17,7 @@ export default function DashboardPage() {
       kicker: "Research note / リサーチメモ",
       title: "A simple player note, with the source checks kept beside it.",
       titleJa: "選手メモと出典確認を同じ画面で見られるようにしました。",
+      titleEs: "Una nota de jugador con la revisión de fuentes al lado.",
       meta: "Mateo Alvarez / River Norte",
       href: "/players/p-001",
     },
@@ -25,7 +26,8 @@ export default function DashboardPage() {
       kicker: "QA finding / データ不備",
       title: "The messy sample row is there on purpose. The app catches it.",
       titleJa: "あえて不備のある行を入れ、チェック結果を見える形にしています。",
-      meta: `${summary.total} open findings / 未対応 ${summary.total}件`,
+      titleEs: "La fila con errores está a propósito. La app la detecta.",
+      meta: `${summary.total} open findings / 未対応 ${summary.total}件 / ${summary.total} pendientes`,
       href: "/qa",
     },
     {
@@ -33,7 +35,8 @@ export default function DashboardPage() {
       kicker: "Report builder / レポート作成",
       title: "Draft first, then check the facts before it leaves the desk.",
       titleJa: "下書きを作ってから、事実と出典を人の目で確認します。",
-      meta: "Markdown preview / Markdown下書き",
+      titleEs: "Primero el borrador. Después se revisan los datos y las fuentes.",
+      meta: "Markdown preview / Markdown下書き / Borrador",
       href: "/reports",
     },
   ];
@@ -52,6 +55,10 @@ export default function DashboardPage() {
           <p className="jp">
             サッカーの選手データを整理し、不備を確認してからレポート下書きにするための
             自作ポートフォリオです。リサーチ、データ確認、納品前チェックの流れを見せています。
+          </p>
+          <p className="es">
+            Una app de portafolio para ordenar datos de futbolistas de América,
+            detectar campos flojos y convertirlos en reportes revisados antes de entregar.
           </p>
         </div>
         <Link className="primaryAction" href="/qa">
@@ -77,6 +84,7 @@ export default function DashboardPage() {
               <p className="eyebrow">{card.kicker}</p>
               <h2>{card.title}</h2>
               <p className="jp">{card.titleJa}</p>
+              <p className="es">{card.titleEs}</p>
               <span>{card.meta}</span>
             </div>
           </Link>
@@ -86,22 +94,22 @@ export default function DashboardPage() {
       <section className="metricGrid" aria-label="Project metrics">
         <article className="metric">
           <Users size={20} aria-hidden="true" />
-          <span>Players / 選手</span>
+          <span>Players / 選手 / Jugadores</span>
           <strong>{players.length}</strong>
         </article>
         <article className="metric">
           <TrendingUp size={20} aria-hidden="true" />
-          <span>Teams / チーム</span>
+          <span>Teams / チーム / Equipos</span>
           <strong>{teams.length}</strong>
         </article>
         <article className="metric">
           <ShieldCheck size={20} aria-hidden="true" />
-          <span>Checked score / 確認スコア</span>
+          <span>Checked score / 確認スコア / Revisión</span>
           <strong>{completeness}%</strong>
         </article>
         <article className="metric alert">
           <ShieldCheck size={20} aria-hidden="true" />
-          <span>Open issues / 未対応</span>
+          <span>Open issues / 未対応 / Pendientes</span>
           <strong>{summary.total}</strong>
         </article>
       </section>
@@ -112,6 +120,7 @@ export default function DashboardPage() {
             <p className="eyebrow">Player board / 選手ボード</p>
             <h2>Who is producing chances?</h2>
             <p className="jp">得点とアシストをまとめて、まず見るべき選手を絞ります。</p>
+            <p className="es">Goles y asistencias ayudan a decidir por dónde empezar la revisión.</p>
           </div>
           <div className="tableShell">
             <table>
@@ -155,16 +164,20 @@ export default function DashboardPage() {
             不備のある選手データをあえて入れることで、出典不足、数値ミス、
             整合性の問題をどう見つけるかを見せています。
           </p>
+          <p className="es">
+            Un jugador de prueba tiene datos malos a propósito. Así se ve cómo el sistema marca
+            fuentes faltantes, números raros y estadísticas que no cierran.
+          </p>
         </div>
       </section>
 
       <section className="tagMarquee" aria-label="Portfolio proof tags">
-        <span>Data QA / データ確認</span>
-        <span>Research notes / リサーチメモ</span>
-        <span>Source policy / 出典ルール</span>
-        <span>Report drafts / 下書き</span>
-        <span>Vitest checks / 自動テスト</span>
-        <span>Portfolio proof / 実作例</span>
+        <span>Data QA / データ確認 / Control de datos</span>
+        <span>Research notes / リサーチメモ / Notas</span>
+        <span>Source policy / 出典ルール / Fuentes</span>
+        <span>Report drafts / 下書き / Borradores</span>
+        <span>Vitest checks / 自動テスト / Tests</span>
+        <span>Portfolio proof / 実作例 / Portafolio</span>
       </section>
     </div>
   );

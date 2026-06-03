@@ -15,6 +15,9 @@ export default function PlayersPage() {
         <p className="jp">
           スカウティングメモ、データ確認、レポート下書きに使うサンプル選手データです。
         </p>
+        <p className="es">
+          Registros de muestra para notas de scouting, control de datos y borradores de reporte.
+        </p>
       </div>
 
       <div className="filterBar" aria-label="Static MVP filters">
@@ -41,9 +44,10 @@ export default function PlayersPage() {
                 <h2>{player.name}</h2>
                 <p>{player.researchNote}</p>
                 <p className="jp">{player.researchNoteJa}</p>
+                <p className="es">{player.researchNoteEs}</p>
                 <div>
                   <span className={playerIssues.length ? "pill danger" : "pill"}>
-                    {playerIssues.length} issues / 不備
+                    {playerIssues.length} issues / 不備 / errores
                   </span>
                   <span className="pill">{player.goals + player.assists} G+A</span>
                 </div>

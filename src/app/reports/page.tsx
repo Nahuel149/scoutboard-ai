@@ -21,6 +21,10 @@ export default function ReportsPage() {
           まだAI APIは使っていません。まずは「下書き、出典確認、人の目での最終調整」
           という納品前の流れを見せています。
         </p>
+        <p className="es">
+          Todavía no usa una API de IA. Primero muestra el flujo correcto:
+          borrador, revisión de fuentes y edición humana antes de entregar.
+        </p>
       </div>
 
       <section className="split">
@@ -29,6 +33,7 @@ export default function ReportsPage() {
           <h2>{selectedPlayer.name}</h2>
           <p>A player note that keeps source metadata and validation checks nearby.</p>
           <p className="jp">出典情報とデータ確認を近くに置いた選手レポートの下書きです。</p>
+          <p className="es">Un borrador de jugador con fuentes y control de datos a la vista.</p>
         </div>
         <div className="qaPanel">
           <p className="eyebrow">Human verification / 納品前チェック</p>
@@ -44,6 +49,12 @@ export default function ReportsPage() {
             <li>クライアント向けの自然な文章に調整</li>
             <li>根拠のない移籍・怪我の話は削除</li>
             <li>最終確認日を記録</li>
+          </ul>
+          <ul className="checklist es">
+            <li>Revisar cada dato contra la fuente</li>
+            <li>Ajustar el tono para el cliente</li>
+            <li>Quitar rumores sin respaldo</li>
+            <li>Guardar la fecha de revisión final</li>
           </ul>
         </div>
       </section>

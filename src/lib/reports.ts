@@ -6,14 +6,19 @@ export function buildPlayerReport(player: Player, issues: DataIssue[]): string {
   );
   const issueSummary =
     playerIssues.length === 0
-      ? "No open data issues for this sample record.\n\nこのサンプルでは未対応のデータ不備はありません。"
+      ? "No open data issues for this sample record.\n\nこのサンプルでは未対応のデータ不備はありません。\n\nNo hay errores abiertos en este registro de muestra."
       : playerIssues
-          .map((issue) => `- ${issue.severity}: ${issue.message}\n  ${issue.messageJa ?? ""}`)
+          .map(
+            (issue) =>
+              `- ${issue.severity}: ${issue.message}\n  ${issue.messageJa ?? ""}\n  ${issue.messageEs ?? ""}`,
+          )
           .join("\n");
 
   return `# ${player.name} - ScoutBoard AI sample report
 
 自作ポートフォリオ用のサンプルレポートです。実在のクライアント案件や非公開データは含みません。
+
+Reporte de muestra para portafolio. No incluye trabajos reales de clientes ni datos privados.
 
 ## Profile
 
@@ -36,6 +41,8 @@ ${player.researchNote}
 
 ${player.researchNoteJa}
 
+${player.researchNoteEs}
+
 ## Source
 
 - ${player.sourceName || "Missing source name"}: ${player.sourceUrl || "Missing source URL"}
@@ -54,6 +61,13 @@ ${player.researchNoteJa}
 - 出典名・URL・確認日を確認
 - 根拠のない表現を削除
 - 最後は人の目で文章を調整
+
+## Revisión antes de entregar
+
+- Revisar los datos importados
+- Confirmar fuente, URL y fecha de revisión
+- Quitar frases sin respaldo
+- Ajustar el texto final con criterio humano
 
 ## Open Data Issues
 
