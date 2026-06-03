@@ -32,6 +32,18 @@ export default function DataQaPage() {
         </article>
       </section>
 
+      <section className="qaStory">
+        <div>
+          <p className="eyebrow">Review path</p>
+          <h2>Import check, evidence, suggested fix.</h2>
+        </div>
+        <ol>
+          <li>Catch impossible values and missing source fields.</li>
+          <li>Group issues by severity for client-facing review.</li>
+          <li>Keep flawed rows as internal QA proof only.</li>
+        </ol>
+      </section>
+
       <div className="tableShell">
         <table>
           <thead>

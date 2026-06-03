@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { BarChart3, ClipboardCheck, FileText, Search } from "lucide-react";
+import { BarChart3, ClipboardCheck, FileText, Search, UserRound } from "lucide-react";
 import "./styles.css";
 
 export const metadata: Metadata = {
@@ -24,15 +24,15 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <div className="shell">
-          <aside className="sidebar" aria-label="Main navigation">
+          <header className="masthead">
             <div className="brand">
               <span className="brandMark">SB</span>
               <div>
                 <strong>ScoutBoard AI</strong>
-                <span>Research and QA desk</span>
+                <span>Football research dispatch</span>
               </div>
             </div>
-            <nav>
+            <nav aria-label="Main navigation">
               {navItems.map((item) => {
                 const Icon = item.icon;
                 return (
@@ -43,7 +43,15 @@ export default function RootLayout({
                 );
               })}
             </nav>
-          </aside>
+            <div className="mastActions" aria-label="Project actions">
+              <Link className="roundAction" href="/players" aria-label="Search players">
+                <Search size={20} aria-hidden="true" />
+              </Link>
+              <Link className="roundAction" href="/reports" aria-label="Open report builder">
+                <UserRound size={20} aria-hidden="true" />
+              </Link>
+            </div>
+          </header>
           <main className="content">{children}</main>
         </div>
       </body>

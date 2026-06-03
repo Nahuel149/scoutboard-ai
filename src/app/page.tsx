@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { CSSProperties } from "react";
 import { ArrowRight, ShieldCheck, TrendingUp, Users } from "lucide-react";
 import { players, teams } from "@/lib/sample-data";
 import { getCompletenessScore, summarizeIssues, validateData } from "@/lib/validation";
@@ -10,6 +11,29 @@ export default function DashboardPage() {
   const topPlayers = [...players]
     .sort((a, b) => b.goals + b.assists - (a.goals + a.assists))
     .slice(0, 3);
+  const featureCards = [
+    {
+      tone: "amber",
+      kicker: "Research note",
+      title: "A midfield profile with source checks attached.",
+      meta: "Mateo Alvarez / River Norte",
+      href: "/players/p-001",
+    },
+    {
+      tone: "blue",
+      kicker: "QA finding",
+      title: "One flawed import row becomes a client-ready data issue report.",
+      meta: `${summary.total} open findings`,
+      href: "/qa",
+    },
+    {
+      tone: "green",
+      kicker: "Report builder",
+      title: "Draft, source list, and final human verification in one workflow.",
+      meta: "Markdown preview",
+      href: "/reports",
+    },
+  ];
 
   return (
     <div className="pageStack">
@@ -26,6 +50,28 @@ export default function DashboardPage() {
           Review issues
           <ArrowRight size={18} aria-hidden="true" />
         </Link>
+      </section>
+
+      <section className="featureRail" aria-label="Featured ScoutBoard workflows">
+        {featureCards.map((card, index) => (
+          <Link
+            className={`featureCard ${card.tone}`}
+            href={card.href}
+            key={card.title}
+            style={{ "--enter-d": `${index * 110}ms` } as CSSProperties & Record<"--enter-d", string>}
+          >
+            <div className="featureImage" aria-hidden="true">
+              <span className="pitchLine one" />
+              <span className="pitchLine two" />
+              <span className="ballDot" />
+            </div>
+            <div className="featureCaption">
+              <p className="eyebrow">{card.kicker}</p>
+              <h2>{card.title}</h2>
+              <span>{card.meta}</span>
+            </div>
+          </Link>
+        ))}
       </section>
 
       <section className="metricGrid" aria-label="Project metrics">
@@ -96,6 +142,15 @@ export default function DashboardPage() {
             report is delivered.
           </p>
         </div>
+      </section>
+
+      <section className="tagMarquee" aria-label="Portfolio proof tags">
+        <span>Data QA</span>
+        <span>Research notes</span>
+        <span>Source policy</span>
+        <span>Report drafts</span>
+        <span>Vitest checks</span>
+        <span>Portfolio proof</span>
       </section>
     </div>
   );

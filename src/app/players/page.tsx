@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { CSSProperties } from "react";
 import { players } from "@/lib/sample-data";
 import { validatePlayers } from "@/lib/validation";
 
@@ -18,6 +19,35 @@ export default function PlayersPage() {
         <span>Position filter</span>
         <span>Source review</span>
       </div>
+
+      <section className="playerCardGrid" aria-label="Player research cards">
+        {players.map((player, index) => {
+          const playerIssues = issues.filter((issue) => issue.entityId === player.id);
+          return (
+            <Link
+              className={`miniArticleCard tone-${index % 4}`}
+              href={`/players/${player.id}`}
+              key={player.id}
+              style={{ "--enter-d": `${index * 85}ms` } as CSSProperties & Record<"--enter-d", string>}
+            >
+              <div className="miniArticleVisual" aria-hidden="true">
+                <span>{player.position}</span>
+              </div>
+              <div className="miniArticleBody">
+                <p className="eyebrow">{player.club}</p>
+                <h2>{player.name}</h2>
+                <p>{player.researchNote}</p>
+                <div>
+                  <span className={playerIssues.length ? "pill danger" : "pill"}>
+                    {playerIssues.length} issues
+                  </span>
+                  <span className="pill">{player.goals + player.assists} G+A</span>
+                </div>
+              </div>
+            </Link>
+          );
+        })}
+      </section>
 
       <div className="tableShell">
         <table>
