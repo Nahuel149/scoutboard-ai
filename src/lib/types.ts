@@ -20,6 +20,7 @@ export type Player = {
   sourceName: string;
   lastCheckedAt: string;
   researchNote: string;
+  researchNoteJa: string;
 };
 
 export type Team = {
@@ -44,6 +45,8 @@ export type DataIssue = {
   severity: "critical" | "warning" | "info";
   issueType: "missing" | "range" | "consistency" | "source" | "format";
   message: string;
+  messageJa?: string;
   suggestedFix: string;
+  suggestedFixJa?: string;
   status: "open" | "reviewed";
 };

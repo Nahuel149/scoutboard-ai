@@ -8,39 +8,43 @@ export default function DataQaPage() {
   return (
     <div className="pageStack">
       <div className="sectionHeader">
-        <p className="eyebrow">Data QA</p>
-        <h1>Validation report</h1>
-        <p>Open findings from player and team sample records.</p>
+        <p className="eyebrow">Data QA / データ確認</p>
+        <h1>Data check report</h1>
+        <p>Open findings from the player and team sample records.</p>
+        <p className="jp">
+          選手・チームのサンプルデータから見つかった未対応の確認事項です。
+        </p>
       </div>
 
       <section className="metricGrid">
         <article className="metric alert">
-          <span>Critical</span>
+          <span>Critical / 重要</span>
           <strong>{summary.critical}</strong>
         </article>
         <article className="metric">
-          <span>Warnings</span>
+          <span>Warnings / 注意</span>
           <strong>{summary.warning}</strong>
         </article>
         <article className="metric">
-          <span>Info</span>
+          <span>Info / 確認</span>
           <strong>{summary.info}</strong>
         </article>
         <article className="metric">
-          <span>Total</span>
+          <span>Total / 合計</span>
           <strong>{summary.total}</strong>
         </article>
       </section>
 
       <section className="qaStory">
         <div>
-          <p className="eyebrow">Review path</p>
-          <h2>Import check, evidence, suggested fix.</h2>
+          <p className="eyebrow">Review path / 確認の流れ</p>
+          <h2>Find the issue, explain it, leave the next fix clear.</h2>
+          <p className="jp">不備を見つけて、理由と修正案まで残します。</p>
         </div>
         <ol>
-          <li>Catch impossible values and missing source fields.</li>
-          <li>Group issues by severity for client-facing review.</li>
-          <li>Keep flawed rows as internal QA proof only.</li>
+          <li>Catch strange values and missing source fields.</li>
+          <li>Group findings by severity before they reach a report.</li>
+          <li>Keep flawed rows as internal QA proof, not final delivery data.</li>
         </ol>
       </section>
 
@@ -48,11 +52,11 @@ export default function DataQaPage() {
         <table>
           <thead>
             <tr>
-              <th>Severity</th>
-              <th>Entity</th>
-              <th>Field</th>
-              <th>Issue</th>
-              <th>Suggested fix</th>
+              <th>Severity / 重要度</th>
+              <th>Entity / 対象</th>
+              <th>Field / 項目</th>
+              <th>Issue / 内容</th>
+              <th>Suggested fix / 修正案</th>
             </tr>
           </thead>
           <tbody>
@@ -63,8 +67,16 @@ export default function DataQaPage() {
                 </td>
                 <td>{issue.entityId}</td>
                 <td>{issue.field}</td>
-                <td>{issue.message}</td>
-                <td>{issue.suggestedFix}</td>
+                <td>
+                  {issue.message}
+                  {issue.messageJa ? <span className="jp tableSubline">{issue.messageJa}</span> : null}
+                </td>
+                <td>
+                  {issue.suggestedFix}
+                  {issue.suggestedFixJa ? (
+                    <span className="jp tableSubline">{issue.suggestedFixJa}</span>
+                  ) : null}
+                </td>
               </tr>
             ))}
           </tbody>

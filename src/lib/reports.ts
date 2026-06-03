@@ -6,10 +6,14 @@ export function buildPlayerReport(player: Player, issues: DataIssue[]): string {
   );
   const issueSummary =
     playerIssues.length === 0
-      ? "No open data issues for this sample record."
-      : playerIssues.map((issue) => `- ${issue.severity}: ${issue.message}`).join("\n");
+      ? "No open data issues for this sample record.\n\nこのサンプルでは未対応のデータ不備はありません。"
+      : playerIssues
+          .map((issue) => `- ${issue.severity}: ${issue.message}\n  ${issue.messageJa ?? ""}`)
+          .join("\n");
 
-  return `# ${player.name} - ScoutBoard AI Sample Report
+  return `# ${player.name} - ScoutBoard AI sample report
+
+自作ポートフォリオ用のサンプルレポートです。実在のクライアント案件や非公開データは含みません。
 
 ## Profile
 
@@ -30,6 +34,8 @@ export function buildPlayerReport(player: Player, issues: DataIssue[]): string {
 
 ${player.researchNote}
 
+${player.researchNoteJa}
+
 ## Source
 
 - ${player.sourceName || "Missing source name"}: ${player.sourceUrl || "Missing source URL"}
@@ -41,6 +47,13 @@ ${player.researchNote}
 - Source metadata checked
 - Unsupported claims removed
 - Final wording edited by a human
+
+## 納品前チェック
+
+- 入力データを確認
+- 出典名・URL・確認日を確認
+- 根拠のない表現を削除
+- 最後は人の目で文章を調整
 
 ## Open Data Issues
 

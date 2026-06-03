@@ -30,7 +30,9 @@ export function validatePlayers(players: Player[]): DataIssue[] {
         severity: "critical",
         issueType: "missing",
         message: "Player name is required for reports.",
+        messageJa: "レポートには選手名が必要です。",
         suggestedFix: "Add the verified display name before exporting.",
+        suggestedFixJa: "書き出し前に確認済みの表示名を入力します。",
       });
     }
 
@@ -41,8 +43,10 @@ export function validatePlayers(players: Player[]): DataIssue[] {
         field: "age",
         severity: "warning",
         issueType: "range",
-        message: "Player age is outside the expected 15-45 range.",
-        suggestedFix: "Confirm the date of birth or mark the row as synthetic test data.",
+        message: "Age is outside the normal player range for this sample.",
+        messageJa: "年齢がサンプル想定の範囲外です。",
+        suggestedFix: "Check the birth date, or keep the row marked as test data.",
+        suggestedFixJa: "生年月日を確認するか、テスト用データとして扱います。",
       });
     }
 
@@ -54,7 +58,9 @@ export function validatePlayers(players: Player[]): DataIssue[] {
         severity: "critical",
         issueType: "missing",
         message: "Nationality is blank.",
+        messageJa: "国籍が空欄です。",
         suggestedFix: "Add nationality or remove the player from final client-facing exports.",
+        suggestedFixJa: "国籍を入力するか、提出用データから外します。",
       });
     }
 
@@ -66,7 +72,9 @@ export function validatePlayers(players: Player[]): DataIssue[] {
         severity: "warning",
         issueType: "format",
         message: "Position must be one of GK, DF, MF, or FW.",
+        messageJa: "ポジションは GK / DF / MF / FW の形式にそろえる必要があります。",
         suggestedFix: "Map detailed positions to the allowed portfolio schema.",
+        suggestedFixJa: "細かいポジション名をポートフォリオ用の形式に変換します。",
       });
     }
 
@@ -78,7 +86,9 @@ export function validatePlayers(players: Player[]): DataIssue[] {
         severity: "info",
         issueType: "range",
         message: "Height is unusual and should be checked.",
+        messageJa: "身長の値がやや不自然です。",
         suggestedFix: "Verify the height against the source or keep a note explaining the value.",
+        suggestedFixJa: "出典で身長を確認し、必要なら補足メモを残します。",
       });
     }
 
@@ -90,7 +100,9 @@ export function validatePlayers(players: Player[]): DataIssue[] {
         severity: "critical",
         issueType: "range",
         message: "Market value cannot be negative.",
+        messageJa: "市場価値がマイナスになっています。",
         suggestedFix: "Set unknown values to 0 or null in the import before reporting.",
+        suggestedFixJa: "不明な値はレポート前に 0 または null に直します。",
       });
     }
 
@@ -101,8 +113,10 @@ export function validatePlayers(players: Player[]): DataIssue[] {
         field: "contractUntil",
         severity: "warning",
         issueType: "range",
-        message: "Contract date is in the past for the current sample season.",
+        message: "Contract date is already in the past for this sample season.",
+        messageJa: "契約終了日がサンプルの対象シーズンより過去です。",
         suggestedFix: "Re-check the contract end date or label the record as historical.",
+        suggestedFixJa: "契約終了日を再確認するか、過去データとして明記します。",
       });
     }
 
@@ -114,7 +128,9 @@ export function validatePlayers(players: Player[]): DataIssue[] {
         severity: "critical",
         issueType: "range",
         message: "Goals, assists, and minutes cannot be negative.",
+        messageJa: "得点・アシスト・出場時間はマイナスにできません。",
         suggestedFix: "Correct the numeric import values before using this row.",
+        suggestedFixJa: "この行を使う前に数値の取り込みミスを修正します。",
       });
     }
 
@@ -126,7 +142,9 @@ export function validatePlayers(players: Player[]): DataIssue[] {
         severity: "warning",
         issueType: "consistency",
         message: "Player has goal contributions despite 0 minutes.",
+        messageJa: "出場時間が 0 分なのに得点関与があります。",
         suggestedFix: "Verify minutes played or add a note explaining the competition context.",
+        suggestedFixJa: "出場時間を確認し、特殊な大会条件があればメモを残します。",
       });
     }
 
@@ -138,7 +156,9 @@ export function validatePlayers(players: Player[]): DataIssue[] {
         severity: "critical",
         issueType: "source",
         message: "Source URL and source name are required for research claims.",
+        messageJa: "リサーチ内容には出典URLと出典名が必要です。",
         suggestedFix: "Add source metadata or keep the claim out of the final report.",
+        suggestedFixJa: "出典情報を追加するか、根拠のない記述を最終レポートから外します。",
       });
     }
 
@@ -150,7 +170,9 @@ export function validatePlayers(players: Player[]): DataIssue[] {
         severity: "warning",
         issueType: "source",
         message: "Last checked date is missing.",
+        messageJa: "確認日が未入力です。",
         suggestedFix: "Record the date when the source was reviewed.",
+        suggestedFixJa: "出典を確認した日付を記録します。",
       });
     }
   });
@@ -174,7 +196,9 @@ export function validateTeams(teams: Team[]): DataIssue[] {
         severity: "critical",
         issueType: "missing",
         message: "Team name is required.",
+        messageJa: "チーム名が必要です。",
         suggestedFix: "Add the verified team name before export.",
+        suggestedFixJa: "書き出し前に確認済みのチーム名を入力します。",
       });
     }
 
@@ -186,7 +210,9 @@ export function validateTeams(teams: Team[]): DataIssue[] {
         severity: "warning",
         issueType: "range",
         message: "Squad size is outside the expected range.",
+        messageJa: "登録人数が想定範囲外です。",
         suggestedFix: "Check whether youth, reserve, or duplicate rows were included.",
+        suggestedFixJa: "下部組織、リザーブ、重複行が混ざっていないか確認します。",
       });
     }
 
@@ -198,7 +224,9 @@ export function validateTeams(teams: Team[]): DataIssue[] {
         severity: "info",
         issueType: "range",
         message: "Average age should be reviewed.",
+        messageJa: "平均年齢は確認が必要です。",
         suggestedFix: "Verify the squad list used for the calculation.",
+        suggestedFixJa: "計算に使った選手リストを確認します。",
       });
     }
 
@@ -210,7 +238,9 @@ export function validateTeams(teams: Team[]): DataIssue[] {
         severity: "critical",
         issueType: "source",
         message: "Team source metadata is incomplete.",
+        messageJa: "チーム情報の出典メタデータが不足しています。",
         suggestedFix: "Add source URL, source name, and checked date.",
+        suggestedFixJa: "出典URL、出典名、確認日を追加します。",
       });
     }
   });

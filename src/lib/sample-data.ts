@@ -21,7 +21,9 @@ export const players: Player[] = [
     sourceName: "ScoutBoard synthetic sample",
     lastCheckedAt: "2026-05-20",
     researchNote:
-      "Progressive central midfielder with clean receiving angles, high availability between lines, and reliable final-third passing.",
+      "A tidy central midfielder who keeps showing for the ball, takes clean first touches, and moves passes into useful areas.",
+    researchNoteJa:
+      "ボールを受け直す動きが多く、最初のタッチも安定。中央でテンポを作りながら、前向きなパスを選べるタイプ。",
   },
   {
     id: "p-002",
@@ -43,7 +45,9 @@ export const players: Player[] = [
     sourceName: "ScoutBoard synthetic sample",
     lastCheckedAt: "2026-05-21",
     researchNote:
-      "Mobile forward who attacks the near post early and creates repeatable shots from inside the box.",
+      "A quick forward who gets across defenders early. Most of his value is simple: he keeps finding shots inside the box.",
+    researchNoteJa:
+      "相手DFの前に入る動きが早いFW。難しいことより、ボックス内で何度もシュート場面を作れる点が強み。",
   },
   {
     id: "p-003",
@@ -65,7 +69,9 @@ export const players: Player[] = [
     sourceName: "ScoutBoard synthetic sample",
     lastCheckedAt: "2026-05-22",
     researchNote:
-      "Dominant aerial centre-back with calm outlet passing and strong set-piece value.",
+      "A centre-back built for aerial duels. He is also calm enough on the ball to start the next pass instead of only clearing it.",
+    researchNoteJa:
+      "空中戦に強いCB。クリアだけで終わらせず、落ち着いて次のパスにつなげられるところも見たいポイント。",
   },
   {
     id: "p-004",
@@ -87,7 +93,9 @@ export const players: Player[] = [
     sourceName: "",
     lastCheckedAt: "",
     researchNote:
-      "Intentional flawed record used to demonstrate validation and QA reporting.",
+      "This row is deliberately messy. It exists so the QA screen has real problems to catch, not just perfect demo data.",
+    researchNoteJa:
+      "QA機能を見せるための意図的な不備データ。きれいなサンプルだけでなく、実際に見つけるべき問題を入れている。",
   },
 ];
 

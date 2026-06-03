@@ -27,7 +27,7 @@ body {
     linear-gradient(180deg, var(--paper) 0%, #fff8ef 58%, var(--paper-strong) 100%);
   background-size: 42px 42px, auto;
   color: var(--ink);
-  font-family: "Arial Black", "Trebuchet MS", Verdana, sans-serif;
+  font-family: "Arial Black", "Yu Gothic", "Hiragino Kaku Gothic ProN", "Meiryo", "Trebuchet MS", Verdana, sans-serif;
 }
 
 a {
@@ -83,6 +83,28 @@ a {
   font-family: Georgia, "Times New Roman", serif;
   font-size: 0.88rem;
   margin-top: 4px;
+}
+
+.navLabel {
+  display: grid;
+  gap: 2px;
+  text-align: center;
+}
+
+.navLabel small,
+.jp {
+  font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.navLabel small {
+  color: var(--muted);
+  font-size: 0.72rem;
+}
+
+.navItem:hover .navLabel small {
+  color: rgba(255, 255, 255, 0.78);
 }
 
 .masthead nav {
@@ -205,6 +227,25 @@ a {
   font-family: Georgia, "Times New Roman", serif;
   font-size: 1.06rem;
   line-height: 1.62;
+}
+
+.jp {
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.7;
+}
+
+.heroBand .jp,
+.detailHero .jp {
+  max-width: 690px;
+  color: rgba(255, 253, 247, 0.86);
+}
+
+.featureCaption .jp,
+.miniArticleBody .jp,
+.qaPanel .jp,
+.sectionHeader .jp {
+  margin-top: 8px;
 }
 
 .eyebrow {
@@ -370,6 +411,12 @@ a {
   font-family: Georgia, "Times New Roman", serif;
 }
 
+.tableSubline {
+  display: block;
+  margin-top: 6px;
+  color: var(--muted);
+}
+
 .metricGrid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -439,7 +486,7 @@ a {
 table {
   width: 100%;
   border-collapse: collapse;
-  font-family: "Trebuchet MS", Verdana, sans-serif;
+  font-family: "Trebuchet MS", "Yu Gothic", "Hiragino Kaku Gothic ProN", "Meiryo", Verdana, sans-serif;
   font-size: 0.94rem;
 }
 
@@ -472,7 +519,6 @@ tbody tr:hover {
 .miniArticleBody p,
 .issueItem p,
 .qaStory li {
-  font-family: Georgia, "Times New Roman", serif;
   line-height: 1.6;
 }
 
@@ -492,6 +538,7 @@ tbody tr:hover {
   padding: 10px 12px;
   border: 2px solid var(--ink);
   background: #fff;
+  color: var(--ink);
   font-family: "Trebuchet MS", Verdana, sans-serif;
 }
 
@@ -666,6 +713,7 @@ tbody tr:hover {
   background: #15130f;
   color: #fff8ef;
   border: 3px solid var(--ink);
+  font-family: Consolas, "Yu Gothic", "Meiryo", monospace;
   font-size: 0.9rem;
   line-height: 1.55;
 }
@@ -789,6 +837,7 @@ tbody tr:hover {
 
   .navItem {
     min-height: 52px;
+    font-size: 0.82rem;
   }
 
   .mastActions {
@@ -824,5 +873,9 @@ tbody tr:hover {
 
   .issueItem {
     grid-template-columns: 1fr;
+  }
+
+  .issueItem .pill {
+    justify-self: start;
   }
 }

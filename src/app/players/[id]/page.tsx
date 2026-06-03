@@ -29,7 +29,7 @@ export default async function PlayerDetailPage({
     <div className="pageStack">
       <Link className="backLink" href="/players">
         <ArrowLeft size={16} aria-hidden="true" />
-        Players
+        Players / 選手リスト
       </Link>
 
       <section className="detailHero">
@@ -37,26 +37,28 @@ export default async function PlayerDetailPage({
           <p className="eyebrow">{player.club}</p>
           <h1>{player.name}</h1>
           <p>{player.researchNote}</p>
+          <p className="jp">{player.researchNoteJa}</p>
         </div>
         <div className="profileGrid">
-          <span>Age <strong>{player.age}</strong></span>
-          <span>Position <strong>{player.position}</strong></span>
-          <span>Foot <strong>{player.preferredFoot}</strong></span>
-          <span>Value <strong>EUR {player.marketValueEur.toLocaleString()}</strong></span>
+          <span>Age / 年齢 <strong>{player.age}</strong></span>
+          <span>Position / 位置 <strong>{player.position}</strong></span>
+          <span>Foot / 利き足 <strong>{player.preferredFoot}</strong></span>
+          <span>Value / 評価額 <strong>EUR {player.marketValueEur.toLocaleString()}</strong></span>
         </div>
       </section>
 
       <section className="split">
         <div className="qaPanel">
-          <p className="eyebrow">Source notes</p>
-          <h2>Research metadata</h2>
+          <p className="eyebrow">Source notes / 出典メモ</p>
+          <h2>Where this note comes from</h2>
+          <p className="jp">このメモの根拠として残しておく情報です。</p>
           <p>{player.sourceName || "Missing source name"}</p>
           <p className="muted">{player.sourceUrl || "Missing source URL"}</p>
           <p className="muted">Last checked: {player.lastCheckedAt || "Missing"}</p>
         </div>
 
         <div className="qaPanel">
-          <p className="eyebrow">Delivery checklist</p>
+          <p className="eyebrow">Delivery checklist / 納品前チェック</p>
           <h2>Before export</h2>
           <ul className="checklist">
             <li>Confirm source metadata</li>
@@ -64,23 +66,41 @@ export default async function PlayerDetailPage({
             <li>Separate facts from scouting opinion</li>
             <li>Human-edit final wording</li>
           </ul>
+          <ul className="checklist jp">
+            <li>出典情報を確認</li>
+            <li>データ不備を確認</li>
+            <li>事実とスカウト所感を分ける</li>
+            <li>最後は人の目で文章を整える</li>
+          </ul>
         </div>
       </section>
 
       <section className="sectionHeader">
-        <p className="eyebrow">Open issues</p>
+        <p className="eyebrow">Open issues / 未対応の確認事項</p>
         <h2>{playerIssues.length} validation findings</h2>
+        <p className="jp">この選手データで、まだ確認が必要な項目です。</p>
       </section>
       <div className="issueList">
         {playerIssues.length === 0 ? (
-          <p className="emptyState">No validation issues for this player.</p>
+          <p className="emptyState">
+            No validation issues for this player.
+            <span className="jp tableSubline">この選手データには未対応の不備はありません。</span>
+          </p>
         ) : (
           playerIssues.map((issue) => (
             <article key={issue.id} className="issueItem">
               <span className={`pill ${issue.severity}`}>{issue.severity}</span>
               <strong>{issue.field}</strong>
-              <p>{issue.message}</p>
-              <small>{issue.suggestedFix}</small>
+              <p>
+                {issue.message}
+                {issue.messageJa ? <span className="jp tableSubline">{issue.messageJa}</span> : null}
+              </p>
+              <small>
+                {issue.suggestedFix}
+                {issue.suggestedFixJa ? (
+                  <span className="jp tableSubline">{issue.suggestedFixJa}</span>
+                ) : null}
+              </small>
             </article>
           ))
         )}
@@ -88,8 +108,9 @@ export default async function PlayerDetailPage({
 
       <section className="reportPreview">
         <div className="sectionHeader">
-          <p className="eyebrow">Markdown export preview</p>
+          <p className="eyebrow">Markdown preview / Markdown下書き</p>
           <h2>Player report draft</h2>
+          <p className="jp">日本語メモも含めたサンプルレポートのプレビューです。</p>
         </div>
         <button className="iconButton" type="button" aria-label="Export available in next milestone">
           <Download size={18} aria-hidden="true" />

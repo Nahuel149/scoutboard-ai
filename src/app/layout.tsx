@@ -5,14 +5,14 @@ import "./styles.css";
 
 export const metadata: Metadata = {
   title: "ScoutBoard AI",
-  description: "Football research, data QA, and report generator portfolio app.",
+  description: "A bilingual football research and data-checking portfolio app.",
 };
 
 const navItems = [
-  { href: "/", label: "Dashboard", icon: BarChart3 },
-  { href: "/players", label: "Players", icon: Search },
-  { href: "/qa", label: "Data QA", icon: ClipboardCheck },
-  { href: "/reports", label: "Reports", icon: FileText },
+  { href: "/", label: "Dashboard", labelJa: "ダッシュボード", icon: BarChart3 },
+  { href: "/players", label: "Players", labelJa: "選手リスト", icon: Search },
+  { href: "/qa", label: "Data QA", labelJa: "データ確認", icon: ClipboardCheck },
+  { href: "/reports", label: "Reports", labelJa: "レポート", icon: FileText },
 ];
 
 export default function RootLayout({
@@ -38,7 +38,10 @@ export default function RootLayout({
                 return (
                   <Link key={item.href} href={item.href} className="navItem">
                     <Icon size={17} aria-hidden="true" />
-                    {item.label}
+                    <span className="navLabel">
+                      <strong>{item.label}</strong>
+                      <small>{item.labelJa}</small>
+                    </span>
                   </Link>
                 );
               })}

@@ -9,15 +9,18 @@ export default function PlayersPage() {
   return (
     <div className="pageStack">
       <div className="sectionHeader">
-        <p className="eyebrow">Research table</p>
+        <p className="eyebrow">Research table / 選手リサーチ</p>
         <h1>Players</h1>
-        <p>Sample records for scouting notes, validation, and report drafts.</p>
+        <p>Small sample records for scouting notes, data checks, and report drafts.</p>
+        <p className="jp">
+          スカウティングメモ、データ確認、レポート下書きに使うサンプル選手データです。
+        </p>
       </div>
 
       <div className="filterBar" aria-label="Static MVP filters">
-        <span>Search-ready table</span>
-        <span>Position filter</span>
-        <span>Source review</span>
+        <span>Search-ready / 検索対応予定</span>
+        <span>Position filter / ポジション絞り込み</span>
+        <span>Source review / 出典確認</span>
       </div>
 
       <section className="playerCardGrid" aria-label="Player research cards">
@@ -37,9 +40,10 @@ export default function PlayersPage() {
                 <p className="eyebrow">{player.club}</p>
                 <h2>{player.name}</h2>
                 <p>{player.researchNote}</p>
+                <p className="jp">{player.researchNoteJa}</p>
                 <div>
                   <span className={playerIssues.length ? "pill danger" : "pill"}>
-                    {playerIssues.length} issues
+                    {playerIssues.length} issues / 不備
                   </span>
                   <span className="pill">{player.goals + player.assists} G+A</span>
                 </div>
@@ -53,13 +57,13 @@ export default function PlayersPage() {
         <table>
           <thead>
             <tr>
-              <th>Name</th>
-              <th>Club</th>
-              <th>League</th>
-              <th>Position</th>
-              <th>Goals</th>
-              <th>Assists</th>
-              <th>Issues</th>
+              <th>Name / 選手</th>
+              <th>Club / 所属</th>
+              <th>League / リーグ</th>
+              <th>Position / 位置</th>
+              <th>Goals / 得点</th>
+              <th>Assists / A</th>
+              <th>Issues / 不備</th>
             </tr>
           </thead>
           <tbody>

@@ -14,23 +14,26 @@ export default function DashboardPage() {
   const featureCards = [
     {
       tone: "amber",
-      kicker: "Research note",
-      title: "A midfield profile with source checks attached.",
+      kicker: "Research note / リサーチメモ",
+      title: "A simple player note, with the source checks kept beside it.",
+      titleJa: "選手メモと出典確認を同じ画面で見られるようにしました。",
       meta: "Mateo Alvarez / River Norte",
       href: "/players/p-001",
     },
     {
       tone: "blue",
-      kicker: "QA finding",
-      title: "One flawed import row becomes a client-ready data issue report.",
-      meta: `${summary.total} open findings`,
+      kicker: "QA finding / データ不備",
+      title: "The messy sample row is there on purpose. The app catches it.",
+      titleJa: "あえて不備のある行を入れ、チェック結果を見える形にしています。",
+      meta: `${summary.total} open findings / 未対応 ${summary.total}件`,
       href: "/qa",
     },
     {
       tone: "green",
-      kicker: "Report builder",
-      title: "Draft, source list, and final human verification in one workflow.",
-      meta: "Markdown preview",
+      kicker: "Report builder / レポート作成",
+      title: "Draft first, then check the facts before it leaves the desk.",
+      titleJa: "下書きを作ってから、事実と出典を人の目で確認します。",
+      meta: "Markdown preview / Markdown下書き",
       href: "/reports",
     },
   ];
@@ -39,15 +42,20 @@ export default function DashboardPage() {
     <div className="pageStack">
       <section className="heroBand">
         <div>
-          <p className="eyebrow">Portfolio MVP</p>
-          <h1>Football research with a QA trail.</h1>
+          <p className="eyebrow">Portfolio MVP / ポートフォリオ</p>
+          <h1>Football research, checked before it becomes a report.</h1>
           <p>
-            ScoutBoard AI turns sample player and team data into validation
-            evidence, research notes, and export-ready report drafts.
+            ScoutBoard AI is a small portfolio app for football research work:
+            collect the sample data, spot the weak fields, then write a report
+            that still has a human review step.
+          </p>
+          <p className="jp">
+            サッカーの選手データを整理し、不備を確認してからレポート下書きにするための
+            自作ポートフォリオです。リサーチ、データ確認、納品前チェックの流れを見せています。
           </p>
         </div>
         <Link className="primaryAction" href="/qa">
-          Review issues
+          Check the data
           <ArrowRight size={18} aria-hidden="true" />
         </Link>
       </section>
@@ -68,6 +76,7 @@ export default function DashboardPage() {
             <div className="featureCaption">
               <p className="eyebrow">{card.kicker}</p>
               <h2>{card.title}</h2>
+              <p className="jp">{card.titleJa}</p>
               <span>{card.meta}</span>
             </div>
           </Link>
@@ -77,22 +86,22 @@ export default function DashboardPage() {
       <section className="metricGrid" aria-label="Project metrics">
         <article className="metric">
           <Users size={20} aria-hidden="true" />
-          <span>Players</span>
+          <span>Players / 選手</span>
           <strong>{players.length}</strong>
         </article>
         <article className="metric">
           <TrendingUp size={20} aria-hidden="true" />
-          <span>Teams</span>
+          <span>Teams / チーム</span>
           <strong>{teams.length}</strong>
         </article>
         <article className="metric">
           <ShieldCheck size={20} aria-hidden="true" />
-          <span>Completeness</span>
+          <span>Checked score / 確認スコア</span>
           <strong>{completeness}%</strong>
         </article>
         <article className="metric alert">
           <ShieldCheck size={20} aria-hidden="true" />
-          <span>Open issues</span>
+          <span>Open issues / 未対応</span>
           <strong>{summary.total}</strong>
         </article>
       </section>
@@ -100,16 +109,17 @@ export default function DashboardPage() {
       <section className="split">
         <div>
           <div className="sectionHeader">
-            <p className="eyebrow">Player board</p>
-            <h2>Top contribution snapshot</h2>
+            <p className="eyebrow">Player board / 選手ボード</p>
+            <h2>Who is producing chances?</h2>
+            <p className="jp">得点とアシストをまとめて、まず見るべき選手を絞ります。</p>
           </div>
           <div className="tableShell">
             <table>
               <thead>
                 <tr>
-                  <th>Name</th>
-                  <th>Club</th>
-                  <th>Pos</th>
+                  <th>Name / 選手</th>
+                  <th>Club / 所属</th>
+                  <th>Pos / 位置</th>
                   <th>G+A</th>
                 </tr>
               </thead>
@@ -129,28 +139,32 @@ export default function DashboardPage() {
           </div>
         </div>
         <div className="qaPanel">
-          <p className="eyebrow">QA summary</p>
-          <h2>Validation catches flawed import rows.</h2>
+          <p className="eyebrow">QA summary / 確認結果</p>
+          <h2>The data check finds the row a human would worry about.</h2>
           <div className="severityGrid">
-            <span>Critical <strong>{summary.critical}</strong></span>
-            <span>Warning <strong>{summary.warning}</strong></span>
-            <span>Info <strong>{summary.info}</strong></span>
+            <span>Critical / 重要 <strong>{summary.critical}</strong></span>
+            <span>Warning / 注意 <strong>{summary.warning}</strong></span>
+            <span>Info / 確認 <strong>{summary.info}</strong></span>
           </div>
           <p>
-            The intentionally flawed sample player proves the workflow can find
-            missing sources, impossible values, and consistency problems before a
-            report is delivered.
+            One sample player has bad values on purpose. That makes the QA
+            behavior visible: missing sources, strange numbers, and stats that
+            do not line up.
+          </p>
+          <p className="jp">
+            不備のある選手データをあえて入れることで、出典不足、数値ミス、
+            整合性の問題をどう見つけるかを見せています。
           </p>
         </div>
       </section>
 
       <section className="tagMarquee" aria-label="Portfolio proof tags">
-        <span>Data QA</span>
-        <span>Research notes</span>
-        <span>Source policy</span>
-        <span>Report drafts</span>
-        <span>Vitest checks</span>
-        <span>Portfolio proof</span>
+        <span>Data QA / データ確認</span>
+        <span>Research notes / リサーチメモ</span>
+        <span>Source policy / 出典ルール</span>
+        <span>Report drafts / 下書き</span>
+        <span>Vitest checks / 自動テスト</span>
+        <span>Portfolio proof / 実作例</span>
       </section>
     </div>
   );
