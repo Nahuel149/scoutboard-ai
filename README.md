@@ -1,12 +1,49 @@
-# ScoutBoard AI - Football Research and QA Portfolio Project
+# ScoutBoard AI
 
-ScoutBoard AI is a planned portfolio project for showing practical proof across football research, data QA, AI-assisted writing, frontend/backend development, and client-ready reporting.
+Football research, data QA, and report generator portfolio app.
 
-The goal is to build one global project that can support:
+ScoutBoard AI is a self-created portfolio project that demonstrates practical
+full-stack development, football research structure, spreadsheet-style data QA,
+AI-assisted writing workflow design, and client-ready reporting.
 
-- GitHub contribution history through real code commits.
-- Portfolio proof for CrowdWorks proposals.
-- Stronger references for remote QA, research, data, writing, and frontend/backend jobs.
-- Reusable sanitized samples: dashboards, source-backed research briefs, QA reports, article outlines, and spreadsheet-style data checks.
+## Current MVP
 
-Start with `PROJECT_BLUEPRINT.md`.
+- Next.js + TypeScript app shell.
+- Dashboard with sample football metrics.
+- Player list and player detail pages.
+- Data QA page powered by reusable validation rules.
+- Report builder preview with manual human verification checklist.
+- Synthetic CSV sample data.
+- Unit tests for validation behavior.
+
+## Local Setup
+
+```powershell
+npm install
+npm run dev
+```
+
+Then open `http://localhost:3000`.
+
+## Testing
+
+```powershell
+npm test
+npm run build
+```
+
+## Data Policy
+
+The repo currently uses self-created synthetic data only. It must not include
+private resumes, CrowdWorks logs/messages, Telegram files, secrets, raw personal
+screenshots, or restricted football datasets.
+
+See [docs/data-source-policy.md](docs/data-source-policy.md).
+
+## Portfolio Note
+
+This is a self-created portfolio project. It demonstrates full-stack
+development, data validation, QA reporting, and source-backed research workflows
+using football sample data. It does not include client-confidential material.
+
+The original build plan is in [PROJECT_BLUEPRINT.md](PROJECT_BLUEPRINT.md).

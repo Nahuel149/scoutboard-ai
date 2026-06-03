@@ -1,0 +1,4 @@
+id,name,country,league,manager,stadium,squad_size,average_age,source_url,source_name,last_checked_at
+t-001,River Norte,Argentina,Primera Sample,Santiago Paz,Estadio del Norte,27,25.4,https://example.com/scoutboard/synthetic/team-t-001,ScoutBoard synthetic sample,2026-05-20
+t-002,Yokohama Bays,Japan,J Sample League,Hiro Tanaka,Bay Field,29,24.1,https://example.com/scoutboard/synthetic/team-t-002,ScoutBoard synthetic sample,2026-05-21
+t-003,Berlin Athletic,Germany,Bundes Sample,Marta Klein,Nordpark Arena,26,26.8,https://example.com/scoutboard/synthetic/team-t-003,ScoutBoard synthetic sample,2026-05-22

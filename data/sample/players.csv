@@ -1,0 +1,5 @@
+id,name,age,nationality,position,club,league,preferred_foot,height_cm,market_value_eur,contract_until,appearances,goals,assists,minutes,source_url,source_name,last_checked_at
+p-001,Mateo Alvarez,22,Argentina,MF,River Norte,Primera Sample,Right,176,2400000,2028-06-30,31,6,11,2420,https://example.com/scoutboard/synthetic/player-p-001,ScoutBoard synthetic sample,2026-05-20
+p-002,Kenji Sato,19,Japan,FW,Yokohama Bays,J Sample League,Left,181,1200000,2027-01-31,24,12,4,1685,https://example.com/scoutboard/synthetic/player-p-002,ScoutBoard synthetic sample,2026-05-21
+p-003,Luca Weber,28,Germany,DF,Berlin Athletic,Bundes Sample,Both,190,3600000,2026-12-31,29,2,1,2610,https://example.com/scoutboard/synthetic/player-p-003,ScoutBoard synthetic sample,2026-05-22
+p-004,Omar Diallo,46,,AM,Casablanca Port,Atlantic Sample,Right,163,-50000,2021-06-30,4,3,2,0,,, 
