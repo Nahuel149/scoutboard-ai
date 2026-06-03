@@ -1,0 +1,35 @@
+# Dependencies and build outputs
+node_modules/
+.next/
+dist/
+build/
+.venv/
+__pycache__/
+*.pyc
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Local runtime files
+*.log
+.DS_Store
+Thumbs.db
+
+# Personal/job-search material should not be committed to this portfolio repo.
+*.pdf
+*.docx
+*.xlsx
+*.png
+*.jpg
+*.jpeg
+*.webp
+
+# Allow curated screenshots later only after review by moving them under docs/screenshots
+!docs/screenshots/*.png
+!docs/screenshots/*.jpg
+!docs/screenshots/*.jpeg
+!docs/screenshots/*.webp
