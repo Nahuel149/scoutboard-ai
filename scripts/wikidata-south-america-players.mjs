@@ -101,6 +101,48 @@ const argentinaFirstDivision2026Clubs = [
   { id: "Q215163", name: "Club Atlético Vélez Sarsfield" },
 ];
 
+const brazilFirstDivision2026Clubs = [
+  { id: "Q506832", name: "Club Athletico Paranaense" },
+  { id: "Q270995", name: "Clube Atlético Mineiro" },
+  { id: "Q198032", name: "Esporte Clube Bahia" },
+  { id: "Q80958", name: "Botafogo de Futebol e Regatas" },
+  { id: "Q2536715", name: "Associação Chapecoense de Futebol" },
+  { id: "Q35933", name: "Sport Club Corinthians Paulista" },
+  { id: "Q478317", name: "Coritiba Foot Ball Club" },
+  { id: "Q188277", name: "Cruzeiro Esporte Clube" },
+  { id: "Q17479", name: "Clube de Regatas do Flamengo" },
+  { id: "Q80987", name: "Fluminense Football Club" },
+  { id: "Q221695", name: "Grêmio Foot-Ball Porto Alegrense" },
+  { id: "Q80845", name: "Sport Club Internacional" },
+  { id: "Q2622870", name: "Mirassol Futebol Clube" },
+  { id: "Q80964", name: "Sociedade Esportiva Palmeiras" },
+  { id: "Q541744", name: "Red Bull Bragantino" },
+  { id: "Q2552872", name: "Clube do Remo" },
+  { id: "Q80955", name: "Santos Futebol Clube" },
+  { id: "Q38568", name: "São Paulo Futebol Clube" },
+  { id: "Q5014111", name: "Club de Regatas Vasco da Gama" },
+  { id: "Q274465", name: "Esporte Clube Vitória" },
+];
+
+const currentLeagueScopes = {
+  "argentina-first-division-current": {
+    clubs: argentinaFirstDivision2026Clubs,
+    importScope: "argentina-first-division-current-players",
+    leagueSeason: "Liga Profesional 2026",
+    leagueSeasonSource: "https://www.ligaprofesional.ar/clubes",
+    queryPurpose: "Argentina Primera División current squad import spike",
+    outputLabel: "current Argentina first-division player-club rows",
+  },
+  "brazil-first-division-current": {
+    clubs: brazilFirstDivision2026Clubs,
+    importScope: "brazil-first-division-current-players",
+    leagueSeason: "Campeonato Brasileiro Série A 2026",
+    leagueSeasonSource: "https://www.cbf.com.br/futebol-brasileiro/times/campeonato-brasileiro/serie-a/2026",
+    queryPurpose: "Brazil Série A current squad import spike",
+    outputLabel: "current Brazil first-division player-club rows",
+  },
+};
+
 function getLimit() {
   const raw = process.argv.find((arg) => arg.startsWith("--limit="))?.split("=")[1];
   const value = raw ? Number.parseInt(raw, 10) : defaultLimit;
@@ -197,7 +239,7 @@ function normalizeRows(bindings) {
     });
 }
 
-function normalizeCurrentArgentinaFirstDivisionEntity(entity, club) {
+function normalizeCurrentLeagueEntity(entity, club, importScope) {
   const positionId = claimValue(entity, "P413");
 
   return {
@@ -223,7 +265,7 @@ function normalizeCurrentArgentinaFirstDivisionEntity(entity, club) {
     sourceName: "Wikidata",
     sourceLicense: "CC0",
     importedAt: new Date().toISOString(),
-    importScope: "argentina-first-division-current-players",
+    importScope,
     currentnessRule: "P54 club membership statement without P582 end-time qualifier",
     reviewStatus: "needs_manual_review",
   };
@@ -250,11 +292,11 @@ async function fetchWikidataPlayers(limit, countryIds) {
   return response.json();
 }
 
-async function fetchCurrentArgentinaFirstDivisionPlayers(limit) {
+async function fetchCurrentLeaguePlayers(limit, leagueConfig) {
   const rows = [];
   const seen = new Set();
 
-  for (const club of argentinaFirstDivision2026Clubs) {
+  for (const club of leagueConfig.clubs) {
     if (rows.length >= limit) {
       break;
     }
@@ -267,7 +309,7 @@ async function fetchCurrentArgentinaFirstDivisionPlayers(limit) {
         continue;
       }
 
-      const row = normalizeCurrentArgentinaFirstDivisionEntity(entity, club);
+      const row = normalizeCurrentLeagueEntity(entity, club, leagueConfig.importScope);
       const dedupeKey = `${row.wikidataId}-${row.currentClub}`;
 
       if (seen.has(dedupeKey)) {
@@ -558,8 +600,10 @@ async function main() {
   let rows = [];
   let accessMethod = "Wikidata entity API";
 
-  if (scope === "argentina-first-division-current") {
-    rows = await fetchCurrentArgentinaFirstDivisionPlayers(limit);
+  const currentLeagueConfig = currentLeagueScopes[scope];
+
+  if (currentLeagueConfig) {
+    rows = await fetchCurrentLeaguePlayers(limit, currentLeagueConfig);
 
     const output = {
       source: {
@@ -567,23 +611,23 @@ async function main() {
         endpoint,
         accessMethod: "Wikidata Query Service SPARQL",
         license: "CC0",
-        queryPurpose: "Argentina Primera División current squad import spike",
-        leagueSeasonSource: "https://www.ligaprofesional.ar/clubes",
-        leagueSeason: "Liga Profesional 2026",
-        clubCount: argentinaFirstDivision2026Clubs.length,
-        clubs: argentinaFirstDivision2026Clubs,
+        queryPurpose: currentLeagueConfig.queryPurpose,
+        leagueSeasonSource: currentLeagueConfig.leagueSeasonSource,
+        leagueSeason: currentLeagueConfig.leagueSeason,
+        clubCount: currentLeagueConfig.clubs.length,
+        clubs: currentLeagueConfig.clubs,
         importedAt: new Date().toISOString(),
         limit,
       },
       reviewNote:
-        "Rows are intended to represent current Argentina first-division squad members, based on Wikidata team membership statements with no end date. Squads and Wikidata claims can lag real transfers, so every row needs manual review before public display.",
+        "Rows are intended to represent current first-division squad members, based on Wikidata team membership statements with no end date. Squads and Wikidata claims can lag real transfers, so every row needs manual review before public display.",
       players: rows,
     };
 
     await mkdir(dirname(outputPath), { recursive: true });
     await writeFile(outputPath, `${JSON.stringify(output, null, 2)}\n`, "utf8");
 
-    console.log(`Imported ${rows.length} current Argentina first-division player-club rows from Wikidata.`);
+    console.log(`Imported ${rows.length} ${currentLeagueConfig.outputLabel} from Wikidata.`);
     console.log(`Wrote ${outputPath}`);
     return;
   }

@@ -82,6 +82,23 @@ This is a useful first pass for current squads, but it is not an official player
 registration feed. Transfers, loans, youth call-ups, and stale Wikidata claims
 still need manual review.
 
+For current Brazil Serie A squads, use:
+
+```powershell
+npm run import:brazil-first-division
+```
+
+That command uses the official CBF 2026 Campeonato Brasileiro Serie A team page
+as the league source set, then applies the same Wikidata current-team rule:
+`member of sports team` (`P54`) pointing to one of those clubs, with no
+`end time` (`P582`) qualifier. As with Argentina, this is a first-pass scouting
+database seed, not official registration data.
+
+CBF club pages also expose athlete lists, which are a better source for
+registration-level current squads, but the site marks its content as all rights
+reserved. Review CBF terms before storing or committing athlete data from those
+pages.
+
 ## Decision
 
 Status: approved for an import spike.
