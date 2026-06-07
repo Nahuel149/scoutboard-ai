@@ -124,6 +124,25 @@ const brazilFirstDivision2026Clubs = [
   { id: "Q274465", name: "Esporte Clube Vitória" },
 ];
 
+const chileFirstDivision2026Clubs = [
+  { id: "Q758689", name: "Audax Italiano" },
+  { id: "Q642669", name: "Cobresal" },
+  { id: "Q207373", name: "Club Social y Deportivo Colo Colo" },
+  { id: "Q2407595", name: "Coquimbo Unido" },
+  { id: "Q2317166", name: "Club Deportes Concepción" },
+  { id: "Q642098", name: "Club Deportes La Serena" },
+  { id: "Q105144613", name: "Club de Deportes Limache" },
+  { id: "Q1103684", name: "Everton de Viña del Mar" },
+  { id: "Q1023191", name: "Club Deportivo Huachipato" },
+  { id: "Q2317539", name: "Club Deportivo Ñublense" },
+  { id: "Q719722", name: "O'Higgins F.C." },
+  { id: "Q719719", name: "Club Deportivo Palestino" },
+  { id: "Q719383", name: "Unión La Calera" },
+  { id: "Q427446", name: "Club Deportivo Universidad Católica" },
+  { id: "Q737753", name: "Club Universidad de Chile" },
+  { id: "Q721560", name: "Club Deportivo Universidad de Concepción" },
+];
+
 const currentLeagueScopes = {
   "argentina-first-division-current": {
     clubs: argentinaFirstDivision2026Clubs,
@@ -132,6 +151,7 @@ const currentLeagueScopes = {
     leagueSeasonSource: "https://www.ligaprofesional.ar/clubes",
     queryPurpose: "Argentina Primera División current squad import spike",
     outputLabel: "current Argentina first-division player-club rows",
+    oldestPlausibleBirthDate: "1981-01-01",
   },
   "brazil-first-division-current": {
     clubs: brazilFirstDivision2026Clubs,
@@ -140,6 +160,16 @@ const currentLeagueScopes = {
     leagueSeasonSource: "https://www.cbf.com.br/futebol-brasileiro/times/campeonato-brasileiro/serie-a/2026",
     queryPurpose: "Brazil Série A current squad import spike",
     outputLabel: "current Brazil first-division player-club rows",
+    oldestPlausibleBirthDate: "1981-01-01",
+  },
+  "chile-first-division-current": {
+    clubs: chileFirstDivision2026Clubs,
+    importScope: "chile-first-division-current-players",
+    leagueSeason: "Liga de Primera 2026",
+    leagueSeasonSource: "https://www.campeonatochileno.cl/competition/liga-de-primera/",
+    queryPurpose: "Chile Liga de Primera current squad import spike",
+    outputLabel: "current Chile first-division player-club rows",
+    oldestPlausibleBirthDate: "1981-01-01",
   },
 };
 
@@ -305,7 +335,11 @@ async function fetchCurrentLeaguePlayers(limit, leagueConfig) {
     const entities = await fetchEntities(candidateIds);
 
     for (const entity of entities) {
-      if (!hasClaim(entity, "P106", "Q937857") || !hasCurrentTeamClaim(entity, club.id)) {
+      if (
+        !hasClaim(entity, "P106", "Q937857") ||
+        !hasCurrentTeamClaim(entity, club.id) ||
+        !hasPlausibleActiveBirthDate(entity, leagueConfig.oldestPlausibleBirthDate)
+      ) {
         continue;
       }
 
@@ -496,6 +530,16 @@ function hasCurrentTeamClaim(entity, clubId) {
   );
 }
 
+function hasPlausibleActiveBirthDate(entity, oldestPlausibleBirthDate) {
+  const birthDate = claimValue(entity, "P569");
+
+  if (!birthDate) {
+    return true;
+  }
+
+  return birthDate >= oldestPlausibleBirthDate;
+}
+
 async function fetchEntities(ids) {
   if (ids.length === 0) {
     return [];
@@ -604,6 +648,8 @@ async function main() {
 
   if (currentLeagueConfig) {
     rows = await fetchCurrentLeaguePlayers(limit, currentLeagueConfig);
+    const clubsWithRows = new Set(rows.map((row) => row.currentClub));
+    const clubsWithoutRows = currentLeagueConfig.clubs.filter((club) => !clubsWithRows.has(club.id));
 
     const output = {
       source: {
@@ -616,11 +662,15 @@ async function main() {
         leagueSeason: currentLeagueConfig.leagueSeason,
         clubCount: currentLeagueConfig.clubs.length,
         clubs: currentLeagueConfig.clubs,
+        clubsWithRows: clubsWithRows.size,
+        clubsWithoutRows,
+        currentnessRule: "P54 club membership statement without P582 end-time qualifier",
+        oldestPlausibleBirthDate: currentLeagueConfig.oldestPlausibleBirthDate,
         importedAt: new Date().toISOString(),
         limit,
       },
       reviewNote:
-        "Rows are intended to represent current first-division squad members, based on Wikidata team membership statements with no end date. Squads and Wikidata claims can lag real transfers, so every row needs manual review before public display.",
+        "Rows are intended to represent current first-division squad members, based on Wikidata team membership statements with no end date and a conservative birth-date guard. Squads and Wikidata claims can lag real transfers, so every row needs manual review before public display.",
       players: rows,
     };
 

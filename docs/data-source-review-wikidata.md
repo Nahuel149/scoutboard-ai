@@ -99,6 +99,18 @@ registration-level current squads, but the site marks its content as all rights
 reserved. Review CBF terms before storing or committing athlete data from those
 pages.
 
+For current Chile Liga de Primera squads, use:
+
+```powershell
+npm run import:chile-first-division
+```
+
+That command uses the official Campeonato Chileno Liga de Primera page as the
+league source set, then applies the same Wikidata current-team rule plus a
+conservative birth-date guard to filter obvious retired players from stale
+open-ended Wikidata claims. It is a seed for the scouting database, not a
+substitute for ANFP/COMET registration data.
+
 ## Decision
 
 Status: approved for an import spike.

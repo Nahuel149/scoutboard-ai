@@ -10,6 +10,7 @@
     "import:south-america": "node scripts/wikidata-south-america-players.mjs",
     "import:argentina-first-division": "node scripts/wikidata-south-america-players.mjs --scope=argentina-first-division-current --limit=2000 --out=data/imported/argentina-first-division-current-players.sample.json",
     "import:brazil-first-division": "node scripts/wikidata-south-america-players.mjs --scope=brazil-first-division-current --limit=2000 --out=data/imported/brazil-first-division-current-players.sample.json",
+    "import:chile-first-division": "node scripts/wikidata-south-america-players.mjs --scope=chile-first-division-current --limit=2000 --out=data/imported/chile-first-division-current-players.sample.json",
     "test": "vitest run",
     "test:watch": "vitest"
   },
