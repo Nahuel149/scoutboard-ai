@@ -69,6 +69,19 @@ categories, resolves each page to a Wikidata entity, then validates player
 occupation and nationality claims before writing rows. A SPARQL fallback remains
 available when the entity API path fails.
 
+For current Argentina Primera Division squads, use:
+
+```powershell
+npm run import:argentina-first-division
+```
+
+That command uses the official LPF club index as the first-division club source
+set, then imports Wikidata players whose `member of sports team` (`P54`) claim
+points to one of those clubs and does not have an `end time` (`P582`) qualifier.
+This is a useful first pass for current squads, but it is not an official player
+registration feed. Transfers, loans, youth call-ups, and stale Wikidata claims
+still need manual review.
+
 ## Decision
 
 Status: approved for an import spike.

@@ -68,12 +68,45 @@ const countryWikipediaCategories = {
   Q730: "Category:Surinamese footballers",
 };
 
+const argentinaFirstDivision2026Clubs = [
+  { id: "Q971490", name: "Club Atlético Aldosivi" },
+  { id: "Q220621", name: "Asociación Atlética Argentinos Juniors" },
+  { id: "Q757470", name: "Club Atlético Tucumán" },
+  { id: "Q692646", name: "Club Atlético Banfield" },
+  { id: "Q2469894", name: "Club Atlético Barracas Central" },
+  { id: "Q59962", name: "Club Atlético Belgrano" },
+  { id: "Q170703", name: "Club Atlético Boca Juniors" },
+  { id: "Q5060684", name: "Club Atlético Central Córdoba" },
+  { id: "Q1024338", name: "Club Social y Deportivo Defensa y Justicia" },
+  { id: "Q4382304", name: "Club Deportivo Riestra" },
+  { id: "Q214940", name: "Club Estudiantes de La Plata" },
+  { id: "Q8206935", name: "Asociación Atlética Estudiantes" },
+  { id: "Q18640", name: "Club de Gimnasia y Esgrima La Plata" },
+  { id: "Q2707037", name: "Club Atlético Gimnasia y Esgrima" },
+  { id: "Q327172", name: "Club Atlético Huracán" },
+  { id: "Q214978", name: "Club Atlético Independiente" },
+  { id: "Q2454482", name: "Club Sportivo Independiente Rivadavia" },
+  { id: "Q1421829", name: "Instituto Atlético Central Córdoba" },
+  { id: "Q324589", name: "Club Atlético Lanús" },
+  { id: "Q221882", name: "Club Atlético Newell's Old Boys" },
+  { id: "Q151907", name: "Club Atlético Platense" },
+  { id: "Q276533", name: "Racing Club" },
+  { id: "Q15799", name: "Club Atlético River Plate" },
+  { id: "Q318307", name: "Club Atlético Rosario Central" },
+  { id: "Q218282", name: "Club Atlético San Lorenzo de Almagro" },
+  { id: "Q519966", name: "Club Atlético Sarmiento" },
+  { id: "Q1022939", name: "Club Atlético Talleres" },
+  { id: "Q80886", name: "Club Atlético Tigre" },
+  { id: "Q80899", name: "Club Atlético Unión" },
+  { id: "Q215163", name: "Club Atlético Vélez Sarsfield" },
+];
+
 function getLimit() {
   const raw = process.argv.find((arg) => arg.startsWith("--limit="))?.split("=")[1];
   const value = raw ? Number.parseInt(raw, 10) : defaultLimit;
 
-  if (!Number.isFinite(value) || value < 1 || value > 500) {
-    throw new Error("Use --limit with a number between 1 and 500.");
+  if (!Number.isFinite(value) || value < 1 || value > 2000) {
+    throw new Error("Use --limit with a number between 1 and 2000.");
   }
 
   return value;
@@ -82,6 +115,10 @@ function getLimit() {
 function getOutputPath() {
   const raw = process.argv.find((arg) => arg.startsWith("--out="))?.split("=")[1];
   return resolve(raw ?? "data/imported/south-america-players.sample.json");
+}
+
+function getScope() {
+  return process.argv.find((arg) => arg.startsWith("--scope="))?.split("=")[1] ?? "south-america-country";
 }
 
 function getCountryIds() {
@@ -160,6 +197,38 @@ function normalizeRows(bindings) {
     });
 }
 
+function normalizeCurrentArgentinaFirstDivisionEntity(entity, club) {
+  const positionId = claimValue(entity, "P413");
+
+  return {
+    id: `wikidata-${entity.id}`,
+    wikidataId: entity.id,
+    name: label(entity, "en") ?? label(entity, "es") ?? label(entity, "ja") ?? entity.id,
+    nameEs: label(entity, "es"),
+    nameJa: label(entity, "ja"),
+    description: description(entity, "en") ?? description(entity, "es") ?? description(entity, "ja") ?? null,
+    descriptionEs: description(entity, "es"),
+    descriptionJa: description(entity, "ja"),
+    nationality: claimValue(entity, "P27"),
+    birthDate: claimValue(entity, "P569"),
+    position: positionId,
+    positionName: null,
+    positionNameEs: null,
+    positionNameJa: null,
+    currentClub: club.id,
+    currentClubName: club.name,
+    currentClubNameEs: club.name,
+    currentClubNameJa: null,
+    sourceUrl: `https://www.wikidata.org/wiki/${entity.id}`,
+    sourceName: "Wikidata",
+    sourceLicense: "CC0",
+    importedAt: new Date().toISOString(),
+    importScope: "argentina-first-division-current-players",
+    currentnessRule: "P54 club membership statement without P582 end-time qualifier",
+    reviewStatus: "needs_manual_review",
+  };
+}
+
 async function fetchWikidataPlayers(limit, countryIds) {
   const params = new URLSearchParams({
     query: buildQuery(limit, countryIds),
@@ -179,6 +248,73 @@ async function fetchWikidataPlayers(limit, countryIds) {
   }
 
   return response.json();
+}
+
+async function fetchCurrentArgentinaFirstDivisionPlayers(limit) {
+  const rows = [];
+  const seen = new Set();
+
+  for (const club of argentinaFirstDivision2026Clubs) {
+    if (rows.length >= limit) {
+      break;
+    }
+
+    const candidateIds = await fetchCurrentClubPlayerCandidateIds(club.id, Math.min(150, limit - rows.length));
+    const entities = await fetchEntities(candidateIds);
+
+    for (const entity of entities) {
+      if (!hasClaim(entity, "P106", "Q937857") || !hasCurrentTeamClaim(entity, club.id)) {
+        continue;
+      }
+
+      const row = normalizeCurrentArgentinaFirstDivisionEntity(entity, club);
+      const dedupeKey = `${row.wikidataId}-${row.currentClub}`;
+
+      if (seen.has(dedupeKey)) {
+        continue;
+      }
+
+      seen.add(dedupeKey);
+      rows.push(row);
+    }
+  }
+
+  return rows;
+}
+
+async function fetchCurrentClubPlayerCandidateIds(clubId, limit) {
+  const query = `
+SELECT ?player WHERE {
+  ?player wdt:P54 wd:${clubId};
+          wdt:P106 wd:Q937857.
+}
+ORDER BY ?player
+LIMIT ${limit}
+`;
+  const params = new URLSearchParams({
+    query,
+    format: "json",
+  });
+
+  const response = await fetch(`${endpoint}?${params.toString()}`, {
+    headers: {
+      Accept: "application/sparql-results+json",
+      "User-Agent": userAgent,
+    },
+  });
+
+  if (!response.ok) {
+    const body = await response.text().catch(() => "");
+    throw new Error(`Wikidata player candidate request failed for ${clubId}: HTTP ${response.status}\n${body.slice(0, 500)}`);
+  }
+
+  const data = await response.json();
+
+  return (
+    data.results?.bindings
+      ?.map((binding) => value(binding, "player")?.split("/").pop())
+      .filter(Boolean) ?? []
+  );
 }
 
 async function fetchJson(url) {
@@ -307,6 +443,17 @@ function hasClaim(entity, property, id) {
   return entity.claims?.[property]?.some((claim) => claim.mainsnak?.datavalue?.value?.id === id) ?? false;
 }
 
+function hasCurrentTeamClaim(entity, clubId) {
+  return (
+    entity.claims?.P54?.some((claim) => {
+      const teamId = claim.mainsnak?.datavalue?.value?.id;
+      const hasEndTime = Boolean(claim.qualifiers?.P582?.length);
+
+      return teamId === clubId && !hasEndTime;
+    }) ?? false
+  );
+}
+
 async function fetchEntities(ids) {
   if (ids.length === 0) {
     return [];
@@ -405,10 +552,41 @@ async function fetchWikidataPlayersViaEntityApi(limit, countryIds) {
 
 async function main() {
   const limit = getLimit();
+  const scope = getScope();
   const countryIds = getCountryIds();
   const outputPath = getOutputPath();
   let rows = [];
   let accessMethod = "Wikidata entity API";
+
+  if (scope === "argentina-first-division-current") {
+    rows = await fetchCurrentArgentinaFirstDivisionPlayers(limit);
+
+    const output = {
+      source: {
+        name: "Wikidata",
+        endpoint,
+        accessMethod: "Wikidata Query Service SPARQL",
+        license: "CC0",
+        queryPurpose: "Argentina Primera División current squad import spike",
+        leagueSeasonSource: "https://www.ligaprofesional.ar/clubes",
+        leagueSeason: "Liga Profesional 2026",
+        clubCount: argentinaFirstDivision2026Clubs.length,
+        clubs: argentinaFirstDivision2026Clubs,
+        importedAt: new Date().toISOString(),
+        limit,
+      },
+      reviewNote:
+        "Rows are intended to represent current Argentina first-division squad members, based on Wikidata team membership statements with no end date. Squads and Wikidata claims can lag real transfers, so every row needs manual review before public display.",
+      players: rows,
+    };
+
+    await mkdir(dirname(outputPath), { recursive: true });
+    await writeFile(outputPath, `${JSON.stringify(output, null, 2)}\n`, "utf8");
+
+    console.log(`Imported ${rows.length} current Argentina first-division player-club rows from Wikidata.`);
+    console.log(`Wrote ${outputPath}`);
+    return;
+  }
 
   try {
     rows = await fetchWikidataPlayersViaEntityApi(limit, countryIds);
