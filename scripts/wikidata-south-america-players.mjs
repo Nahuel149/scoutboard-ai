@@ -143,6 +143,139 @@ const chileFirstDivision2026Clubs = [
   { id: "Q721560", name: "Club Deportivo Universidad de Concepción" },
 ];
 
+const uruguayFirstDivision2026Clubs = [
+  { id: "Q568435", name: "Albion F.C." },
+  { id: "Q1022910", name: "Boston River" },
+  { id: "Q1053786", name: "Central Espanol F.C." },
+  { id: "Q719344", name: "C.A. Cerro" },
+  { id: "Q1055895", name: "Cerro Largo F.C." },
+  { id: "Q584316", name: "Danubio F.C." },
+  { id: "Q844238", name: "Defensor Sporting Club" },
+  { id: "Q1023199", name: "Deportivo Maldonado" },
+  { id: "Q217644", name: "Juventud de Las Piedras" },
+  { id: "Q1131189", name: "Liverpool F.C. Montevideo" },
+  { id: "Q48646", name: "Montevideo City Torque" },
+  { id: "Q872702", name: "Montevideo Wanderers F.C." },
+  { id: "Q499616", name: "Club Nacional de Football" },
+  { id: "Q16320", name: "Club Atletico Penarol" },
+  { id: "Q420106", name: "C.A. Progreso" },
+  { id: "Q1417183", name: "Racing Club de Montevideo" },
+];
+
+const colombiaFirstDivision2026Clubs = [
+  { id: "Q332833", name: "Aguilas Doradas" },
+  { id: "Q952393", name: "Alianza F.C." },
+  { id: "Q391987", name: "America de Cali" },
+  { id: "Q757418", name: "Atletico Bucaramanga" },
+  { id: "Q332605", name: "Atletico Nacional" },
+  { id: "Q332863", name: "Boyaca Chico" },
+  { id: "Q616380", name: "Cucuta Deportivo" },
+  { id: "Q332532", name: "Deportes Tolima" },
+  { id: "Q663400", name: "Deportivo Cali" },
+  { id: "Q332858", name: "Deportivo Pasto" },
+  { id: "Q515178", name: "Deportivo Pereira" },
+  { id: "Q5472511", name: "Fortaleza F.C." },
+  { id: "Q332527", name: "Independiente Medellin" },
+  { id: "Q137324985", name: "Internacional de Bogota", playerSourceIds: ["Q332668"] },
+  { id: "Q5924752", name: "Jaguares de Cordoba" },
+  { id: "Q332524", name: "Junior de Barranquilla" },
+  { id: "Q6661327", name: "Llaneros F.C." },
+  { id: "Q391984", name: "Millonarios" },
+  { id: "Q47533", name: "Once Caldas" },
+  { id: "Q1424072", name: "Independiente Santa Fe" },
+];
+
+const peruFirstDivision2026Clubs = [
+  { id: "Q4807509", name: "Asociacion Deportiva Tarma" },
+  { id: "Q509510", name: "Alianza Atletico" },
+  { id: "Q572957", name: "Club Alianza Lima" },
+  { id: "Q3288724", name: "Atletico Grau" },
+  { id: "Q131583124", name: "FC Cajamarca" },
+  { id: "Q602482", name: "Cienciano" },
+  { id: "Q5151530", name: "Comerciantes Unidos" },
+  { id: "Q602397", name: "Cusco F.C." },
+  { id: "Q5136204", name: "Club Deportivo Garcilaso" },
+  { id: "Q130467118", name: "Club Deportivo Moquegua" },
+  { id: "Q123575473", name: "Juan Pablo II College" },
+  { id: "Q23409530", name: "Club Deportivo Los Chankas" },
+  { id: "Q602542", name: "FBC Melgar" },
+  { id: "Q603060", name: "Sport Boys" },
+  { id: "Q602987", name: "Sport Huancayo" },
+  { id: "Q604581", name: "Club Sporting Cristal" },
+  { id: "Q19066", name: "Club Universitario de Deportes" },
+  { id: "Q971843", name: "Universidad Tecnica de Cajamarca" },
+];
+
+const ecuadorFirstDivision2026Clubs = [
+  { id: "Q2476133", name: "Sociedad Deportiva Aucas" },
+  { id: "Q248782", name: "Barcelona S.C." },
+  { id: "Q5253709", name: "Delfin S.C." },
+  { id: "Q248765", name: "Deportivo Cuenca" },
+  { id: "Q249612", name: "Club Sport Emelec" },
+  { id: "Q5136217", name: "Guayaquil City F.C." },
+  { id: "Q249648", name: "Independiente del Valle" },
+  { id: "Q249643", name: "LDU Quito" },
+  { id: "Q109313809", name: "Leones F.C." },
+  { id: "Q105484053", name: "Libertad F.C." },
+  { id: "Q249636", name: "C.S.D. Macara" },
+  { id: "Q2501106", name: "Manta F.C." },
+  { id: "Q6034679", name: "Mushuc Runa S.C." },
+  { id: "Q6052286", name: "Orense S.C." },
+  { id: "Q332866", name: "Tecnico Universitario" },
+  { id: "Q2308911", name: "Universidad Catolica del Ecuador" },
+];
+
+const paraguayFirstDivision2026Clubs = [
+  { id: "Q1926287", name: "Club Sportivo 2 de Mayo" },
+  { id: "Q914086", name: "Club Cerro Porteno" },
+  { id: "Q605044", name: "Club Guarani" },
+  { id: "Q848642", name: "Club Libertad" },
+  { id: "Q603101", name: "Club Nacional" },
+  { id: "Q604589", name: "Club Olimpia" },
+  { id: "Q1637661", name: "Deportivo Recoleta" },
+  { id: "Q603085", name: "Club Rubio Nu" },
+  { id: "Q2980003", name: "Club Sportivo San Lorenzo" },
+  { id: "Q15294976", name: "Sportivo Ameliano" },
+  { id: "Q602515", name: "Sportivo Luqueno" },
+  { id: "Q2980011", name: "Sportivo Trinidense" },
+];
+
+const boliviaFirstDivision2026Clubs = [
+  { id: "Q4671099", name: "Academia del Balompie Boliviano" },
+  { id: "Q1102942", name: "Club Always Ready" },
+  { id: "Q127925", name: "Club Aurora" },
+  { id: "Q94571", name: "Club Blooming" },
+  { id: "Q128024", name: "Club Bolivar" },
+  { id: "Q128049", name: "Club Deportivo Guabira" },
+  { id: "Q111162309", name: "GV San Jose" },
+  { id: "Q2018250", name: "Club Independiente Petrolero" },
+  { id: "Q676897", name: "Nacional Potosi" },
+  { id: "Q127923", name: "Oriente Petrolero" },
+  { id: "Q131425581", name: "Real Oruro" },
+  { id: "Q128022", name: "Club Real Potosi" },
+  { id: "Q104605993", name: "Club Real Tomayapo" },
+  { id: "Q123925120", name: "C.D. San Antonio Bulo Bulo" },
+  { id: "Q128020", name: "The Strongest" },
+  { id: "Q110123008", name: "F.C. Universitario de Vinto" },
+];
+
+const venezuelaFirstDivision2026Clubs = [
+  { id: "Q17619991", name: "Academia Puerto Cabello" },
+  { id: "Q27929084", name: "Anzoategui F.C." },
+  { id: "Q1035297", name: "Carabobo F.C." },
+  { id: "Q1130244", name: "Caracas F.C." },
+  { id: "Q628860", name: "Deportivo La Guaira F.C." },
+  { id: "Q178378", name: "Deportivo Tachira F.C." },
+  { id: "Q786500", name: "Estudiantes de Merida F.C." },
+  { id: "Q6012105", name: "Metropolitanos F.C." },
+  { id: "Q1636856", name: "Monagas S.C." },
+  { id: "Q1458264", name: "Portuguesa F.C." },
+  { id: "Q116504962", name: "Deportivo Rayo Zuliano" },
+  { id: "Q1879895", name: "Trujillanos F.C." },
+  { id: "Q3076549", name: "Universidad Central de Venezuela F.C." },
+  { id: "Q145885", name: "Zamora F.C." },
+];
+
 const currentLeagueScopes = {
   "argentina-first-division-current": {
     clubs: argentinaFirstDivision2026Clubs,
@@ -169,6 +302,69 @@ const currentLeagueScopes = {
     leagueSeasonSource: "https://www.campeonatochileno.cl/competition/liga-de-primera/",
     queryPurpose: "Chile Liga de Primera current squad import spike",
     outputLabel: "current Chile first-division player-club rows",
+    oldestPlausibleBirthDate: "1981-01-01",
+  },
+  "uruguay-first-division-current": {
+    clubs: uruguayFirstDivision2026Clubs,
+    importScope: "uruguay-first-division-current-players",
+    leagueSeason: "Liga AUF Uruguaya 2026",
+    leagueSeasonSource: "https://es.wikipedia.org/wiki/Campeonato_Uruguayo_de_Primera_Divisi%C3%B3n_2026",
+    queryPurpose: "Uruguay Primera Division current squad import spike",
+    outputLabel: "current Uruguay first-division player-club rows",
+    oldestPlausibleBirthDate: "1981-01-01",
+  },
+  "colombia-first-division-current": {
+    clubs: colombiaFirstDivision2026Clubs,
+    importScope: "colombia-first-division-current-players",
+    leagueSeason: "Liga DIMAYOR 2026",
+    leagueSeasonSource: "https://en.wikipedia.org/wiki/2026_Liga_DIMAYOR",
+    queryPurpose: "Colombia Liga DIMAYOR current squad import spike",
+    outputLabel: "current Colombia first-division player-club rows",
+    oldestPlausibleBirthDate: "1981-01-01",
+  },
+  "peru-first-division-current": {
+    clubs: peruFirstDivision2026Clubs,
+    importScope: "peru-first-division-current-players",
+    leagueSeason: "Liga 1 2026",
+    leagueSeasonSource: "https://en.wikipedia.org/wiki/2026_Liga_1_(Peru)",
+    queryPurpose: "Peru Liga 1 current squad import spike",
+    outputLabel: "current Peru first-division player-club rows",
+    oldestPlausibleBirthDate: "1981-01-01",
+  },
+  "ecuador-first-division-current": {
+    clubs: ecuadorFirstDivision2026Clubs,
+    importScope: "ecuador-first-division-current-players",
+    leagueSeason: "LigaPro Serie A 2026",
+    leagueSeasonSource: "https://en.wikipedia.org/wiki/2026_LigaPro_Serie_A",
+    queryPurpose: "Ecuador LigaPro Serie A current squad import spike",
+    outputLabel: "current Ecuador first-division player-club rows",
+    oldestPlausibleBirthDate: "1981-01-01",
+  },
+  "paraguay-first-division-current": {
+    clubs: paraguayFirstDivision2026Clubs,
+    importScope: "paraguay-first-division-current-players",
+    leagueSeason: "Copa de Primera 2026",
+    leagueSeasonSource: "https://en.wikipedia.org/wiki/2026_Copa_de_Primera",
+    queryPurpose: "Paraguay Copa de Primera current squad import spike",
+    outputLabel: "current Paraguay first-division player-club rows",
+    oldestPlausibleBirthDate: "1981-01-01",
+  },
+  "bolivia-first-division-current": {
+    clubs: boliviaFirstDivision2026Clubs,
+    importScope: "bolivia-first-division-current-players",
+    leagueSeason: "FBF Division Profesional 2026",
+    leagueSeasonSource: "https://en.wikipedia.org/wiki/2026_FBF_Divisi%C3%B3n_Profesional",
+    queryPurpose: "Bolivia Division Profesional current squad import spike",
+    outputLabel: "current Bolivia first-division player-club rows",
+    oldestPlausibleBirthDate: "1981-01-01",
+  },
+  "venezuela-first-division-current": {
+    clubs: venezuelaFirstDivision2026Clubs,
+    importScope: "venezuela-first-division-current-players",
+    leagueSeason: "Liga FUTVE 2026",
+    leagueSeasonSource: "https://es.wikipedia.org/wiki/Primera_Divisi%C3%B3n_de_Venezuela_2026",
+    queryPurpose: "Venezuela Liga FUTVE current squad import spike",
+    outputLabel: "current Venezuela first-division player-club rows",
     oldestPlausibleBirthDate: "1981-01-01",
   },
 };
@@ -291,6 +487,7 @@ function normalizeCurrentLeagueEntity(entity, club, importScope) {
     currentClubName: club.name,
     currentClubNameEs: club.name,
     currentClubNameJa: null,
+    currentClubPlayerSourceIds: club.playerSourceIds ?? [],
     sourceUrl: `https://www.wikidata.org/wiki/${entity.id}`,
     sourceName: "Wikidata",
     sourceLicense: "CC0",
@@ -331,13 +528,24 @@ async function fetchCurrentLeaguePlayers(limit, leagueConfig) {
       break;
     }
 
-    const candidateIds = await fetchCurrentClubPlayerCandidateIds(club.id, Math.min(150, limit - rows.length));
+    const teamClaimIds = [club.id, ...(club.playerSourceIds ?? [])];
+    const candidateIds = [
+      ...new Set(
+        (
+          await Promise.all(
+            teamClaimIds.map((clubId) =>
+              fetchCurrentClubPlayerCandidateIds(clubId, Math.min(150, limit - rows.length)),
+            ),
+          )
+        ).flat(),
+      ),
+    ];
     const entities = await fetchEntities(candidateIds);
 
     for (const entity of entities) {
       if (
         !hasClaim(entity, "P106", "Q937857") ||
-        !hasCurrentTeamClaim(entity, club.id) ||
+        !teamClaimIds.some((clubId) => hasCurrentTeamClaim(entity, clubId)) ||
         !hasPlausibleActiveBirthDate(entity, leagueConfig.oldestPlausibleBirthDate)
       ) {
         continue;

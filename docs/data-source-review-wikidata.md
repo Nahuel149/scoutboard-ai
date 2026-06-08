@@ -111,6 +111,27 @@ conservative birth-date guard to filter obvious retired players from stale
 open-ended Wikidata claims. It is a seed for the scouting database, not a
 substitute for ANFP/COMET registration data.
 
+For the remaining CONMEBOL first divisions, use:
+
+```powershell
+npm run import:uruguay-first-division
+npm run import:colombia-first-division
+npm run import:peru-first-division
+npm run import:ecuador-first-division
+npm run import:paraguay-first-division
+npm run import:bolivia-first-division
+npm run import:venezuela-first-division
+```
+
+These commands use current 2026 season club lists for each league, then apply the
+same Wikidata current-team rule and conservative birth-date guard. Treat the
+generated files as scouting database seeds only; official registration feeds or
+club squad pages should be reviewed separately before being stored.
+
+Some rebranded clubs may use `playerSourceIds` so the output keeps the current
+club identity while reading still-open player claims from the older Wikidata
+club item. Those mappings are source workarounds and need manual review.
+
 ## Decision
 
 Status: approved for an import spike.

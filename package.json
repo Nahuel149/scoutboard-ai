@@ -11,6 +11,13 @@
     "import:argentina-first-division": "node scripts/wikidata-south-america-players.mjs --scope=argentina-first-division-current --limit=2000 --out=data/imported/argentina-first-division-current-players.sample.json",
     "import:brazil-first-division": "node scripts/wikidata-south-america-players.mjs --scope=brazil-first-division-current --limit=2000 --out=data/imported/brazil-first-division-current-players.sample.json",
     "import:chile-first-division": "node scripts/wikidata-south-america-players.mjs --scope=chile-first-division-current --limit=2000 --out=data/imported/chile-first-division-current-players.sample.json",
+    "import:uruguay-first-division": "node scripts/wikidata-south-america-players.mjs --scope=uruguay-first-division-current --limit=2000 --out=data/imported/uruguay-first-division-current-players.sample.json",
+    "import:colombia-first-division": "node scripts/wikidata-south-america-players.mjs --scope=colombia-first-division-current --limit=2000 --out=data/imported/colombia-first-division-current-players.sample.json",
+    "import:peru-first-division": "node scripts/wikidata-south-america-players.mjs --scope=peru-first-division-current --limit=2000 --out=data/imported/peru-first-division-current-players.sample.json",
+    "import:ecuador-first-division": "node scripts/wikidata-south-america-players.mjs --scope=ecuador-first-division-current --limit=2000 --out=data/imported/ecuador-first-division-current-players.sample.json",
+    "import:paraguay-first-division": "node scripts/wikidata-south-america-players.mjs --scope=paraguay-first-division-current --limit=2000 --out=data/imported/paraguay-first-division-current-players.sample.json",
+    "import:bolivia-first-division": "node scripts/wikidata-south-america-players.mjs --scope=bolivia-first-division-current --limit=2000 --out=data/imported/bolivia-first-division-current-players.sample.json",
+    "import:venezuela-first-division": "node scripts/wikidata-south-america-players.mjs --scope=venezuela-first-division-current --limit=2000 --out=data/imported/venezuela-first-division-current-players.sample.json",
     "test": "vitest run",
     "test:watch": "vitest"
   },
