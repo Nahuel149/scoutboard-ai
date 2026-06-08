@@ -338,6 +338,72 @@ const brazilSecondDivision2026Clubs = [
   { id: "Q1513287", name: "Vila Nova Futebol Clube" },
 ];
 
+const mexicoFirstDivision2026Clubs = [
+  { id: "Q459090", name: "Club America" },
+  { id: "Q1023532", name: "Atlas F.C." },
+  { id: "Q13408349", name: "Atletico San Luis" },
+  { id: "Q849949", name: "Atlante F.C." },
+  { id: "Q845859", name: "Cruz Azul" },
+  { id: "Q503321", name: "C.D. Guadalajara" },
+  { id: "Q20051399", name: "FC Juarez" },
+  { id: "Q633223", name: "Club Leon" },
+  { id: "Q768253", name: "C.F. Monterrey" },
+  { id: "Q1280895", name: "Club Necaxa" },
+  { id: "Q736937", name: "C.F. Pachuca" },
+  { id: "Q646596", name: "Club Puebla" },
+  { id: "Q1143000", name: "Club Universidad Nacional" },
+  { id: "Q606210", name: "Queretaro F.C." },
+  { id: "Q745246", name: "Santos Laguna" },
+  { id: "Q849823", name: "Tigres UANL" },
+  { id: "Q1103168", name: "Club Tijuana" },
+  { id: "Q670186", name: "Deportivo Toluca F.C." },
+];
+
+const mlsFirstDivision2026Clubs = [
+  { id: "Q16836317", name: "Atlanta United FC" },
+  { id: "Q60643348", name: "Austin FC" },
+  { id: "Q167615", name: "CF Montreal" },
+  { id: "Q78944434", name: "Charlotte FC" },
+  { id: "Q308683", name: "Chicago Fire FC" },
+  { id: "Q642408", name: "Colorado Rapids" },
+  { id: "Q457163", name: "Columbus Crew" },
+  { id: "Q238593", name: "D.C. United" },
+  { id: "Q20855983", name: "FC Cincinnati" },
+  { id: "Q642291", name: "FC Dallas" },
+  { id: "Q328313", name: "Houston Dynamo FC" },
+  { id: "Q16844931", name: "Inter Miami CF" },
+  { id: "Q204357", name: "LA Galaxy" },
+  { id: "Q18380286", name: "Los Angeles FC" },
+  { id: "Q19828435", name: "Minnesota United FC" },
+  { id: "Q47518754", name: "Nashville SC" },
+  { id: "Q309095", name: "New England Revolution" },
+  { id: "Q13361030", name: "New York City FC" },
+  { id: "Q204220", name: "New York Red Bulls" },
+  { id: "Q15214308", name: "Orlando City SC" },
+  { id: "Q689874", name: "Philadelphia Union" },
+  { id: "Q1031200", name: "Portland Timbers" },
+  { id: "Q391353", name: "Real Salt Lake" },
+  { id: "Q118945347", name: "San Diego FC" },
+  { id: "Q575370", name: "San Jose Earthquakes" },
+  { id: "Q632511", name: "Seattle Sounders FC" },
+  { id: "Q329812", name: "Sporting Kansas City" },
+  { id: "Q66642491", name: "St. Louis City SC" },
+  { id: "Q327238", name: "Toronto FC" },
+  { id: "Q196107", name: "Vancouver Whitecaps FC" },
+];
+
+const canadaFirstDivision2026Clubs = [
+  { id: "Q84127265", name: "Atletico Ottawa" },
+  { id: "Q53795705", name: "Cavalry FC" },
+  { id: null, name: "FC Supra" },
+  { id: "Q55639736", name: "Forge FC" },
+  { id: "Q54944515", name: "HFX Wanderers FC" },
+  { id: "Q53590124", name: "Inter Toronto FC" },
+  { id: "Q56063575", name: "Pacific FC" },
+  { id: "Q55075000", name: "Valour FC" },
+  { id: "Q115104762", name: "Vancouver FC" },
+];
+
 const currentLeagueScopes = {
   "argentina-first-division-current": {
     clubs: argentinaFirstDivision2026Clubs,
@@ -445,6 +511,33 @@ const currentLeagueScopes = {
     leagueSeasonSource: "https://en.wikipedia.org/wiki/2026_Campeonato_Brasileiro_S%C3%A9rie_B",
     queryPurpose: "Brazil Serie B current squad import spike",
     outputLabel: "current Brazil second-division player-club rows",
+    oldestPlausibleBirthDate: "1981-01-01",
+  },
+  "mexico-first-division-current": {
+    clubs: mexicoFirstDivision2026Clubs,
+    importScope: "mexico-first-division-current-players",
+    leagueSeason: "Liga MX Apertura 2026",
+    leagueSeasonSource: "https://en.wikipedia.org/wiki/Liga_MX",
+    queryPurpose: "Mexico Liga MX current squad import spike",
+    outputLabel: "current Mexico first-division player-club rows",
+    oldestPlausibleBirthDate: "1981-01-01",
+  },
+  "mls-first-division-current": {
+    clubs: mlsFirstDivision2026Clubs,
+    importScope: "mls-first-division-current-players",
+    leagueSeason: "Major League Soccer 2026",
+    leagueSeasonSource: "https://www.mlssoccer.com/clubs",
+    queryPurpose: "MLS current squad import spike",
+    outputLabel: "current MLS player-club rows",
+    oldestPlausibleBirthDate: "1981-01-01",
+  },
+  "canada-first-division-current": {
+    clubs: canadaFirstDivision2026Clubs,
+    importScope: "canada-first-division-current-players",
+    leagueSeason: "Canadian Premier League 2026",
+    leagueSeasonSource: "https://en.wikipedia.org/wiki/2026_Canadian_Premier_League_season",
+    queryPurpose: "Canada CPL current squad import spike",
+    outputLabel: "current Canada first-division player-club rows",
     oldestPlausibleBirthDate: "1981-01-01",
   },
 };
@@ -606,6 +699,10 @@ async function fetchCurrentLeaguePlayers(limit, leagueConfig) {
   for (const club of leagueConfig.clubs) {
     if (rows.length >= limit) {
       break;
+    }
+
+    if (!club.id) {
+      continue;
     }
 
     const teamClaimIds = [club.id, ...(club.playerSourceIds ?? [])];

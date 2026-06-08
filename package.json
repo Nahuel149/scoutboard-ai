@@ -20,6 +20,9 @@
     "import:venezuela-first-division": "node scripts/wikidata-south-america-players.mjs --scope=venezuela-first-division-current --limit=2000 --out=data/imported/venezuela-first-division-current-players.sample.json",
     "import:argentina-second-division": "node scripts/wikidata-south-america-players.mjs --scope=argentina-second-division-current --limit=3000 --out=data/imported/argentina-second-division-current-players.sample.json",
     "import:brazil-second-division": "node scripts/wikidata-south-america-players.mjs --scope=brazil-second-division-current --limit=3000 --out=data/imported/brazil-second-division-current-players.sample.json",
+    "import:mexico-first-division": "node scripts/wikidata-south-america-players.mjs --scope=mexico-first-division-current --limit=3000 --out=data/imported/mexico-first-division-current-players.sample.json",
+    "import:mls-first-division": "node scripts/wikidata-south-america-players.mjs --scope=mls-first-division-current --limit=4000 --out=data/imported/mls-first-division-current-players.sample.json",
+    "import:canada-first-division": "node scripts/wikidata-south-america-players.mjs --scope=canada-first-division-current --limit=2000 --out=data/imported/canada-first-division-current-players.sample.json",
     "test": "vitest run",
     "test:watch": "vitest"
   },

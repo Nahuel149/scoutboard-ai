@@ -143,6 +143,20 @@ These commands follow the same method as the first-division imports: current
 season club list, Wikidata current-team claims, coverage metadata, and manual
 review status on every player row.
 
+For the highest-priority North American leagues, use:
+
+```powershell
+npm run import:mexico-first-division
+npm run import:mls-first-division
+npm run import:canada-first-division
+```
+
+Mexico uses the Apertura 2026 Liga MX club set, where Atlante replaces Mazatlan
+after the approved franchise sale. MLS covers the 30 United States/Canada clubs.
+The Canadian Premier League import includes FC Supra as a club without a
+Wikidata ID yet, so it is expected to appear in `clubsWithoutRows` until source
+coverage catches up.
+
 ## Decision
 
 Status: approved for an import spike.
