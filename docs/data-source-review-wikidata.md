@@ -132,6 +132,17 @@ Some rebranded clubs may use `playerSourceIds` so the output keeps the current
 club identity while reading still-open player claims from the older Wikidata
 club item. Those mappings are source workarounds and need manual review.
 
+For Argentina and Brazil second divisions, use:
+
+```powershell
+npm run import:argentina-second-division
+npm run import:brazil-second-division
+```
+
+These commands follow the same method as the first-division imports: current
+season club list, Wikidata current-team claims, coverage metadata, and manual
+review status on every player row.
+
 ## Decision
 
 Status: approved for an import spike.

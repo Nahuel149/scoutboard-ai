@@ -276,6 +276,68 @@ const venezuelaFirstDivision2026Clubs = [
   { id: "Q145885", name: "Zamora F.C." },
 ];
 
+const argentinaSecondDivision2026Clubs = [
+  { id: "Q2351223", name: "Acassuso" },
+  { id: "Q5772949", name: "Club Agropecuario Argentino" },
+  { id: "Q646088", name: "All Boys" },
+  { id: "Q1102935", name: "Club Almagro" },
+  { id: "Q1102931", name: "Club Almirante Brown" },
+  { id: "Q1022904", name: "Club Atletico Atlanta" },
+  { id: "Q59839", name: "Atletico de Rafaela" },
+  { id: "Q3384346", name: "Central Norte" },
+  { id: "Q853053", name: "Chacarita Juniors" },
+  { id: "Q3781627", name: "Chaco For Ever" },
+  { id: "Q1102967", name: "Club Ciudad de Bolivar" },
+  { id: "Q2057734", name: "Club Atletico Colegiales" },
+  { id: "Q80897", name: "Club Atletico Colon" },
+  { id: "Q2979817", name: "Defensores de Belgrano" },
+  { id: "Q919761", name: "Deportivo Madryn" },
+  { id: "Q3775566", name: "Deportivo Maipu" },
+  { id: "Q2318771", name: "Deportivo Moron" },
+  { id: "Q2333719", name: "Estudiantes de Buenos Aires" },
+  { id: "Q5136249", name: "Club Ferrocarril Midland" },
+  { id: "Q910444", name: "Ferro Carril Oeste" },
+  { id: "Q1022923", name: "Gimnasia y Esgrima de Jujuy" },
+  { id: "Q2759870", name: "Gimnasia y Tiro" },
+  { id: "Q80882", name: "Godoy Cruz Antonio Tomba" },
+  { id: "Q5773135", name: "Club Atletico Guemes" },
+  { id: "Q2317584", name: "Club Atletico Los Andes" },
+  { id: "Q5487437", name: "Club Atletico Mitre" },
+  { id: "Q744555", name: "Club Atletico Nueva Chicago" },
+  { id: "Q1773830", name: "Club Atletico Patronato" },
+  { id: "Q775966", name: "Quilmes Atletico Club" },
+  { id: "Q632805", name: "Racing de Cordoba" },
+  { id: "Q80921", name: "San Martin de San Juan" },
+  { id: "Q1022938", name: "San Martin de Tucuman" },
+  { id: "Q972701", name: "Club Atletico San Miguel" },
+  { id: "Q2979822", name: "Club Atletico San Telmo" },
+  { id: "Q2778591", name: "Club Atletico Temperley" },
+  { id: "Q2979984", name: "Club Tristan Suarez" },
+];
+
+const brazilSecondDivision2026Clubs = [
+  { id: "Q338285", name: "America Futebol Clube" },
+  { id: "Q9636189", name: "Athletic Club" },
+  { id: "Q198034", name: "Atletico Clube Goianiense" },
+  { id: "Q374069", name: "Avai Futebol Clube" },
+  { id: "Q2332493", name: "Botafogo Futebol Clube" },
+  { id: "Q1052219", name: "Ceara Sporting Club" },
+  { id: "Q1024264", name: "Clube de Regatas Brasil" },
+  { id: "Q598834", name: "Criciuma Esporte Clube" },
+  { id: "Q2945011", name: "Cuiaba Esporte Clube" },
+  { id: "Q188841", name: "Fortaleza Esporte Clube" },
+  { id: "Q816779", name: "Goias Esporte Clube" },
+  { id: "Q910453", name: "Esporte Clube Juventude" },
+  { id: "Q1633430", name: "Londrina Esporte Clube" },
+  { id: "Q73971", name: "Clube Nautico Capibaribe" },
+  { id: "Q4115694", name: "Gremio Esportivo Novorizontino" },
+  { id: "Q2580083", name: "Operario Ferroviario Esporte Clube" },
+  { id: "Q219120", name: "Associacao Atletica Ponte Preta" },
+  { id: "Q557103", name: "Sao Bernardo Futebol Clube" },
+  { id: "Q219098", name: "Sport Club do Recife" },
+  { id: "Q1513287", name: "Vila Nova Futebol Clube" },
+];
+
 const currentLeagueScopes = {
   "argentina-first-division-current": {
     clubs: argentinaFirstDivision2026Clubs,
@@ -367,14 +429,32 @@ const currentLeagueScopes = {
     outputLabel: "current Venezuela first-division player-club rows",
     oldestPlausibleBirthDate: "1981-01-01",
   },
+  "argentina-second-division-current": {
+    clubs: argentinaSecondDivision2026Clubs,
+    importScope: "argentina-second-division-current-players",
+    leagueSeason: "Primera Nacional 2026",
+    leagueSeasonSource: "https://en.wikipedia.org/wiki/2026_Primera_Nacional",
+    queryPurpose: "Argentina Primera Nacional current squad import spike",
+    outputLabel: "current Argentina second-division player-club rows",
+    oldestPlausibleBirthDate: "1981-01-01",
+  },
+  "brazil-second-division-current": {
+    clubs: brazilSecondDivision2026Clubs,
+    importScope: "brazil-second-division-current-players",
+    leagueSeason: "Campeonato Brasileiro Serie B 2026",
+    leagueSeasonSource: "https://en.wikipedia.org/wiki/2026_Campeonato_Brasileiro_S%C3%A9rie_B",
+    queryPurpose: "Brazil Serie B current squad import spike",
+    outputLabel: "current Brazil second-division player-club rows",
+    oldestPlausibleBirthDate: "1981-01-01",
+  },
 };
 
 function getLimit() {
   const raw = process.argv.find((arg) => arg.startsWith("--limit="))?.split("=")[1];
   const value = raw ? Number.parseInt(raw, 10) : defaultLimit;
 
-  if (!Number.isFinite(value) || value < 1 || value > 2000) {
-    throw new Error("Use --limit with a number between 1 and 2000.");
+  if (!Number.isFinite(value) || value < 1 || value > 5000) {
+    throw new Error("Use --limit with a number between 1 and 5000.");
   }
 
   return value;

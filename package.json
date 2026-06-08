@@ -18,6 +18,8 @@
     "import:paraguay-first-division": "node scripts/wikidata-south-america-players.mjs --scope=paraguay-first-division-current --limit=2000 --out=data/imported/paraguay-first-division-current-players.sample.json",
     "import:bolivia-first-division": "node scripts/wikidata-south-america-players.mjs --scope=bolivia-first-division-current --limit=2000 --out=data/imported/bolivia-first-division-current-players.sample.json",
     "import:venezuela-first-division": "node scripts/wikidata-south-america-players.mjs --scope=venezuela-first-division-current --limit=2000 --out=data/imported/venezuela-first-division-current-players.sample.json",
+    "import:argentina-second-division": "node scripts/wikidata-south-america-players.mjs --scope=argentina-second-division-current --limit=3000 --out=data/imported/argentina-second-division-current-players.sample.json",
+    "import:brazil-second-division": "node scripts/wikidata-south-america-players.mjs --scope=brazil-second-division-current --limit=3000 --out=data/imported/brazil-second-division-current-players.sample.json",
     "test": "vitest run",
     "test:watch": "vitest"
   },
