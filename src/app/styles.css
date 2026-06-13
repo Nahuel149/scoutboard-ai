@@ -457,8 +457,24 @@ a {
     linear-gradient(135deg, var(--blue) 0%, var(--green) 48%, var(--amber) 100%);
 }
 
+.championsHero {
+  background:
+    linear-gradient(90deg, rgba(5, 5, 5, 0.62), rgba(5, 5, 5, 0.08)),
+    linear-gradient(135deg, #12224a 0%, var(--blue) 48%, var(--red) 100%);
+}
+
 .analyticsStory {
   align-items: start;
+}
+
+.championsTeaser,
+.championsStatus {
+  background:
+    linear-gradient(90deg, #fff 0%, #fff 38%, #d9f0ff 38%, #d9f0ff 100%);
+}
+
+.inlineCodeBlock {
+  box-shadow: none;
 }
 
 .barList {

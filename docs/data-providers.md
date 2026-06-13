@@ -32,6 +32,16 @@ Check provider availability without saving data:
 npm run providers:check
 ```
 
+Show the Champions League Football-Data.org demo in the app:
+
+```powershell
+npm run dev
+# open http://localhost:3000/analytics/champions
+```
+
+Without `FOOTBALL_DATA_API_TOKEN`, the page intentionally shows a setup state.
+With the token available server-side, it renders Champions League matches.
+
 Expected behavior:
 
 - Wikidata and StatsBomb should run without keys.

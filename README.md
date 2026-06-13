@@ -13,6 +13,7 @@ workflow design, and client-ready reporting.
 - Dashboard with sample football metrics.
 - Player list and player detail pages.
 - Analytics page using StatsBomb Open Data for Copa America 2024 forward shot quality.
+- Champions League ETL demo page for Football-Data.org basic match data.
 - Data QA page powered by reusable validation rules.
 - Report builder preview with manual human verification checklist.
 - Synthetic CSV sample data.

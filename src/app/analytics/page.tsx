@@ -74,6 +74,34 @@ export default function AnalyticsPage() {
         </article>
       </section>
 
+      <section className="qaStory championsTeaser">
+        <div>
+          <p className="eyebrow">Current data / Champions League / Football-Data.org</p>
+          <h2>Basic Champions League ETL is now part of the analytics area.</h2>
+          <p>
+            StatsBomb covers the event-analysis demo. Football-Data.org covers the simpler
+            current-data demo: fixtures, results, status, and competition metadata.
+          </p>
+          <p className="jp">
+            Football-Data.orgで、Champions Leagueの日程・結果・ステータスを表示する準備をしています。
+          </p>
+          <p className="es">
+            Football-Data.org queda conectado para mostrar partidos, resultados y estado de Champions.
+          </p>
+        </div>
+        <div className="qaPanel">
+          <p className="eyebrow">Provider status</p>
+          <h2>Free-tier API, server-side key</h2>
+          <p>
+            The page renders live data when `FOOTBALL_DATA_API_TOKEN` is available, and shows
+            a clear setup state when it is missing.
+          </p>
+          <Link className="backLink" href="/analytics/champions">
+            Open Champions demo
+          </Link>
+        </div>
+      </section>
+
       <section className="split">
         <div>
           <div className="sectionHeader">
