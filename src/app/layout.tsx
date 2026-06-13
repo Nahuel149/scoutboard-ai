@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { BarChart3, ClipboardCheck, FileText, Search, UserRound } from "lucide-react";
+import { BarChart3, ClipboardCheck, FileText, Search, Target, UserRound } from "lucide-react";
 import "./styles.css";
 
 export const metadata: Metadata = {
@@ -11,6 +11,7 @@ export const metadata: Metadata = {
 const navItems = [
   { href: "/", label: "Dashboard", labelJa: "ダッシュボード", labelEs: "Panel", icon: BarChart3 },
   { href: "/players", label: "Players", labelJa: "選手リスト", labelEs: "Jugadores", icon: Search },
+  { href: "/analytics", label: "Analytics", labelJa: "分析", labelEs: "Análisis", icon: Target },
   { href: "/qa", label: "Data QA", labelJa: "データ確認", labelEs: "Control de datos", icon: ClipboardCheck },
   { href: "/reports", label: "Reports", labelJa: "レポート", labelEs: "Reportes", icon: FileText },
 ];

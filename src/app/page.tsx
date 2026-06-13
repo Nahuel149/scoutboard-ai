@@ -32,12 +32,12 @@ export default function DashboardPage() {
     },
     {
       tone: "green",
-      kicker: "Report builder / レポート作成",
-      title: "Draft first, then check the facts before it leaves the desk.",
-      titleJa: "下書きを作ってから、事実と出典を人の目で確認します。",
-      titleEs: "Primero el borrador. Después se revisan los datos y las fuentes.",
-      meta: "Markdown preview / Markdown下書き / Borrador",
-      href: "/reports",
+      kicker: "Shot quality / シュート分析",
+      title: "StatsBomb event data turns into a forward xG board.",
+      titleJa: "StatsBombのイベントデータから、FWのxGボードを作ります。",
+      titleEs: "Datos de eventos de StatsBomb convertidos en un tablero de xG para delanteros.",
+      meta: "Copa America 2024 / xG / Shot quality",
+      href: "/analytics",
     },
   ];
 
