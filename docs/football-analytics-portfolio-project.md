@@ -73,6 +73,21 @@ Outputs:
 - `data/analytics/league_coverage_summary.json`
 - `data/analytics/source_registry.json`
 
+The first event-data step uses StatsBomb Open Data for Copa America 2024 and
+ranks South American forwards by shot volume, xG, non-penalty xG, goals, shot
+accuracy, and average shot distance.
+
+Run:
+
+```powershell
+npm run analytics:statsbomb-forward-xg
+```
+
+Outputs:
+
+- `data/analytics/copa_america_2024_forward_shot_quality.csv`
+- `data/analytics/copa_america_2024_forward_shot_quality.json`
+
 ## Portfolio narrative
 
 This project is not trying to pretend free data is perfect. The useful story is
@@ -101,4 +116,3 @@ and what risk are we accepting?
 - API-SPORTS football documentation: https://api-sports.io/documentation/football/v3
 - FBref: https://fbref.com/en/
 - Understat: https://understat.com/
-

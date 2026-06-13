@@ -1,0 +1,53 @@
+player,team,positions,matches_with_shot,shots,open_play_shots,penalty_shots,goals,shots_on_target,xg,non_penalty_xg,penalty_xg,avg_xg_per_shot,avg_non_penalty_xg_per_shot,shot_accuracy,goal_minus_xg,avg_shot_distance
+Lautaro Javier Martínez,Argentina,Center Forward; Left Center Forward,5,11,11,0,5,8,2.888,2.888,0.0,0.263,0.263,0.727,2.112,14.39
+Lionel Andrés Messi Cuccittini,Argentina,Right Center Forward,5,14,13,1,1,4,2.833,2.05,0.783,0.202,0.158,0.286,-1.833,17.57
+Darwin Gabriel Núñez Ribeiro,Uruguay,Center Forward,6,21,21,0,2,5,1.861,1.861,0.0,0.089,0.089,0.238,0.139,15.05
+Julián Álvarez,Argentina,Left Center Forward,5,10,9,1,3,6,2.326,1.542,0.783,0.233,0.171,0.6,0.674,21.13
+José Salomón Rondón Giménez,Venezuela,Center Forward; Left Center Forward; Right Center Forward,4,19,17,2,4,6,3.102,1.535,1.567,0.163,0.09,0.316,0.898,16.78
+Jhon Andrés Córdoba Copete,Colombia,Center Forward; Right Center Forward,5,11,11,0,2,3,1.368,1.368,0.0,0.124,0.124,0.273,0.632,10.31
+Facundo Pellistri Rebollo,Uruguay,Right Wing,2,3,3,0,1,2,1.008,1.008,0.0,0.336,0.336,0.667,-0.008,9.63
+Luis Alberto Suárez Díaz,Uruguay,Center Forward; Right Center Forward,3,6,5,1,2,4,1.732,0.949,0.783,0.289,0.19,0.667,0.268,15.72
+Rodrygo Silva de Goes,Brazil,Center Forward; Left Wing; Right Center Forward,3,10,10,0,0,2,0.903,0.903,0.0,0.09,0.09,0.2,-0.903,18.39
+Maximiliano Javier Araújo Vilches,Uruguay,Left Wing,3,8,8,0,2,6,0.819,0.819,0.0,0.102,0.102,0.75,1.181,14.16
+Raphael Dias Belloli,Brazil,Right Wing,3,7,7,0,1,5,0.803,0.803,0.0,0.115,0.115,0.714,0.197,21.37
+Vinícius José Paixão de Oliveira Júnior,Brazil,Left Center Forward; Left Wing,2,4,4,0,2,2,0.732,0.732,0.0,0.183,0.183,0.5,1.268,17.98
+Luis Fernando Díaz Marulanda,Colombia,Left Center Forward; Left Wing,6,9,8,1,2,5,1.432,0.649,0.783,0.159,0.081,0.556,0.568,17.25
+Ángel Rodrigo Romero Villamayor,Paraguay,Right Wing,1,3,3,0,0,1,0.629,0.629,0.0,0.21,0.21,0.333,-0.629,16.19
+Eric Kleybel Ramírez Matheus,Venezuela,Center Forward; Left Center Forward,2,3,3,0,1,2,0.554,0.554,0.0,0.185,0.185,0.667,0.446,20.51
+Julio César Enciso Espínola,Paraguay,Center Forward; Left Wing; Right Wing,2,8,8,0,1,3,0.505,0.505,0.0,0.063,0.063,0.375,0.495,22.37
+Gianluca Lapadula Vargas,Peru,Center Forward; Right Center Forward,3,8,8,0,0,3,0.5,0.5,0.0,0.063,0.063,0.375,-0.5,28.31
+Alan Steve Minda García,Ecuador,Right Wing,1,1,1,0,1,1,0.471,0.471,0.0,0.471,0.471,1.0,0.529,13.51
+Alex Adrián Arce Barrios,Paraguay,Center Forward,2,5,5,0,0,0,0.438,0.438,0.0,0.088,0.088,0.0,-0.438,31.81
+Bruno Miranda Villagomez,Bolivia,Center Forward,1,1,1,0,1,1,0.425,0.425,0.0,0.425,0.425,1.0,0.575,13.81
+Jeremy Leonel Sarmiento Morante,Ecuador,Left Wing,3,5,5,0,1,2,0.327,0.327,0.0,0.065,0.065,0.4,0.673,18.67
+Eduard Alexander Bello Gil,Venezuela,Left Wing; Right Wing,3,3,3,0,1,2,0.309,0.309,0.0,0.103,0.103,0.667,0.691,15.84
+Rafael Santos Borré Amaury,Colombia,Right Wing,1,1,1,0,0,0,0.305,0.305,0.0,0.305,0.305,0.0,-0.305,11.27
+José Paolo Guerrero Gonzáles,Peru,Left Center Forward; Right Center Forward,2,2,2,0,0,2,0.269,0.269,0.0,0.135,0.135,1.0,-0.269,17.28
+Jordy Josué Caicedo Medina,Ecuador,Right Center Forward,1,3,2,1,1,1,0.984,0.201,0.783,0.328,0.1,0.333,0.016,11.76
+Víctor Alejandro Dávila Zavala,Chile,Left Wing; Right Wing,1,3,3,0,0,0,0.185,0.185,0.0,0.062,0.062,0.0,-0.185,16.17
+Damián Josué Bobadilla Benítez,Paraguay,Right Wing,1,3,3,0,0,3,0.151,0.151,0.0,0.05,0.05,1.0,-0.151,21.88
+Jhonder Leonel Cádiz Fernández,Venezuela,Left Center Forward; Right Center Forward,2,4,3,1,2,2,0.932,0.149,0.783,0.233,0.05,0.5,1.068,17.7
+Ray Kendry Páez Andrade,Ecuador,Right Wing,2,2,2,0,0,0,0.144,0.144,0.0,0.072,0.072,0.0,-0.144,20.15
+Darwin Daniel Machís Marcano,Venezuela,Right Wing,1,3,3,0,0,0,0.135,0.135,0.0,0.045,0.045,0.0,-0.135,22.7
+Ramón Sosa Acosta,Paraguay,Left Wing,1,3,3,0,1,2,0.135,0.135,0.0,0.045,0.045,0.667,0.865,22.12
+Paul Brian Rodríguez Bravo,Uruguay,Right Wing,1,1,1,0,0,0,0.134,0.134,0.0,0.134,0.134,0.0,-0.134,14.78
+Alejandro Garnacho Ferreyra,Argentina,Left Wing,1,2,2,0,0,0,0.123,0.123,0.0,0.061,0.061,0.0,-0.123,18.96
+Endrick Felipe Moreira de Sousa,Brazil,Center Forward; Left Wing,2,2,2,0,0,1,0.122,0.122,0.0,0.061,0.061,0.5,-0.122,21.24
+Kevin José Rodríguez Cortez,Ecuador,Center Forward; Left Center Forward; Right Center Forward,3,5,5,0,1,1,0.121,0.121,0.0,0.024,0.024,0.2,0.879,19.98
+Yeferson Julio Soteldo Martínez,Venezuela,Left Wing,1,2,2,0,0,1,0.11,0.11,0.0,0.055,0.055,0.5,-0.11,19.1
+John Yeboah Zamora,Ecuador,Right Wing,2,3,3,0,0,1,0.107,0.107,0.0,0.036,0.036,0.333,-0.107,19.06
+Enner Remberto Valencia Lastra,Ecuador,Center Forward; Left Center Forward,2,4,3,1,0,1,0.889,0.106,0.783,0.222,0.035,0.25,-0.889,22.14
+Ben Brereton Díaz,Chile,Center Forward,1,2,2,0,0,0,0.079,0.079,0.0,0.04,0.04,0.0,-0.079,16.62
+Miguel Ángel Borja Hernández,Colombia,Left Center Forward; Right Center Forward,2,2,1,1,1,1,0.843,0.059,0.783,0.421,0.059,0.5,0.157,14.46
+Édison Michael Flores Peralta,Peru,Left Center Forward,2,2,2,0,0,0,0.059,0.059,0.0,0.029,0.029,0.0,-0.059,24.42
+Jorge Andrés Carrascal Guardo,Colombia,Center Forward,1,1,1,0,0,1,0.058,0.058,0.0,0.058,0.058,1.0,-0.058,20.01
+Sávio Moreira de Oliveira,Brazil,Right Wing,1,1,1,0,0,0,0.05,0.05,0.0,0.05,0.05,0.0,-0.05,15.84
+Miguel Ángel Almirón Rejala,Paraguay,Left Wing,1,1,1,0,0,1,0.033,0.033,0.0,0.033,0.033,1.0,-0.033,28.0
+Jhon Adolfo Arias Andrade,Colombia,Right Wing,1,1,1,0,0,0,0.029,0.029,0.0,0.029,0.029,0.0,-0.029,26.11
+Roberto Carlos Fernández Toro,Bolivia,Left Wing,1,1,1,0,0,1,0.027,0.027,0.0,0.027,0.027,1.0,-0.027,28.66
+Darío Esteban Osorio Osorio,Chile,Right Wing,1,1,1,0,0,0,0.023,0.023,0.0,0.023,0.023,0.0,-0.023,25.98
+Ángel Fabián Di María Hernández,Argentina,Right Wing,1,1,1,0,0,1,0.023,0.023,0.0,0.023,0.023,1.0,-0.023,26.49
+Alexis Alejandro Sánchez Sánchez,Chile,Center Forward,1,1,1,0,0,1,0.014,0.014,0.0,0.014,0.014,1.0,-0.014,21.26
+Carmelo Algarañaz Añez,Bolivia,Center Forward,1,2,2,0,0,1,0.012,0.012,0.0,0.006,0.006,0.5,-0.012,44.79
+Miguel Ángel Terceros,Bolivia,Left Wing,1,1,1,0,0,0,0.012,0.012,0.0,0.012,0.012,0.0,-0.012,29.79
+Giorgian Daniel De Arrascaeta Benedetti,Uruguay,Center Forward,1,1,0,1,1,1,0.783,0.0,0.783,0.783,0,1.0,0.217,11.9
