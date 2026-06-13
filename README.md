@@ -44,6 +44,7 @@ resumes, CrowdWorks logs/messages, Telegram files, secrets, raw personal
 screenshots, player photos, club logos, or restricted football datasets.
 
 See [docs/data-source-policy.md](docs/data-source-policy.md).
+The provider adapter plan is in [docs/data-providers.md](docs/data-providers.md).
 The merged product plan is in [docs/unified-product-roadmap.md](docs/unified-product-roadmap.md).
 
 ## Portfolio Note

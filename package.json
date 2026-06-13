@@ -26,6 +26,7 @@
     "analytics:coverage": "python scripts/build_analytics_coverage_summary.py",
     "analytics:statsbomb-competitions": "python scripts/fetch_statsbomb_competitions.py",
     "analytics:statsbomb-forward-xg": "python scripts/build_statsbomb_forward_shot_quality.py",
+    "providers:check": "node scripts/check-data-providers.mjs",
     "test": "vitest run",
     "test:watch": "vitest"
   },

@@ -55,6 +55,7 @@ Together they become one credible football data-analysis portfolio instead of tw
 - Coverage summary pipeline for imported player data.
 - StatsBomb Open Data pipeline for Copa America 2024 forward shot quality.
 - New `/analytics` page showing the StatsBomb xG board inside the app.
+- Data provider adapter layer for Wikidata, StatsBomb Open Data, Football-Data.org, API-Football, and Sportmonks.
 
 ## Development Roadmap
 
@@ -108,4 +109,5 @@ Together they become one credible football data-analysis portfolio instead of tw
 2. Add league coverage page from `data/analytics/league_coverage_summary.json`.
 3. Add imported player search for Americas data.
 4. Connect analytics insights to the report builder.
-5. Add Playwright checks and screenshots for portfolio evidence.
+5. Wire provider adapters into server-side import jobs with reviewed cache rules.
+6. Add Playwright checks and screenshots for portfolio evidence.
