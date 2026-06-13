@@ -23,6 +23,8 @@
     "import:mexico-first-division": "node scripts/wikidata-south-america-players.mjs --scope=mexico-first-division-current --limit=3000 --out=data/imported/mexico-first-division-current-players.sample.json",
     "import:mls-first-division": "node scripts/wikidata-south-america-players.mjs --scope=mls-first-division-current --limit=4000 --out=data/imported/mls-first-division-current-players.sample.json",
     "import:canada-first-division": "node scripts/wikidata-south-america-players.mjs --scope=canada-first-division-current --limit=2000 --out=data/imported/canada-first-division-current-players.sample.json",
+    "analytics:coverage": "python scripts/build_analytics_coverage_summary.py",
+    "analytics:statsbomb-competitions": "python scripts/fetch_statsbomb_competitions.py",
     "test": "vitest run",
     "test:watch": "vitest"
   },

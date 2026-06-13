@@ -1,0 +1,51 @@
+[
+  {
+    "source": "Wikidata",
+    "use": "Player identity, club membership, multilingual labels",
+    "license": "CC0",
+    "status": "in_use",
+    "risk": "Current squads can be stale or incomplete",
+    "url": "https://www.wikidata.org/"
+  },
+  {
+    "source": "StatsBomb Open Data",
+    "use": "Event data, shots, passes, pressures, pitch coordinates",
+    "license": "Open data with StatsBomb terms",
+    "status": "next_build_target",
+    "risk": "Selected competitions only",
+    "url": "https://github.com/statsbomb/open-data"
+  },
+  {
+    "source": "API-Football",
+    "use": "Fixtures, lineups, match statistics, player statistics",
+    "license": "API subscription terms",
+    "status": "evaluate_later",
+    "risk": "Rate limits and publication rights need review",
+    "url": "https://www.api-football.com/"
+  },
+  {
+    "source": "FBref",
+    "use": "Team and player statistical tables",
+    "license": "Website terms require review",
+    "status": "evaluate_carefully",
+    "risk": "Scraping and reuse may be restricted",
+    "url": "https://fbref.com/en/"
+  },
+  {
+    "source": "Understat",
+    "use": "xG and shot data for selected European leagues",
+    "license": "Website terms require review",
+    "status": "evaluate_carefully",
+    "risk": "Limited league coverage and scraping risk",
+    "url": "https://understat.com/"
+  },
+  {
+    "source": "Transfermarkt",
+    "use": "Market value and contract context",
+    "license": "Website terms require review",
+    "status": "manual_review_only",
+    "risk": "Do not bulk scrape without terms review",
+    "url": "https://www.transfermarkt.com/"
+  }
+]
+
