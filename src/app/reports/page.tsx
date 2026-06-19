@@ -1,11 +1,14 @@
 import { players } from "@/lib/sample-data";
-import { buildPlayerReport } from "@/lib/reports";
+import { buildForwardShotQualityReport, buildPlayerReport } from "@/lib/reports";
+import { topForwardShotQualityPlayers } from "@/lib/statsbomb-forward-shot-quality";
 import { validatePlayers } from "@/lib/validation";
 
 export default function ReportsPage() {
   const issues = validatePlayers(players);
   const selectedPlayer = players[0];
   const report = buildPlayerReport(selectedPlayer, issues);
+  const analyticsPlayer = topForwardShotQualityPlayers[0];
+  const analyticsReport = buildForwardShotQualityReport(analyticsPlayer);
 
   return (
     <div className="pageStack">
@@ -60,7 +63,26 @@ export default function ReportsPage() {
       </section>
 
       <section className="reportPreview">
+        <div className="sectionHeader">
+          <p className="eyebrow">Synthetic player report</p>
+          <h2>Source-backed player draft</h2>
+        </div>
         <pre>{report}</pre>
+      </section>
+
+      <section className="reportPreview">
+        <div className="sectionHeader">
+          <p className="eyebrow">Analytics report / StatsBomb Open Data</p>
+          <h2>{analyticsPlayer.player} shot-quality note</h2>
+          <p>
+            This draft connects the analytics room to report delivery. It uses old but reliable
+            open event data and keeps the limitation visible.
+          </p>
+          <p className="es">
+            Este borrador conecta análisis y entrega: datos abiertos, métrica clara y revisión humana.
+          </p>
+        </div>
+        <pre>{analyticsReport}</pre>
       </section>
     </div>
   );

@@ -1,4 +1,5 @@
 import type { DataIssue, Player } from "./types";
+import { forwardShotQualityData, type ForwardShotQualityPlayer } from "./statsbomb-forward-shot-quality";
 
 export function buildPlayerReport(player: Player, issues: DataIssue[]): string {
   const playerIssues = issues.filter(
@@ -72,5 +73,54 @@ ${player.researchNoteEs}
 ## Open Data Issues
 
 ${issueSummary}
+`;
+}
+
+export function buildForwardShotQualityReport(player: ForwardShotQualityPlayer): string {
+  return `# ${player.player} - Forward shot-quality note
+
+Portfolio sample. Source: ${forwardShotQualityData.source.name}, ${forwardShotQualityData.source.competition}.
+
+This note uses open event data and should be treated as an analysis sample, not a transfer recommendation.
+
+## Context
+
+- Team: ${player.team}
+- Positions in sample: ${player.positions}
+- Matches with shot: ${player.matches_with_shot}
+- Source scope: ${forwardShotQualityData.source.note}
+
+## Shot Quality
+
+- Shots: ${player.shots}
+- Open-play shots: ${player.open_play_shots}
+- Penalty shots: ${player.penalty_shots}
+- Goals: ${player.goals}
+- Total xG: ${player.xg}
+- Non-penalty xG: ${player.non_penalty_xg}
+- Average non-penalty xG per shot: ${player.avg_non_penalty_xg_per_shot}
+- Shot accuracy: ${player.shot_accuracy}
+- Goals minus xG: ${player.goal_minus_xg}
+- Average shot distance: ${player.avg_shot_distance}m
+
+## Working Interpretation
+
+The first scouting read is about chance quality, not reputation. A high non-penalty xG total means the player repeatedly reached valuable shooting positions in this competition sample.
+
+## Japanese note
+
+このメモは公開イベントデータを使ったポートフォリオ用サンプルです。移籍判断ではなく、シュートの質とチャンス量を確認するための分析メモです。
+
+## Nota en español
+
+Este reporte usa datos abiertos de eventos. Sirve para mostrar el flujo de análisis: fuente, métrica, interpretación y revisión humana antes de entregar.
+
+## Manual QA Checklist
+
+- Confirm competition and source
+- Separate penalties from open-play chances
+- Do not claim current form from an old tournament
+- Do not turn this into a transfer recommendation without more recent data
+- Human-edit wording before delivery
 `;
 }

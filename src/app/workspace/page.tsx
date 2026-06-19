@@ -137,10 +137,23 @@ export default function WorkspacePage() {
               <strong>{provider.status === "ready" ? "Ready" : "Needs key"}</strong>
             </div>
           ))}
+          <Link className="backLink" href="/workspace/data-readiness">
+            Open readiness board
+          </Link>
         </div>
       </section>
 
       <section className="playerCardGrid" aria-label="Workspace quick links">
+        <Link className="miniArticleCard tone-3" href="/workspace/league-coverage">
+          <div className="miniArticleVisual" aria-hidden="true">
+            <span>DB</span>
+          </div>
+          <div className="miniArticleBody">
+            <p className="eyebrow">Americas database</p>
+            <h2>League coverage</h2>
+            <p>Review player rows, club coverage, and missing-club tasks before search.</p>
+          </div>
+        </Link>
         <Link className="miniArticleCard tone-0" href="/analytics/champions">
           <div className="miniArticleVisual" aria-hidden="true">
             <span>CL</span>
@@ -169,6 +182,26 @@ export default function WorkspacePage() {
             <p className="eyebrow">Data checks</p>
             <h2>Validation room</h2>
             <p>Find missing sources, strange values, and rows that need human review.</p>
+          </div>
+        </Link>
+        <Link className="miniArticleCard tone-1" href="/workspace/tasks">
+          <div className="miniArticleVisual" aria-hidden="true">
+            <span>!</span>
+          </div>
+          <div className="miniArticleBody">
+            <p className="eyebrow">Alerts</p>
+            <h2>Task queue</h2>
+            <p>Turn missing keys, QA findings, and coverage gaps into visible work.</p>
+          </div>
+        </Link>
+        <Link className="miniArticleCard tone-2" href="/workspace/video-tracking">
+          <div className="miniArticleVisual" aria-hidden="true">
+            <span>VT</span>
+          </div>
+          <div className="miniArticleBody">
+            <p className="eyebrow">Future adapter</p>
+            <h2>Video + tracking</h2>
+            <p>Show the adapter contract without faking licensed video or tracking data.</p>
           </div>
         </Link>
         <Link className="miniArticleCard tone-3" href="/reports">

@@ -488,7 +488,8 @@ a {
   gap: 14px;
 }
 
-.workspaceModule {
+.workspaceModule,
+.workspaceTask {
   display: grid;
   gap: 16px;
   padding: 18px;
@@ -519,6 +520,35 @@ a {
 
 .workspaceModule.blocked {
   background: #fff3ef;
+}
+
+.workspaceTaskList {
+  display: grid;
+  gap: 16px;
+}
+
+.workspaceTask h2 {
+  margin: 8px 0;
+  font-size: 1.55rem;
+  line-height: 1.12;
+}
+
+.workspaceTask p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.workspaceTask.critical {
+  background: #fff3ef;
+}
+
+.workspaceTask.warning {
+  background: #fff8df;
+}
+
+.workspaceTask.info {
+  background: #f2f8ff;
 }
 
 .moduleProof {
@@ -557,6 +587,16 @@ a {
   padding: 12px;
   border: 2px solid var(--ink);
   background: #fff;
+}
+
+.readinessTable td {
+  min-width: 170px;
+}
+
+.readinessTable td:nth-child(4),
+.readinessTable td:nth-child(5),
+.readinessTable td:nth-child(6) {
+  min-width: 260px;
 }
 
 .barList {

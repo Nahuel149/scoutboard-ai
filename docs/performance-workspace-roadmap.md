@@ -16,7 +16,7 @@ Professional platforms combine video, tracking, match events, squad data, coachi
 
 ### 1. Performance Workspace Shell
 
-Status: in progress.
+Status: built.
 
 Build one page that shows the whole operating model:
 
@@ -30,7 +30,7 @@ This gives the project a clear product center instead of separate pages.
 
 ### 2. Data Readiness Board
 
-Status: next.
+Status: built.
 
 Show which providers are ready, missing a token, or only usable as static open-data demos.
 
@@ -42,6 +42,8 @@ Fields:
 - allowed portfolio use
 - cache/display rule
 - next action
+
+Implemented as `/workspace/data-readiness`.
 
 ### 3. Match And Competition Context
 
@@ -73,7 +75,7 @@ Use only open competitions.
 
 ### 5. Player Watchlist
 
-Status: planned.
+Status: in progress.
 
 Turn imported Americas data into a working scouting watchlist:
 
@@ -84,9 +86,11 @@ Turn imported Americas data into a working scouting watchlist:
 - missing-data warnings
 - short notes
 
+First step implemented as `/workspace/league-coverage`, showing league-level imported rows and missing-club review tasks before player search.
+
 ### 6. Report Room
 
-Status: partially built.
+Status: in progress.
 
 Connect the workspace to report drafts:
 
@@ -96,9 +100,11 @@ Connect the workspace to report drafts:
 - English, Japanese, Spanish variants
 - final human review checklist
 
+Current progress: report builder now includes a StatsBomb shot-quality note so analytics can become a sourced report draft.
+
 ### 7. Alert And Task Queue
 
-Status: planned.
+Status: built.
 
 Add simple internal alerts:
 
@@ -108,9 +114,11 @@ Add simple internal alerts:
 - high xG player needs report
 - report awaiting QA
 
+Implemented as `/workspace/tasks`.
+
 ### 8. Video And Tracking Placeholder
 
-Status: later.
+Status: built.
 
 Do not fake proprietary video/tracking. Add a clearly labeled placeholder showing how a licensed provider would plug in later.
 
@@ -120,6 +128,8 @@ Possible public-safe demo:
 - timestamp notes
 - event ID links
 - no copyrighted footage committed
+
+Implemented as `/workspace/video-tracking`.
 
 ## Product Rule
 

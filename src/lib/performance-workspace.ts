@@ -1,4 +1,5 @@
 import { getProviderStatus } from "./data-providers";
+import { leaguesNeedingClubReview } from "./league-coverage";
 import { forwardShotQualityData, topForwardShotQualityPlayers } from "./statsbomb-forward-shot-quality";
 import { players } from "./sample-data";
 import { validatePlayers } from "./validation";
@@ -13,13 +14,38 @@ export type WorkspaceModule = {
   nextAction: string;
 };
 
+export type DataReadinessRow = {
+  provider: string;
+  homepageUrl: string;
+  sourceType: string;
+  keyStatus: string;
+  portfolioUse: string;
+  cacheRule: string;
+  licenseNote: string;
+  capabilities: string;
+  nextAction: string;
+  state: "ready" | "needs-key";
+};
+
+export type WorkspaceTaskSeverity = "critical" | "warning" | "info";
+
+export type WorkspaceTask = {
+  id: string;
+  severity: WorkspaceTaskSeverity;
+  area: string;
+  title: string;
+  detail: string;
+  nextAction: string;
+  href: string;
+};
+
 export const workspaceModules: WorkspaceModule[] = [
   {
     title: "Provider readiness board",
     status: "ready",
     summary: "Shows which sources are open, keyed, missing configuration, or ready for portfolio use.",
     proof: "Wikidata and StatsBomb Open Data can be checked without secrets; keyed APIs stay server-side.",
-    nextAction: "Turn provider status into a full table with cache rules and source links.",
+    nextAction: "Keep provider rules visible while wiring import jobs and cache policy.",
   },
   {
     title: "Event analytics room",
@@ -73,4 +99,108 @@ export function getWorkspaceSnapshot() {
     statsbombSummary: forwardShotQualityData.summary,
     providerStatuses,
   };
+}
+
+export function getDataReadinessRows(): DataReadinessRow[] {
+  return getProviderStatus().map((provider) => {
+    const sourceType =
+      provider.access === "open"
+        ? "Open data"
+        : provider.access === "free-tier-key"
+          ? "Free tier API"
+          : "Trial or paid API";
+    const keyStatus = provider.envVar
+      ? provider.status === "ready"
+        ? `${provider.envVar} configured`
+        : `${provider.envVar} missing`
+      : "No key needed";
+    const nextAction =
+      provider.status === "ready"
+        ? provider.access === "open"
+          ? "Use for committed public-safe samples with source notes."
+          : "Use server-side only; review terms before storing samples."
+        : "Add the token in .env.local before enabling live requests.";
+
+    return {
+      provider: provider.name,
+      homepageUrl: provider.homepageUrl,
+      sourceType,
+      keyStatus,
+      portfolioUse: provider.portfolioUse,
+      cacheRule: provider.cacheRule,
+      licenseNote: provider.licenseNote,
+      capabilities: provider.capabilities.join(", "),
+      nextAction,
+      state: provider.status === "ready" ? "ready" : "needs-key",
+    };
+  });
+}
+
+export function getWorkspaceTasks(): WorkspaceTask[] {
+  const providerStatuses = getProviderStatus();
+  const missingProviders = providerStatuses.filter((provider) => provider.status === "missing-key");
+  const playerIssues = validatePlayers(players);
+  const topForward = topForwardShotQualityPlayers[0];
+  const tasks: WorkspaceTask[] = [];
+
+  for (const provider of missingProviders) {
+    tasks.push({
+      id: `provider-${provider.id}`,
+      severity: provider.access === "paid-or-trial-key" ? "info" : "warning",
+      area: "Data providers",
+      title: `${provider.name} key is not configured`,
+      detail: `${provider.envVar} is missing. Live requests for this provider stay disabled.`,
+      nextAction: "Add the key locally in .env.local only after terms are reviewed.",
+      href: "/workspace/data-readiness",
+    });
+  }
+
+  for (const league of leaguesNeedingClubReview.slice(0, 6)) {
+    tasks.push({
+      id: `coverage-${league.file}`,
+      severity: league.clubs_without_rows >= 3 ? "warning" : "info",
+      area: "League coverage",
+      title: `${league.league_season} has missing club rows`,
+      detail: `${league.clubs_without_rows} clubs need manual review before player search is treated as complete.`,
+      nextAction: "Check missing club names and decide whether Wikidata labels or club IDs need adjustment.",
+      href: "/workspace/league-coverage",
+    });
+  }
+
+  if (playerIssues.length > 0) {
+    tasks.push({
+      id: "sample-player-qa",
+      severity: "critical",
+      area: "Data QA",
+      title: "Sample player data still contains open QA findings",
+      detail: `${playerIssues.length} findings are visible in the QA page. Some are intentional demo issues.`,
+      nextAction: "Keep flawed rows marked as demo data and prevent them from final report exports.",
+      href: "/qa",
+    });
+  }
+
+  tasks.push({
+    id: "top-forward-report",
+    severity: "info",
+    area: "Analytics to report",
+    title: `${topForward.player} is ready for a scouting note`,
+    detail: `${topForward.non_penalty_xg.toFixed(2)} non-penalty xG from ${topForward.shots} shots in the StatsBomb sample.`,
+    nextAction: "Connect the report builder to analytics rows so this can become a sourced note.",
+    href: "/analytics",
+  });
+
+  tasks.push({
+    id: "video-tracking-placeholder",
+    severity: "info",
+    area: "Future adapters",
+    title: "Video and tracking data require licensed sources",
+    detail: "Do not fake proprietary tracking or match video. Keep this as an explicit adapter placeholder.",
+    nextAction: "Document the contract for a future licensed video/tracking adapter.",
+    href: "/workspace",
+  });
+
+  return tasks.sort((a, b) => {
+    const rank: Record<WorkspaceTaskSeverity, number> = { critical: 0, warning: 1, info: 2 };
+    return rank[a.severity] - rank[b.severity];
+  });
 }
