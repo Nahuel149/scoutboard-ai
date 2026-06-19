@@ -6,7 +6,12 @@
     "season_id": 282,
     "matches_url": "https://raw.githubusercontent.com/statsbomb/open-data/master/data/matches/223/282.json",
     "events_url_template": "https://raw.githubusercontent.com/statsbomb/open-data/master/data/events/{match_id}.json",
-    "note": "Rows are limited to South American national teams and forward/wing positions."
+    "note": "Rows are limited to South American national teams and forward/wing positions.",
+    "age_enrichment": {
+      "name": "Wikidata",
+      "method": "Name search with football-description guard",
+      "review_note": "Name matches require manual review before recruitment use."
+    }
   },
   "summary": {
     "matches": 32,
@@ -83,6 +88,7 @@
       "team": "Argentina",
       "positions": "Center Forward; Left Center Forward",
       "matches_with_shot": 5,
+      "minutes": 245,
       "shots": 11,
       "open_play_shots": 11,
       "penalty_shots": 0,
@@ -95,13 +101,129 @@
       "avg_non_penalty_xg_per_shot": 0.263,
       "shot_accuracy": 0.727,
       "goal_minus_xg": 2.112,
-      "avg_shot_distance": 14.39
+      "avg_shot_distance": 14.39,
+      "shots_detail": [
+        {
+          "match_id": 3939977,
+          "x": 107.6,
+          "y": 49.2,
+          "xg": 0.069,
+          "outcome": "Blocked",
+          "play_pattern": "From Free Kick",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939977,
+          "x": 112.6,
+          "y": 34.3,
+          "xg": 0.299,
+          "outcome": "Goal",
+          "play_pattern": "From Corner",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939977,
+          "x": 112.0,
+          "y": 37.3,
+          "xg": 0.454,
+          "outcome": "Saved",
+          "play_pattern": "From Counter",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939986,
+          "x": 106.1,
+          "y": 47.0,
+          "xg": 0.343,
+          "outcome": "Goal",
+          "play_pattern": "Regular Play",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939986,
+          "x": 107.7,
+          "y": 42.3,
+          "xg": 0.087,
+          "outcome": "Blocked",
+          "play_pattern": "Other",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939986,
+          "x": 107.0,
+          "y": 29.6,
+          "xg": 0.179,
+          "outcome": "Saved",
+          "play_pattern": "From Free Kick",
+          "body_part": "Left Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939986,
+          "x": 107.3,
+          "y": 32.6,
+          "xg": 0.361,
+          "outcome": "Goal",
+          "play_pattern": "From Counter",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3943077,
+          "x": 105.5,
+          "y": 52.1,
+          "xg": 0.199,
+          "outcome": "Goal",
+          "play_pattern": "Regular Play",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3942228,
+          "x": 106.0,
+          "y": 33.8,
+          "xg": 0.049,
+          "outcome": "Off T",
+          "play_pattern": "From Free Kick",
+          "body_part": "Left Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939969,
+          "x": 103.0,
+          "y": 35.6,
+          "xg": 0.432,
+          "outcome": "Saved",
+          "play_pattern": "Regular Play",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939969,
+          "x": 107.0,
+          "y": 44.9,
+          "xg": 0.415,
+          "outcome": "Goal",
+          "play_pattern": "Regular Play",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        }
+      ],
+      "birth_date": "1997-08-22",
+      "age_source_url": "https://www.wikidata.org/wiki/Q21484126",
+      "age_match_status": "name_match_needs_review"
     },
     {
       "player": "Lionel Andrés Messi Cuccittini",
       "team": "Argentina",
       "positions": "Right Center Forward",
       "matches_with_shot": 5,
+      "minutes": 475,
       "shots": 14,
       "open_play_shots": 13,
       "penalty_shots": 1,
@@ -114,13 +236,159 @@
       "avg_non_penalty_xg_per_shot": 0.158,
       "shot_accuracy": 0.286,
       "goal_minus_xg": -1.833,
-      "avg_shot_distance": 17.57
+      "avg_shot_distance": 17.57,
+      "shots_detail": [
+        {
+          "match_id": 3939977,
+          "x": 91.7,
+          "y": 43.1,
+          "xg": 0.04,
+          "outcome": "Post",
+          "play_pattern": "Regular Play",
+          "body_part": "Left Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3943077,
+          "x": 106.2,
+          "y": 36.8,
+          "xg": 0.151,
+          "outcome": "Blocked",
+          "play_pattern": "From Throw In",
+          "body_part": "Left Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3942785,
+          "x": 100.8,
+          "y": 48.6,
+          "xg": 0.038,
+          "outcome": "Off T",
+          "play_pattern": "Regular Play",
+          "body_part": "Left Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3942785,
+          "x": 106.2,
+          "y": 34.9,
+          "xg": 0.093,
+          "outcome": "Off T",
+          "play_pattern": "Regular Play",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3942785,
+          "x": 100.2,
+          "y": 35.7,
+          "xg": 0.055,
+          "outcome": "Off T",
+          "play_pattern": "From Free Kick",
+          "body_part": "Left Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3942785,
+          "x": 114.4,
+          "y": 41.3,
+          "xg": 0.595,
+          "outcome": "Goal",
+          "play_pattern": "From Throw In",
+          "body_part": "Left Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3942228,
+          "x": 108.5,
+          "y": 29.7,
+          "xg": 0.116,
+          "outcome": "Saved",
+          "play_pattern": "From Throw In",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3942228,
+          "x": 108.1,
+          "y": 40.1,
+          "xg": 0.783,
+          "outcome": "Post",
+          "play_pattern": "Other",
+          "body_part": "Left Foot",
+          "is_penalty": true
+        },
+        {
+          "match_id": 3939969,
+          "x": 112.1,
+          "y": 52.1,
+          "xg": 0.056,
+          "outcome": "Blocked",
+          "play_pattern": "Regular Play",
+          "body_part": "Left Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939969,
+          "x": 97.6,
+          "y": 50.1,
+          "xg": 0.041,
+          "outcome": "Off T",
+          "play_pattern": "From Goal Kick",
+          "body_part": "Left Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939969,
+          "x": 106.4,
+          "y": 26.8,
+          "xg": 0.157,
+          "outcome": "Saved",
+          "play_pattern": "From Keeper",
+          "body_part": "Left Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939969,
+          "x": 106.4,
+          "y": 35.2,
+          "xg": 0.296,
+          "outcome": "Blocked",
+          "play_pattern": "From Keeper",
+          "body_part": "Left Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939969,
+          "x": 105.8,
+          "y": 45.9,
+          "xg": 0.349,
+          "outcome": "Off T",
+          "play_pattern": "Regular Play",
+          "body_part": "Left Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939969,
+          "x": 93.6,
+          "y": 42.1,
+          "xg": 0.062,
+          "outcome": "Saved",
+          "play_pattern": "From Free Kick",
+          "body_part": "Left Foot",
+          "is_penalty": false
+        }
+      ],
+      "birth_date": "1987-06-24",
+      "age_source_url": "https://www.wikidata.org/wiki/Q615",
+      "age_match_status": "name_match_needs_review"
     },
     {
       "player": "Darwin Gabriel Núñez Ribeiro",
       "team": "Uruguay",
       "positions": "Center Forward",
       "matches_with_shot": 6,
+      "minutes": 483,
       "shots": 21,
       "open_play_shots": 21,
       "penalty_shots": 0,
@@ -133,13 +401,229 @@
       "avg_non_penalty_xg_per_shot": 0.089,
       "shot_accuracy": 0.238,
       "goal_minus_xg": 0.139,
-      "avg_shot_distance": 15.05
+      "avg_shot_distance": 15.05,
+      "shots_detail": [
+        {
+          "match_id": 3939982,
+          "x": 108.0,
+          "y": 38.8,
+          "xg": 0.082,
+          "outcome": "Off T",
+          "play_pattern": "From Throw In",
+          "body_part": "Head",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939982,
+          "x": 105.4,
+          "y": 36.0,
+          "xg": 0.092,
+          "outcome": "Blocked",
+          "play_pattern": "Regular Play",
+          "body_part": "Left Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939982,
+          "x": 109.8,
+          "y": 51.6,
+          "xg": 0.172,
+          "outcome": "Saved",
+          "play_pattern": "Regular Play",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939982,
+          "x": 110.5,
+          "y": 30.7,
+          "xg": 0.056,
+          "outcome": "Goal",
+          "play_pattern": "Regular Play",
+          "body_part": "Left Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939982,
+          "x": 108.6,
+          "y": 37.9,
+          "xg": 0.072,
+          "outcome": "Post",
+          "play_pattern": "Regular Play",
+          "body_part": "Head",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939982,
+          "x": 107.1,
+          "y": 29.8,
+          "xg": 0.066,
+          "outcome": "Off T",
+          "play_pattern": "From Throw In",
+          "body_part": "Left Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939982,
+          "x": 115.3,
+          "y": 29.2,
+          "xg": 0.044,
+          "outcome": "Blocked",
+          "play_pattern": "Regular Play",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939990,
+          "x": 107.5,
+          "y": 33.5,
+          "xg": 0.078,
+          "outcome": "Off T",
+          "play_pattern": "From Free Kick",
+          "body_part": "Left Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3943076,
+          "x": 99.0,
+          "y": 32.8,
+          "xg": 0.083,
+          "outcome": "Off T",
+          "play_pattern": "From Free Kick",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3942852,
+          "x": 103.5,
+          "y": 44.4,
+          "xg": 0.198,
+          "outcome": "Off T",
+          "play_pattern": "From Throw In",
+          "body_part": "Left Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3942852,
+          "x": 108.0,
+          "y": 55.0,
+          "xg": 0.064,
+          "outcome": "Off T",
+          "play_pattern": "Regular Play",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3942852,
+          "x": 115.3,
+          "y": 24.6,
+          "xg": 0.011,
+          "outcome": "Wayward",
+          "play_pattern": "From Free Kick",
+          "body_part": "Left Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3942852,
+          "x": 99.4,
+          "y": 38.0,
+          "xg": 0.092,
+          "outcome": "Off T",
+          "play_pattern": "From Counter",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3942415,
+          "x": 107.3,
+          "y": 36.4,
+          "xg": 0.038,
+          "outcome": "Blocked",
+          "play_pattern": "From Corner",
+          "body_part": "Head",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3942415,
+          "x": 113.1,
+          "y": 36.8,
+          "xg": 0.17,
+          "outcome": "Off T",
+          "play_pattern": "From Free Kick",
+          "body_part": "Head",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3942415,
+          "x": 113.7,
+          "y": 51.2,
+          "xg": 0.066,
+          "outcome": "Blocked",
+          "play_pattern": "From Goal Kick",
+          "body_part": "Left Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939973,
+          "x": 101.1,
+          "y": 37.4,
+          "xg": 0.058,
+          "outcome": "Blocked",
+          "play_pattern": "From Corner",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939973,
+          "x": 101.2,
+          "y": 21.1,
+          "xg": 0.009,
+          "outcome": "Saved",
+          "play_pattern": "From Throw In",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939973,
+          "x": 108.4,
+          "y": 42.0,
+          "xg": 0.18,
+          "outcome": "Saved",
+          "play_pattern": "Regular Play",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939973,
+          "x": 113.9,
+          "y": 35.9,
+          "xg": 0.138,
+          "outcome": "Off T",
+          "play_pattern": "Regular Play",
+          "body_part": "Head",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939973,
+          "x": 109.4,
+          "y": 33.5,
+          "xg": 0.092,
+          "outcome": "Goal",
+          "play_pattern": "From Throw In",
+          "body_part": "Left Foot",
+          "is_penalty": false
+        }
+      ],
+      "birth_date": "1999-06-24",
+      "age_source_url": "https://www.wikidata.org/wiki/Q46372260",
+      "age_match_status": "name_match_needs_review"
     },
     {
       "player": "Julián Álvarez",
       "team": "Argentina",
       "positions": "Left Center Forward",
       "matches_with_shot": 5,
+      "minutes": 383,
       "shots": 10,
       "open_play_shots": 9,
       "penalty_shots": 1,
@@ -152,13 +636,119 @@
       "avg_non_penalty_xg_per_shot": 0.171,
       "shot_accuracy": 0.6,
       "goal_minus_xg": 0.674,
-      "avg_shot_distance": 21.13
+      "avg_shot_distance": 21.13,
+      "shots_detail": [
+        {
+          "match_id": 3939977,
+          "x": 110.4,
+          "y": 35.1,
+          "xg": 0.271,
+          "outcome": "Saved",
+          "play_pattern": "From Throw In",
+          "body_part": "Left Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939977,
+          "x": 100.2,
+          "y": 28.1,
+          "xg": 0.055,
+          "outcome": "Off T",
+          "play_pattern": "From Throw In",
+          "body_part": "Left Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3943077,
+          "x": 105.6,
+          "y": 44.0,
+          "xg": 0.072,
+          "outcome": "Off T",
+          "play_pattern": "From Kick Off",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3942785,
+          "x": 52.1,
+          "y": 51.6,
+          "xg": 0.004,
+          "outcome": "Off T",
+          "play_pattern": "Regular Play",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3942785,
+          "x": 107.1,
+          "y": 42.5,
+          "xg": 0.55,
+          "outcome": "Goal",
+          "play_pattern": "Regular Play",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3942785,
+          "x": 102.8,
+          "y": 50.0,
+          "xg": 0.175,
+          "outcome": "Saved",
+          "play_pattern": "From Free Kick",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3942228,
+          "x": 108.1,
+          "y": 40.1,
+          "xg": 0.783,
+          "outcome": "Goal",
+          "play_pattern": "Other",
+          "body_part": "Right Foot",
+          "is_penalty": true
+        },
+        {
+          "match_id": 3939969,
+          "x": 110.9,
+          "y": 20.2,
+          "xg": 0.046,
+          "outcome": "Wayward",
+          "play_pattern": "From Free Kick",
+          "body_part": "Left Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939969,
+          "x": 115.7,
+          "y": 50.0,
+          "xg": 0.281,
+          "outcome": "Goal",
+          "play_pattern": "From Throw In",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939969,
+          "x": 104.5,
+          "y": 36.0,
+          "xg": 0.088,
+          "outcome": "Saved",
+          "play_pattern": "Regular Play",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        }
+      ],
+      "birth_date": "2000-01-31",
+      "age_source_url": "https://www.wikidata.org/wiki/Q59381180",
+      "age_match_status": "name_match_needs_review"
     },
     {
       "player": "José Salomón Rondón Giménez",
       "team": "Venezuela",
       "positions": "Center Forward; Left Center Forward; Right Center Forward",
       "matches_with_shot": 4,
+      "minutes": 373,
       "shots": 19,
       "open_play_shots": 17,
       "penalty_shots": 2,
@@ -171,13 +761,209 @@
       "avg_non_penalty_xg_per_shot": 0.09,
       "shot_accuracy": 0.316,
       "goal_minus_xg": 0.898,
-      "avg_shot_distance": 16.78
+      "avg_shot_distance": 16.78,
+      "shots_detail": [
+        {
+          "match_id": 3939987,
+          "x": 112.8,
+          "y": 39.4,
+          "xg": 0.106,
+          "outcome": "Blocked",
+          "play_pattern": "From Goal Kick",
+          "body_part": "Head",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939987,
+          "x": 102.9,
+          "y": 40.4,
+          "xg": 0.061,
+          "outcome": "Off T",
+          "play_pattern": "From Throw In",
+          "body_part": "Left Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939987,
+          "x": 110.9,
+          "y": 36.5,
+          "xg": 0.24,
+          "outcome": "Goal",
+          "play_pattern": "Regular Play",
+          "body_part": "Left Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939987,
+          "x": 100.5,
+          "y": 44.2,
+          "xg": 0.049,
+          "outcome": "Blocked",
+          "play_pattern": "Regular Play",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939987,
+          "x": 106.4,
+          "y": 32.3,
+          "xg": 0.152,
+          "outcome": "Blocked",
+          "play_pattern": "Regular Play",
+          "body_part": "Left Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939979,
+          "x": 105.9,
+          "y": 27.5,
+          "xg": 0.052,
+          "outcome": "Post",
+          "play_pattern": "Regular Play",
+          "body_part": "Left Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939979,
+          "x": 100.2,
+          "y": 24.1,
+          "xg": 0.021,
+          "outcome": "Blocked",
+          "play_pattern": "From Throw In",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939979,
+          "x": 101.7,
+          "y": 36.0,
+          "xg": 0.051,
+          "outcome": "Blocked",
+          "play_pattern": "Regular Play",
+          "body_part": "Left Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939979,
+          "x": 108.0,
+          "y": 40.0,
+          "xg": 0.783,
+          "outcome": "Goal",
+          "play_pattern": "Other",
+          "body_part": "Right Foot",
+          "is_penalty": true
+        },
+        {
+          "match_id": 3939972,
+          "x": 95.6,
+          "y": 44.7,
+          "xg": 0.036,
+          "outcome": "Off T",
+          "play_pattern": "Regular Play",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939972,
+          "x": 114.0,
+          "y": 34.3,
+          "xg": 0.112,
+          "outcome": "Wayward",
+          "play_pattern": "From Corner",
+          "body_part": "Head",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939972,
+          "x": 115.1,
+          "y": 54.2,
+          "xg": 0.012,
+          "outcome": "Blocked",
+          "play_pattern": "From Counter",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939972,
+          "x": 111.0,
+          "y": 38.1,
+          "xg": 0.285,
+          "outcome": "Saved",
+          "play_pattern": "From Goal Kick",
+          "body_part": "Head",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3942229,
+          "x": 109.0,
+          "y": 41.5,
+          "xg": 0.079,
+          "outcome": "Off T",
+          "play_pattern": "Regular Play",
+          "body_part": "Head",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3942229,
+          "x": 92.1,
+          "y": 44.2,
+          "xg": 0.042,
+          "outcome": "Off T",
+          "play_pattern": "From Counter",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3942229,
+          "x": 114.3,
+          "y": 34.3,
+          "xg": 0.129,
+          "outcome": "Saved",
+          "play_pattern": "From Corner",
+          "body_part": "Head",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3942229,
+          "x": 114.5,
+          "y": 34.0,
+          "xg": 0.09,
+          "outcome": "Blocked",
+          "play_pattern": "From Corner",
+          "body_part": "Head",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3942229,
+          "x": 71.0,
+          "y": 33.7,
+          "xg": 0.019,
+          "outcome": "Goal",
+          "play_pattern": "From Counter",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3942229,
+          "x": 108.1,
+          "y": 40.1,
+          "xg": 0.783,
+          "outcome": "Goal",
+          "play_pattern": "Other",
+          "body_part": "Right Foot",
+          "is_penalty": true
+        }
+      ],
+      "birth_date": "1989-09-16",
+      "age_source_url": "https://www.wikidata.org/wiki/Q357613",
+      "age_match_status": "name_match_needs_review"
     },
     {
       "player": "Jhon Andrés Córdoba Copete",
       "team": "Colombia",
       "positions": "Center Forward; Right Center Forward",
       "matches_with_shot": 5,
+      "minutes": 421,
       "shots": 11,
       "open_play_shots": 11,
       "penalty_shots": 0,
@@ -190,13 +976,129 @@
       "avg_non_penalty_xg_per_shot": 0.124,
       "shot_accuracy": 0.273,
       "goal_minus_xg": 0.632,
-      "avg_shot_distance": 10.31
+      "avg_shot_distance": 10.31,
+      "shots_detail": [
+        {
+          "match_id": 3939991,
+          "x": 114.2,
+          "y": 37.1,
+          "xg": 0.176,
+          "outcome": "Off T",
+          "play_pattern": "From Corner",
+          "body_part": "Head",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939991,
+          "x": 113.2,
+          "y": 35.5,
+          "xg": 0.103,
+          "outcome": "Saved",
+          "play_pattern": "From Free Kick",
+          "body_part": "Head",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3942416,
+          "x": 113.9,
+          "y": 41.0,
+          "xg": 0.386,
+          "outcome": "Goal",
+          "play_pattern": "From Corner",
+          "body_part": "Head",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3943077,
+          "x": 105.5,
+          "y": 47.3,
+          "xg": 0.076,
+          "outcome": "Post",
+          "play_pattern": "From Throw In",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3943077,
+          "x": 108.3,
+          "y": 39.0,
+          "xg": 0.05,
+          "outcome": "Blocked",
+          "play_pattern": "Regular Play",
+          "body_part": "Head",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3943077,
+          "x": 112.5,
+          "y": 42.5,
+          "xg": 0.085,
+          "outcome": "Blocked",
+          "play_pattern": "From Corner",
+          "body_part": "Head",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3942852,
+          "x": 108.7,
+          "y": 37.2,
+          "xg": 0.072,
+          "outcome": "Off T",
+          "play_pattern": "From Throw In",
+          "body_part": "Head",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3942852,
+          "x": 112.9,
+          "y": 43.7,
+          "xg": 0.076,
+          "outcome": "Off T",
+          "play_pattern": "From Corner",
+          "body_part": "Head",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939984,
+          "x": 114.4,
+          "y": 37.5,
+          "xg": 0.136,
+          "outcome": "Wayward",
+          "play_pattern": "From Corner",
+          "body_part": "Head",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939984,
+          "x": 113.5,
+          "y": 51.8,
+          "xg": 0.148,
+          "outcome": "Goal",
+          "play_pattern": "Regular Play",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939984,
+          "x": 102.5,
+          "y": 40.1,
+          "xg": 0.061,
+          "outcome": "Blocked",
+          "play_pattern": "Regular Play",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        }
+      ],
+      "birth_date": "1993-05-11",
+      "age_source_url": "https://www.wikidata.org/wiki/Q209847",
+      "age_match_status": "name_match_needs_review"
     },
     {
       "player": "Facundo Pellistri Rebollo",
       "team": "Uruguay",
       "positions": "Right Wing",
       "matches_with_shot": 2,
+      "minutes": 456,
       "shots": 3,
       "open_play_shots": 3,
       "penalty_shots": 0,
@@ -209,13 +1111,49 @@
       "avg_non_penalty_xg_per_shot": 0.336,
       "shot_accuracy": 0.667,
       "goal_minus_xg": -0.008,
-      "avg_shot_distance": 9.63
+      "avg_shot_distance": 9.63,
+      "shots_detail": [
+        {
+          "match_id": 3939982,
+          "x": 118.1,
+          "y": 42.3,
+          "xg": 0.728,
+          "outcome": "Goal",
+          "play_pattern": "From Free Kick",
+          "body_part": "Head",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939990,
+          "x": 110.5,
+          "y": 48.9,
+          "xg": 0.17,
+          "outcome": "Off T",
+          "play_pattern": "Regular Play",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939990,
+          "x": 107.9,
+          "y": 44.4,
+          "xg": 0.11,
+          "outcome": "Saved",
+          "play_pattern": "Regular Play",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        }
+      ],
+      "birth_date": "2001-12-20",
+      "age_source_url": "https://www.wikidata.org/wiki/Q72091732",
+      "age_match_status": "name_match_needs_review"
     },
     {
       "player": "Luis Alberto Suárez Díaz",
       "team": "Uruguay",
       "positions": "Center Forward; Right Center Forward",
       "matches_with_shot": 3,
+      "minutes": 132,
       "shots": 6,
       "open_play_shots": 5,
       "penalty_shots": 1,
@@ -228,13 +1166,79 @@
       "avg_non_penalty_xg_per_shot": 0.19,
       "shot_accuracy": 0.667,
       "goal_minus_xg": 0.268,
-      "avg_shot_distance": 15.72
+      "avg_shot_distance": 15.72,
+      "shots_detail": [
+        {
+          "match_id": 3939990,
+          "x": 102.7,
+          "y": 32.8,
+          "xg": 0.061,
+          "outcome": "Blocked",
+          "play_pattern": "Regular Play",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3943076,
+          "x": 104.7,
+          "y": 22.6,
+          "xg": 0.04,
+          "outcome": "Saved",
+          "play_pattern": "From Corner",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3943076,
+          "x": 112.1,
+          "y": 51.1,
+          "xg": 0.238,
+          "outcome": "Saved",
+          "play_pattern": "Regular Play",
+          "body_part": "Left Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3943076,
+          "x": 110.0,
+          "y": 38.2,
+          "xg": 0.527,
+          "outcome": "Goal",
+          "play_pattern": "Regular Play",
+          "body_part": "Left Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3943076,
+          "x": 108.0,
+          "y": 40.0,
+          "xg": 0.783,
+          "outcome": "Goal",
+          "play_pattern": "Other",
+          "body_part": "Right Foot",
+          "is_penalty": true
+        },
+        {
+          "match_id": 3942852,
+          "x": 104.3,
+          "y": 45.5,
+          "xg": 0.082,
+          "outcome": "Post",
+          "play_pattern": "Regular Play",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        }
+      ],
+      "birth_date": "1987-01-24",
+      "age_source_url": "https://www.wikidata.org/wiki/Q26517",
+      "age_match_status": "name_match_needs_review"
     },
     {
       "player": "Rodrygo Silva de Goes",
       "team": "Brazil",
       "positions": "Center Forward; Left Wing; Right Center Forward",
       "matches_with_shot": 3,
+      "minutes": 330,
       "shots": 10,
       "open_play_shots": 10,
       "penalty_shots": 0,
@@ -247,13 +1251,119 @@
       "avg_non_penalty_xg_per_shot": 0.09,
       "shot_accuracy": 0.2,
       "goal_minus_xg": -0.903,
-      "avg_shot_distance": 18.39
+      "avg_shot_distance": 18.39,
+      "shots_detail": [
+        {
+          "match_id": 3939983,
+          "x": 112.6,
+          "y": 29.0,
+          "xg": 0.155,
+          "outcome": "Saved",
+          "play_pattern": "Regular Play",
+          "body_part": "Left Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939983,
+          "x": 89.8,
+          "y": 47.8,
+          "xg": 0.033,
+          "outcome": "Saved",
+          "play_pattern": "From Free Kick",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939976,
+          "x": 108.5,
+          "y": 51.5,
+          "xg": 0.132,
+          "outcome": "Off T",
+          "play_pattern": "Regular Play",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939976,
+          "x": 111.9,
+          "y": 36.2,
+          "xg": 0.128,
+          "outcome": "Wayward",
+          "play_pattern": "From Free Kick",
+          "body_part": "Other",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939976,
+          "x": 100.5,
+          "y": 49.0,
+          "xg": 0.049,
+          "outcome": "Off T",
+          "play_pattern": "From Throw In",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939976,
+          "x": 112.3,
+          "y": 31.3,
+          "xg": 0.078,
+          "outcome": "Off T",
+          "play_pattern": "From Corner",
+          "body_part": "Left Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939976,
+          "x": 111.1,
+          "y": 33.7,
+          "xg": 0.062,
+          "outcome": "Off T",
+          "play_pattern": "From Free Kick",
+          "body_part": "Head",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939976,
+          "x": 109.8,
+          "y": 36.0,
+          "xg": 0.184,
+          "outcome": "Blocked",
+          "play_pattern": "From Corner",
+          "body_part": "Left Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3942415,
+          "x": 93.5,
+          "y": 46.0,
+          "xg": 0.056,
+          "outcome": "Blocked",
+          "play_pattern": "From Free Kick",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3942415,
+          "x": 88.4,
+          "y": 34.5,
+          "xg": 0.025,
+          "outcome": "Blocked",
+          "play_pattern": "From Free Kick",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        }
+      ],
+      "birth_date": "2001-01-09",
+      "age_source_url": "https://www.wikidata.org/wiki/Q42728914",
+      "age_match_status": "name_match_needs_review"
     },
     {
       "player": "Maximiliano Javier Araújo Vilches",
       "team": "Uruguay",
       "positions": "Left Wing",
       "matches_with_shot": 3,
+      "minutes": 497,
       "shots": 8,
       "open_play_shots": 8,
       "penalty_shots": 0,
@@ -266,13 +1376,99 @@
       "avg_non_penalty_xg_per_shot": 0.102,
       "shot_accuracy": 0.75,
       "goal_minus_xg": 1.181,
-      "avg_shot_distance": 14.16
+      "avg_shot_distance": 14.16,
+      "shots_detail": [
+        {
+          "match_id": 3939982,
+          "x": 110.7,
+          "y": 28.7,
+          "xg": 0.016,
+          "outcome": "Saved",
+          "play_pattern": "From Corner",
+          "body_part": "Head",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939982,
+          "x": 111.4,
+          "y": 29.2,
+          "xg": 0.223,
+          "outcome": "Saved",
+          "play_pattern": "From Throw In",
+          "body_part": "Left Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939982,
+          "x": 110.4,
+          "y": 45.4,
+          "xg": 0.193,
+          "outcome": "Goal",
+          "play_pattern": "Regular Play",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3943076,
+          "x": 110.4,
+          "y": 27.0,
+          "xg": 0.099,
+          "outcome": "Saved",
+          "play_pattern": "From Throw In",
+          "body_part": "Left Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939973,
+          "x": 108.8,
+          "y": 43.9,
+          "xg": 0.07,
+          "outcome": "Off T",
+          "play_pattern": "Regular Play",
+          "body_part": "Head",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939973,
+          "x": 101.1,
+          "y": 26.2,
+          "xg": 0.041,
+          "outcome": "Goal",
+          "play_pattern": "From Free Kick",
+          "body_part": "Left Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939973,
+          "x": 112.7,
+          "y": 33.3,
+          "xg": 0.137,
+          "outcome": "Saved",
+          "play_pattern": "From Free Kick",
+          "body_part": "Left Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939973,
+          "x": 110.4,
+          "y": 32.0,
+          "xg": 0.039,
+          "outcome": "Blocked",
+          "play_pattern": "From Throw In",
+          "body_part": "Head",
+          "is_penalty": false
+        }
+      ],
+      "birth_date": "2000-02-15",
+      "age_source_url": "https://www.wikidata.org/wiki/Q58011167",
+      "age_match_status": "name_match_needs_review"
     },
     {
       "player": "Raphael Dias Belloli",
       "team": "Brazil",
       "positions": "Right Wing",
       "matches_with_shot": 3,
+      "minutes": 268,
       "shots": 7,
       "open_play_shots": 7,
       "penalty_shots": 0,
@@ -285,13 +1481,89 @@
       "avg_non_penalty_xg_per_shot": 0.115,
       "shot_accuracy": 0.714,
       "goal_minus_xg": 0.197,
-      "avg_shot_distance": 21.37
+      "avg_shot_distance": 21.37,
+      "shots_detail": [
+        {
+          "match_id": 3939991,
+          "x": 92.0,
+          "y": 51.3,
+          "xg": 0.041,
+          "outcome": "Goal",
+          "play_pattern": "From Free Kick",
+          "body_part": "Left Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939991,
+          "x": 97.0,
+          "y": 52.3,
+          "xg": 0.052,
+          "outcome": "Off T",
+          "play_pattern": "From Free Kick",
+          "body_part": "Left Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939976,
+          "x": 118.3,
+          "y": 49.6,
+          "xg": 0.023,
+          "outcome": "Saved",
+          "play_pattern": "From Throw In",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939976,
+          "x": 106.4,
+          "y": 48.5,
+          "xg": 0.171,
+          "outcome": "Saved",
+          "play_pattern": "From Counter",
+          "body_part": "Left Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3942415,
+          "x": 90.9,
+          "y": 50.3,
+          "xg": 0.036,
+          "outcome": "Blocked",
+          "play_pattern": "From Free Kick",
+          "body_part": "Left Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3942415,
+          "x": 103.4,
+          "y": 44.7,
+          "xg": 0.378,
+          "outcome": "Saved",
+          "play_pattern": "From Goal Kick",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3942415,
+          "x": 100.6,
+          "y": 40.7,
+          "xg": 0.103,
+          "outcome": "Saved",
+          "play_pattern": "From Free Kick",
+          "body_part": "Left Foot",
+          "is_penalty": false
+        }
+      ],
+      "birth_date": "1996-12-14",
+      "age_source_url": "https://www.wikidata.org/wiki/Q28861547",
+      "age_match_status": "name_match_needs_review"
     },
     {
       "player": "Vinícius José Paixão de Oliveira Júnior",
       "team": "Brazil",
       "positions": "Left Center Forward; Left Wing",
       "matches_with_shot": 2,
+      "minutes": 258,
       "shots": 4,
       "open_play_shots": 4,
       "penalty_shots": 0,
@@ -304,13 +1576,59 @@
       "avg_non_penalty_xg_per_shot": 0.183,
       "shot_accuracy": 0.5,
       "goal_minus_xg": 1.268,
-      "avg_shot_distance": 17.98
+      "avg_shot_distance": 17.98,
+      "shots_detail": [
+        {
+          "match_id": 3939991,
+          "x": 98.2,
+          "y": 57.7,
+          "xg": 0.016,
+          "outcome": "Off T",
+          "play_pattern": "From Goal Kick",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939983,
+          "x": 109.7,
+          "y": 48.2,
+          "xg": 0.305,
+          "outcome": "Goal",
+          "play_pattern": "From Throw In",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939983,
+          "x": 114.7,
+          "y": 32.6,
+          "xg": 0.312,
+          "outcome": "Goal",
+          "play_pattern": "Regular Play",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939983,
+          "x": 103.2,
+          "y": 26.5,
+          "xg": 0.099,
+          "outcome": "Off T",
+          "play_pattern": "From Goal Kick",
+          "body_part": "Left Foot",
+          "is_penalty": false
+        }
+      ],
+      "birth_date": "2000-07-12",
+      "age_source_url": "https://www.wikidata.org/wiki/Q28973866",
+      "age_match_status": "name_match_needs_review"
     },
     {
       "player": "Luis Fernando Díaz Marulanda",
       "team": "Colombia",
       "positions": "Left Center Forward; Left Wing",
       "matches_with_shot": 6,
+      "minutes": 515,
       "shots": 9,
       "open_play_shots": 8,
       "penalty_shots": 1,
@@ -323,13 +1641,109 @@
       "avg_non_penalty_xg_per_shot": 0.081,
       "shot_accuracy": 0.556,
       "goal_minus_xg": 0.568,
-      "avg_shot_distance": 17.25
+      "avg_shot_distance": 17.25,
+      "shots_detail": [
+        {
+          "match_id": 3939991,
+          "x": 101.0,
+          "y": 28.7,
+          "xg": 0.139,
+          "outcome": "Saved",
+          "play_pattern": "Regular Play",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939975,
+          "x": 103.9,
+          "y": 31.5,
+          "xg": 0.051,
+          "outcome": "Off T",
+          "play_pattern": "From Free Kick",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939975,
+          "x": 112.1,
+          "y": 51.4,
+          "xg": 0.071,
+          "outcome": "Off T",
+          "play_pattern": "Regular Play",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3942416,
+          "x": 97.2,
+          "y": 39.6,
+          "xg": 0.153,
+          "outcome": "Goal",
+          "play_pattern": "From Free Kick",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3943077,
+          "x": 98.6,
+          "y": 25.2,
+          "xg": 0.03,
+          "outcome": "Saved",
+          "play_pattern": "From Keeper",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3942852,
+          "x": 105.6,
+          "y": 27.8,
+          "xg": 0.03,
+          "outcome": "Saved",
+          "play_pattern": "From Corner",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939984,
+          "x": 110.4,
+          "y": 38.5,
+          "xg": 0.065,
+          "outcome": "Off T",
+          "play_pattern": "Regular Play",
+          "body_part": "Other",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939984,
+          "x": 108.1,
+          "y": 40.1,
+          "xg": 0.783,
+          "outcome": "Goal",
+          "play_pattern": "Other",
+          "body_part": "Right Foot",
+          "is_penalty": true
+        },
+        {
+          "match_id": 3939984,
+          "x": 109.7,
+          "y": 34.3,
+          "xg": 0.111,
+          "outcome": "Blocked",
+          "play_pattern": "Regular Play",
+          "body_part": "Left Foot",
+          "is_penalty": false
+        }
+      ],
+      "birth_date": "1997-01-13",
+      "age_source_url": "https://www.wikidata.org/wiki/Q28531111",
+      "age_match_status": "name_match_needs_review"
     },
     {
       "player": "Ángel Rodrigo Romero Villamayor",
       "team": "Paraguay",
       "positions": "Right Wing",
       "matches_with_shot": 1,
+      "minutes": 69,
       "shots": 3,
       "open_play_shots": 3,
       "penalty_shots": 0,
@@ -342,13 +1756,49 @@
       "avg_non_penalty_xg_per_shot": 0.21,
       "shot_accuracy": 0.333,
       "goal_minus_xg": -0.629,
-      "avg_shot_distance": 16.19
+      "avg_shot_distance": 16.19,
+      "shots_detail": [
+        {
+          "match_id": 3939992,
+          "x": 100.3,
+          "y": 41.3,
+          "xg": 0.06,
+          "outcome": "Blocked",
+          "play_pattern": "From Free Kick",
+          "body_part": "Left Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939992,
+          "x": 96.8,
+          "y": 46.7,
+          "xg": 0.073,
+          "outcome": "Blocked",
+          "play_pattern": "From Free Kick",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939992,
+          "x": 115.6,
+          "y": 38.4,
+          "xg": 0.496,
+          "outcome": "Saved",
+          "play_pattern": "From Corner",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        }
+      ],
+      "birth_date": "1992-07-04",
+      "age_source_url": "https://www.wikidata.org/wiki/Q15960510",
+      "age_match_status": "name_match_needs_review"
     },
     {
       "player": "Eric Kleybel Ramírez Matheus",
       "team": "Venezuela",
       "positions": "Center Forward; Left Center Forward",
       "matches_with_shot": 2,
+      "minutes": 24,
       "shots": 3,
       "open_play_shots": 3,
       "penalty_shots": 0,
@@ -361,13 +1811,49 @@
       "avg_non_penalty_xg_per_shot": 0.185,
       "shot_accuracy": 0.667,
       "goal_minus_xg": 0.446,
-      "avg_shot_distance": 20.51
+      "avg_shot_distance": 20.51,
+      "shots_detail": [
+        {
+          "match_id": 3939987,
+          "x": 102.7,
+          "y": 40.2,
+          "xg": 0.459,
+          "outcome": "Goal",
+          "play_pattern": "From Counter",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939987,
+          "x": 101.7,
+          "y": 29.2,
+          "xg": 0.042,
+          "outcome": "Off T",
+          "play_pattern": "From Goal Kick",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939972,
+          "x": 100.1,
+          "y": 51.5,
+          "xg": 0.053,
+          "outcome": "Saved",
+          "play_pattern": "From Throw In",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        }
+      ],
+      "birth_date": "1998-11-20",
+      "age_source_url": "https://www.wikidata.org/wiki/Q36584498",
+      "age_match_status": "name_match_needs_review"
     },
     {
       "player": "Julio César Enciso Espínola",
       "team": "Paraguay",
       "positions": "Center Forward; Left Wing; Right Wing",
       "matches_with_shot": 2,
+      "minutes": 259,
       "shots": 8,
       "open_play_shots": 8,
       "penalty_shots": 0,
@@ -380,13 +1866,99 @@
       "avg_non_penalty_xg_per_shot": 0.063,
       "shot_accuracy": 0.375,
       "goal_minus_xg": 0.495,
-      "avg_shot_distance": 22.37
+      "avg_shot_distance": 22.37,
+      "shots_detail": [
+        {
+          "match_id": 3939975,
+          "x": 98.6,
+          "y": 18.2,
+          "xg": 0.01,
+          "outcome": "Saved",
+          "play_pattern": "From Free Kick",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939975,
+          "x": 94.4,
+          "y": 40.4,
+          "xg": 0.041,
+          "outcome": "Blocked",
+          "play_pattern": "From Throw In",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939975,
+          "x": 100.0,
+          "y": 21.8,
+          "xg": 0.018,
+          "outcome": "Off T",
+          "play_pattern": "From Throw In",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939975,
+          "x": 115.4,
+          "y": 45.2,
+          "xg": 0.185,
+          "outcome": "Goal",
+          "play_pattern": "Regular Play",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939992,
+          "x": 83.6,
+          "y": 35.5,
+          "xg": 0.006,
+          "outcome": "Off T",
+          "play_pattern": "From Free Kick",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939992,
+          "x": 89.0,
+          "y": 28.5,
+          "xg": 0.015,
+          "outcome": "Saved",
+          "play_pattern": "Regular Play",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939992,
+          "x": 108.2,
+          "y": 44.7,
+          "xg": 0.097,
+          "outcome": "Wayward",
+          "play_pattern": "Regular Play",
+          "body_part": "Head",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939992,
+          "x": 113.9,
+          "y": 38.2,
+          "xg": 0.134,
+          "outcome": "Blocked",
+          "play_pattern": "From Corner",
+          "body_part": "Head",
+          "is_penalty": false
+        }
+      ],
+      "birth_date": "2004-01-23",
+      "age_source_url": "https://www.wikidata.org/wiki/Q85872272",
+      "age_match_status": "name_match_needs_review"
     },
     {
       "player": "Gianluca Lapadula Vargas",
       "team": "Peru",
       "positions": "Center Forward; Right Center Forward",
       "matches_with_shot": 3,
+      "minutes": 203,
       "shots": 8,
       "open_play_shots": 8,
       "penalty_shots": 0,
@@ -399,13 +1971,99 @@
       "avg_non_penalty_xg_per_shot": 0.063,
       "shot_accuracy": 0.375,
       "goal_minus_xg": -0.5,
-      "avg_shot_distance": 28.31
+      "avg_shot_distance": 28.31,
+      "shots_detail": [
+        {
+          "match_id": 3939970,
+          "x": 94.2,
+          "y": 30.6,
+          "xg": 0.012,
+          "outcome": "Blocked",
+          "play_pattern": "Regular Play",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939970,
+          "x": 110.3,
+          "y": 44.0,
+          "xg": 0.263,
+          "outcome": "Saved",
+          "play_pattern": "From Goal Kick",
+          "body_part": "Left Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939970,
+          "x": 108.7,
+          "y": 34.9,
+          "xg": 0.049,
+          "outcome": "Saved",
+          "play_pattern": "From Corner",
+          "body_part": "Left Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939986,
+          "x": 63.9,
+          "y": 34.8,
+          "xg": 0.004,
+          "outcome": "Off T",
+          "play_pattern": "From Goal Kick",
+          "body_part": "Left Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939978,
+          "x": 100.3,
+          "y": 53.9,
+          "xg": 0.038,
+          "outcome": "Saved",
+          "play_pattern": "Regular Play",
+          "body_part": "Left Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939978,
+          "x": 107.6,
+          "y": 37.8,
+          "xg": 0.08,
+          "outcome": "Blocked",
+          "play_pattern": "Regular Play",
+          "body_part": "Left Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939978,
+          "x": 99.7,
+          "y": 42.0,
+          "xg": 0.05,
+          "outcome": "Off T",
+          "play_pattern": "From Free Kick",
+          "body_part": "Left Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939978,
+          "x": 60.7,
+          "y": 60.3,
+          "xg": 0.004,
+          "outcome": "Wayward",
+          "play_pattern": "From Counter",
+          "body_part": "Left Foot",
+          "is_penalty": false
+        }
+      ],
+      "birth_date": "1990-02-07",
+      "age_source_url": "https://www.wikidata.org/wiki/Q5558146",
+      "age_match_status": "name_match_needs_review"
     },
     {
       "player": "Alan Steve Minda García",
       "team": "Ecuador",
       "positions": "Right Wing",
       "matches_with_shot": 1,
+      "minutes": 134,
       "shots": 1,
       "open_play_shots": 1,
       "penalty_shots": 0,
@@ -418,13 +2076,29 @@
       "avg_non_penalty_xg_per_shot": 0.471,
       "shot_accuracy": 1.0,
       "goal_minus_xg": 0.529,
-      "avg_shot_distance": 13.51
+      "avg_shot_distance": 13.51,
+      "shots_detail": [
+        {
+          "match_id": 3939980,
+          "x": 110.4,
+          "y": 30.5,
+          "xg": 0.471,
+          "outcome": "Goal",
+          "play_pattern": "From Counter",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        }
+      ],
+      "birth_date": "2003-05-14",
+      "age_source_url": "https://www.wikidata.org/wiki/Q116054089",
+      "age_match_status": "name_match_needs_review"
     },
     {
       "player": "Alex Adrián Arce Barrios",
       "team": "Paraguay",
       "positions": "Center Forward",
       "matches_with_shot": 2,
+      "minutes": 150,
       "shots": 5,
       "open_play_shots": 5,
       "penalty_shots": 0,
@@ -437,13 +2111,69 @@
       "avg_non_penalty_xg_per_shot": 0.088,
       "shot_accuracy": 0.0,
       "goal_minus_xg": -0.438,
-      "avg_shot_distance": 31.81
+      "avg_shot_distance": 31.81,
+      "shots_detail": [
+        {
+          "match_id": 3939975,
+          "x": 86.7,
+          "y": 49.1,
+          "xg": 0.024,
+          "outcome": "Off T",
+          "play_pattern": "From Throw In",
+          "body_part": "Left Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939975,
+          "x": 114.7,
+          "y": 41.7,
+          "xg": 0.364,
+          "outcome": "Wayward",
+          "play_pattern": "From Corner",
+          "body_part": "Head",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939975,
+          "x": 94.8,
+          "y": 35.4,
+          "xg": 0.022,
+          "outcome": "Blocked",
+          "play_pattern": "From Counter",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939983,
+          "x": 97.7,
+          "y": 31.5,
+          "xg": 0.025,
+          "outcome": "Blocked",
+          "play_pattern": "From Keeper",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939983,
+          "x": 50.9,
+          "y": 32.5,
+          "xg": 0.003,
+          "outcome": "Wayward",
+          "play_pattern": "From Throw In",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        }
+      ],
+      "birth_date": "1995-06-16",
+      "age_source_url": "https://www.wikidata.org/wiki/Q118935199",
+      "age_match_status": "name_match_needs_review"
     },
     {
       "player": "Bruno Miranda Villagomez",
       "team": "Bolivia",
       "positions": "Center Forward",
       "matches_with_shot": 1,
+      "minutes": 98,
       "shots": 1,
       "open_play_shots": 1,
       "penalty_shots": 0,
@@ -456,13 +2186,29 @@
       "avg_non_penalty_xg_per_shot": 0.425,
       "shot_accuracy": 1.0,
       "goal_minus_xg": 0.575,
-      "avg_shot_distance": 13.81
+      "avg_shot_distance": 13.81,
+      "shots_detail": [
+        {
+          "match_id": 3939989,
+          "x": 108.6,
+          "y": 32.2,
+          "xg": 0.425,
+          "outcome": "Goal",
+          "play_pattern": "Regular Play",
+          "body_part": "Left Foot",
+          "is_penalty": false
+        }
+      ],
+      "birth_date": "1998-02-10",
+      "age_source_url": "https://www.wikidata.org/wiki/Q23771469",
+      "age_match_status": "name_match_needs_review"
     },
     {
       "player": "Jeremy Leonel Sarmiento Morante",
       "team": "Ecuador",
       "positions": "Left Wing",
       "matches_with_shot": 3,
+      "minutes": 305,
       "shots": 5,
       "open_play_shots": 5,
       "penalty_shots": 0,
@@ -475,13 +2221,69 @@
       "avg_non_penalty_xg_per_shot": 0.065,
       "shot_accuracy": 0.4,
       "goal_minus_xg": 0.673,
-      "avg_shot_distance": 18.67
+      "avg_shot_distance": 18.67,
+      "shots_detail": [
+        {
+          "match_id": 3939980,
+          "x": 98.5,
+          "y": 32.0,
+          "xg": 0.052,
+          "outcome": "Blocked",
+          "play_pattern": "Regular Play",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939980,
+          "x": 107.5,
+          "y": 21.4,
+          "xg": 0.012,
+          "outcome": "Blocked",
+          "play_pattern": "From Throw In",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939980,
+          "x": 99.5,
+          "y": 46.7,
+          "xg": 0.056,
+          "outcome": "Off T",
+          "play_pattern": "From Free Kick",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939972,
+          "x": 104.2,
+          "y": 39.3,
+          "xg": 0.088,
+          "outcome": "Goal",
+          "play_pattern": "From Free Kick",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3942228,
+          "x": 114.4,
+          "y": 31.0,
+          "xg": 0.119,
+          "outcome": "Saved",
+          "play_pattern": "From Throw In",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        }
+      ],
+      "birth_date": "2002-06-16",
+      "age_source_url": "https://www.wikidata.org/wiki/Q108659564",
+      "age_match_status": "name_match_needs_review"
     },
     {
       "player": "Eduard Alexander Bello Gil",
       "team": "Venezuela",
       "positions": "Left Wing; Right Wing",
       "matches_with_shot": 3,
+      "minutes": 295,
       "shots": 3,
       "open_play_shots": 3,
       "penalty_shots": 0,
@@ -494,13 +2296,49 @@
       "avg_non_penalty_xg_per_shot": 0.103,
       "shot_accuracy": 0.667,
       "goal_minus_xg": 0.691,
-      "avg_shot_distance": 15.84
+      "avg_shot_distance": 15.84,
+      "shots_detail": [
+        {
+          "match_id": 3939987,
+          "x": 116.3,
+          "y": 44.8,
+          "xg": 0.277,
+          "outcome": "Goal",
+          "play_pattern": "Regular Play",
+          "body_part": "Head",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939979,
+          "x": 95.7,
+          "y": 55.6,
+          "xg": 0.022,
+          "outcome": "Blocked",
+          "play_pattern": "From Goal Kick",
+          "body_part": "Left Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3942229,
+          "x": 117.8,
+          "y": 27.6,
+          "xg": 0.01,
+          "outcome": "Saved",
+          "play_pattern": "From Free Kick",
+          "body_part": "Left Foot",
+          "is_penalty": false
+        }
+      ],
+      "birth_date": "1995-08-20",
+      "age_source_url": "https://www.wikidata.org/wiki/Q30331471",
+      "age_match_status": "name_match_needs_review"
     },
     {
       "player": "Rafael Santos Borré Amaury",
       "team": "Colombia",
       "positions": "Right Wing",
       "matches_with_shot": 1,
+      "minutes": 140,
       "shots": 1,
       "open_play_shots": 1,
       "penalty_shots": 0,
@@ -513,13 +2351,29 @@
       "avg_non_penalty_xg_per_shot": 0.305,
       "shot_accuracy": 0.0,
       "goal_minus_xg": -0.305,
-      "avg_shot_distance": 11.27
+      "avg_shot_distance": 11.27,
+      "shots_detail": [
+        {
+          "match_id": 3939991,
+          "x": 111.5,
+          "y": 47.4,
+          "xg": 0.305,
+          "outcome": "Off T",
+          "play_pattern": "Regular Play",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        }
+      ],
+      "birth_date": "1995-09-15",
+      "age_source_url": "https://www.wikidata.org/wiki/Q18719633",
+      "age_match_status": "name_match_needs_review"
     },
     {
       "player": "José Paolo Guerrero Gonzáles",
       "team": "Peru",
       "positions": "Left Center Forward; Right Center Forward",
       "matches_with_shot": 2,
+      "minutes": 108,
       "shots": 2,
       "open_play_shots": 2,
       "penalty_shots": 0,
@@ -532,13 +2386,39 @@
       "avg_non_penalty_xg_per_shot": 0.135,
       "shot_accuracy": 1.0,
       "goal_minus_xg": -0.269,
-      "avg_shot_distance": 17.28
+      "avg_shot_distance": 17.28,
+      "shots_detail": [
+        {
+          "match_id": 3939970,
+          "x": 117.6,
+          "y": 35.1,
+          "xg": 0.229,
+          "outcome": "Saved",
+          "play_pattern": "From Corner",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939978,
+          "x": 94.0,
+          "y": 26.9,
+          "xg": 0.04,
+          "outcome": "Saved",
+          "play_pattern": "From Free Kick",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        }
+      ],
+      "birth_date": "1984-01-01",
+      "age_source_url": "https://www.wikidata.org/wiki/Q156802",
+      "age_match_status": "name_match_needs_review"
     },
     {
       "player": "Jordy Josué Caicedo Medina",
       "team": "Ecuador",
       "positions": "Right Center Forward",
       "matches_with_shot": 1,
+      "minutes": 68,
       "shots": 3,
       "open_play_shots": 2,
       "penalty_shots": 1,
@@ -551,13 +2431,49 @@
       "avg_non_penalty_xg_per_shot": 0.1,
       "shot_accuracy": 0.333,
       "goal_minus_xg": 0.016,
-      "avg_shot_distance": 11.76
+      "avg_shot_distance": 11.76,
+      "shots_detail": [
+        {
+          "match_id": 3942228,
+          "x": 113.3,
+          "y": 25.3,
+          "xg": 0.015,
+          "outcome": "Off T",
+          "play_pattern": "From Counter",
+          "body_part": "Left Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3942228,
+          "x": 113.3,
+          "y": 37.3,
+          "xg": 0.186,
+          "outcome": "Off T",
+          "play_pattern": "Regular Play",
+          "body_part": "Head",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3942228,
+          "x": 108.1,
+          "y": 40.1,
+          "xg": 0.783,
+          "outcome": "Goal",
+          "play_pattern": "Other",
+          "body_part": "Right Foot",
+          "is_penalty": true
+        }
+      ],
+      "birth_date": "1997-11-18",
+      "age_source_url": "https://www.wikidata.org/wiki/Q30346214",
+      "age_match_status": "name_match_needs_review"
     },
     {
       "player": "Víctor Alejandro Dávila Zavala",
       "team": "Chile",
       "positions": "Left Wing; Right Wing",
       "matches_with_shot": 1,
+      "minutes": 234,
       "shots": 3,
       "open_play_shots": 3,
       "penalty_shots": 0,
@@ -570,13 +2486,49 @@
       "avg_non_penalty_xg_per_shot": 0.062,
       "shot_accuracy": 0.0,
       "goal_minus_xg": -0.185,
-      "avg_shot_distance": 16.17
+      "avg_shot_distance": 16.17,
+      "shots_detail": [
+        {
+          "match_id": 3939970,
+          "x": 104.4,
+          "y": 47.5,
+          "xg": 0.074,
+          "outcome": "Blocked",
+          "play_pattern": "Regular Play",
+          "body_part": "Left Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939970,
+          "x": 109.5,
+          "y": 45.2,
+          "xg": 0.063,
+          "outcome": "Off T",
+          "play_pattern": "Regular Play",
+          "body_part": "Head",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939970,
+          "x": 100.6,
+          "y": 41.8,
+          "xg": 0.048,
+          "outcome": "Blocked",
+          "play_pattern": "From Goal Kick",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        }
+      ],
+      "birth_date": "1997-11-04",
+      "age_source_url": "https://www.wikidata.org/wiki/Q29995129",
+      "age_match_status": "name_match_needs_review"
     },
     {
       "player": "Damián Josué Bobadilla Benítez",
       "team": "Paraguay",
       "positions": "Right Wing",
       "matches_with_shot": 1,
+      "minutes": 205,
       "shots": 3,
       "open_play_shots": 3,
       "penalty_shots": 0,
@@ -589,13 +2541,49 @@
       "avg_non_penalty_xg_per_shot": 0.05,
       "shot_accuracy": 1.0,
       "goal_minus_xg": -0.151,
-      "avg_shot_distance": 21.88
+      "avg_shot_distance": 21.88,
+      "shots_detail": [
+        {
+          "match_id": 3939983,
+          "x": 94.0,
+          "y": 43.5,
+          "xg": 0.038,
+          "outcome": "Saved",
+          "play_pattern": "Regular Play",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939983,
+          "x": 107.4,
+          "y": 35.1,
+          "xg": 0.081,
+          "outcome": "Saved",
+          "play_pattern": "From Free Kick",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939983,
+          "x": 94.1,
+          "y": 40.2,
+          "xg": 0.032,
+          "outcome": "Saved",
+          "play_pattern": "From Kick Off",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        }
+      ],
+      "birth_date": "2001-07-11",
+      "age_source_url": "https://www.wikidata.org/wiki/Q116223348",
+      "age_match_status": "name_match_needs_review"
     },
     {
       "player": "Jhonder Leonel Cádiz Fernández",
       "team": "Venezuela",
       "positions": "Left Center Forward; Right Center Forward",
       "matches_with_shot": 2,
+      "minutes": 136,
       "shots": 4,
       "open_play_shots": 3,
       "penalty_shots": 1,
@@ -608,13 +2596,59 @@
       "avg_non_penalty_xg_per_shot": 0.05,
       "shot_accuracy": 0.5,
       "goal_minus_xg": 1.068,
-      "avg_shot_distance": 17.7
+      "avg_shot_distance": 17.7,
+      "shots_detail": [
+        {
+          "match_id": 3939972,
+          "x": 103.3,
+          "y": 50.0,
+          "xg": 0.052,
+          "outcome": "Goal",
+          "play_pattern": "From Throw In",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3942229,
+          "x": 98.8,
+          "y": 37.2,
+          "xg": 0.055,
+          "outcome": "Off T",
+          "play_pattern": "Regular Play",
+          "body_part": "Left Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3942229,
+          "x": 110.9,
+          "y": 24.4,
+          "xg": 0.042,
+          "outcome": "Blocked",
+          "play_pattern": "From Throw In",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3942229,
+          "x": 108.1,
+          "y": 40.1,
+          "xg": 0.783,
+          "outcome": "Goal",
+          "play_pattern": "Other",
+          "body_part": "Right Foot",
+          "is_penalty": true
+        }
+      ],
+      "birth_date": "1995-07-29",
+      "age_source_url": "https://www.wikidata.org/wiki/Q18223720",
+      "age_match_status": "name_match_needs_review"
     },
     {
       "player": "Ray Kendry Páez Andrade",
       "team": "Ecuador",
       "positions": "Right Wing",
       "matches_with_shot": 2,
+      "minutes": 307,
       "shots": 2,
       "open_play_shots": 2,
       "penalty_shots": 0,
@@ -627,13 +2661,39 @@
       "avg_non_penalty_xg_per_shot": 0.072,
       "shot_accuracy": 0.0,
       "goal_minus_xg": -0.144,
-      "avg_shot_distance": 20.15
+      "avg_shot_distance": 20.15,
+      "shots_detail": [
+        {
+          "match_id": 3939972,
+          "x": 99.5,
+          "y": 49.6,
+          "xg": 0.081,
+          "outcome": "Wayward",
+          "play_pattern": "From Free Kick",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3942228,
+          "x": 102.6,
+          "y": 37.0,
+          "xg": 0.064,
+          "outcome": "Off T",
+          "play_pattern": "From Throw In",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        }
+      ],
+      "birth_date": "2007-05-04",
+      "age_source_url": "https://www.wikidata.org/wiki/Q116466426",
+      "age_match_status": "name_match_needs_review"
     },
     {
       "player": "Darwin Daniel Machís Marcano",
       "team": "Venezuela",
       "positions": "Right Wing",
       "matches_with_shot": 1,
+      "minutes": 131,
       "shots": 3,
       "open_play_shots": 3,
       "penalty_shots": 0,
@@ -646,13 +2706,49 @@
       "avg_non_penalty_xg_per_shot": 0.045,
       "shot_accuracy": 0.0,
       "goal_minus_xg": -0.135,
-      "avg_shot_distance": 22.7
+      "avg_shot_distance": 22.7,
+      "shots_detail": [
+        {
+          "match_id": 3939972,
+          "x": 90.9,
+          "y": 50.1,
+          "xg": 0.018,
+          "outcome": "Blocked",
+          "play_pattern": "From Free Kick",
+          "body_part": "Left Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939972,
+          "x": 102.8,
+          "y": 41.1,
+          "xg": 0.06,
+          "outcome": "Off T",
+          "play_pattern": "From Counter",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939972,
+          "x": 100.0,
+          "y": 41.6,
+          "xg": 0.058,
+          "outcome": "Off T",
+          "play_pattern": "From Throw In",
+          "body_part": "Left Foot",
+          "is_penalty": false
+        }
+      ],
+      "birth_date": "1993-02-07",
+      "age_source_url": "https://www.wikidata.org/wiki/Q2758078",
+      "age_match_status": "name_match_needs_review"
     },
     {
       "player": "Ramón Sosa Acosta",
       "team": "Paraguay",
       "positions": "Left Wing",
       "matches_with_shot": 1,
+      "minutes": 152,
       "shots": 3,
       "open_play_shots": 3,
       "penalty_shots": 0,
@@ -665,13 +2761,49 @@
       "avg_non_penalty_xg_per_shot": 0.045,
       "shot_accuracy": 0.667,
       "goal_minus_xg": 0.865,
-      "avg_shot_distance": 22.12
+      "avg_shot_distance": 22.12,
+      "shots_detail": [
+        {
+          "match_id": 3939992,
+          "x": 94.4,
+          "y": 46.3,
+          "xg": 0.032,
+          "outcome": "Blocked",
+          "play_pattern": "From Throw In",
+          "body_part": "Left Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939992,
+          "x": 104.4,
+          "y": 26.3,
+          "xg": 0.055,
+          "outcome": "Goal",
+          "play_pattern": "Regular Play",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939992,
+          "x": 107.6,
+          "y": 25.3,
+          "xg": 0.049,
+          "outcome": "Saved",
+          "play_pattern": "From Counter",
+          "body_part": "Left Foot",
+          "is_penalty": false
+        }
+      ],
+      "birth_date": "1999-08-31",
+      "age_source_url": "https://www.wikidata.org/wiki/Q110160871",
+      "age_match_status": "name_match_needs_review"
     },
     {
       "player": "Paul Brian Rodríguez Bravo",
       "team": "Uruguay",
       "positions": "Right Wing",
       "matches_with_shot": 1,
+      "minutes": 67,
       "shots": 1,
       "open_play_shots": 1,
       "penalty_shots": 0,
@@ -684,13 +2816,29 @@
       "avg_non_penalty_xg_per_shot": 0.134,
       "shot_accuracy": 0.0,
       "goal_minus_xg": -0.134,
-      "avg_shot_distance": 14.78
+      "avg_shot_distance": 14.78,
+      "shots_detail": [
+        {
+          "match_id": 3943076,
+          "x": 109.3,
+          "y": 50.2,
+          "xg": 0.134,
+          "outcome": "Blocked",
+          "play_pattern": "From Throw In",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        }
+      ],
+      "birth_date": "2000-05-20",
+      "age_source_url": "https://www.wikidata.org/wiki/Q60736591",
+      "age_match_status": "name_match_needs_review"
     },
     {
       "player": "Alejandro Garnacho Ferreyra",
       "team": "Argentina",
       "positions": "Left Wing",
       "matches_with_shot": 1,
+      "minutes": 64,
       "shots": 2,
       "open_play_shots": 2,
       "penalty_shots": 0,
@@ -703,13 +2851,39 @@
       "avg_non_penalty_xg_per_shot": 0.061,
       "shot_accuracy": 0.0,
       "goal_minus_xg": -0.123,
-      "avg_shot_distance": 18.96
+      "avg_shot_distance": 18.96,
+      "shots_detail": [
+        {
+          "match_id": 3939986,
+          "x": 104.5,
+          "y": 28.8,
+          "xg": 0.048,
+          "outcome": "Blocked",
+          "play_pattern": "Regular Play",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939986,
+          "x": 105.3,
+          "y": 28.3,
+          "xg": 0.075,
+          "outcome": "Off T",
+          "play_pattern": "From Free Kick",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        }
+      ],
+      "birth_date": "2004-07-01",
+      "age_source_url": "https://www.wikidata.org/wiki/Q111366053",
+      "age_match_status": "name_match_needs_review"
     },
     {
       "player": "Endrick Felipe Moreira de Sousa",
       "team": "Brazil",
       "positions": "Center Forward; Left Wing",
       "matches_with_shot": 2,
+      "minutes": 178,
       "shots": 2,
       "open_play_shots": 2,
       "penalty_shots": 0,
@@ -722,13 +2896,39 @@
       "avg_non_penalty_xg_per_shot": 0.061,
       "shot_accuracy": 0.5,
       "goal_minus_xg": -0.122,
-      "avg_shot_distance": 21.24
+      "avg_shot_distance": 21.24,
+      "shots_detail": [
+        {
+          "match_id": 3939976,
+          "x": 103.1,
+          "y": 43.7,
+          "xg": 0.076,
+          "outcome": "Blocked",
+          "play_pattern": "From Throw In",
+          "body_part": "Left Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3942415,
+          "x": 95.2,
+          "y": 44.4,
+          "xg": 0.046,
+          "outcome": "Saved",
+          "play_pattern": "From Counter",
+          "body_part": "Left Foot",
+          "is_penalty": false
+        }
+      ],
+      "birth_date": "2006-07-21",
+      "age_source_url": "https://www.wikidata.org/wiki/Q110644260",
+      "age_match_status": "name_match_needs_review"
     },
     {
       "player": "Kevin José Rodríguez Cortez",
       "team": "Ecuador",
       "positions": "Center Forward; Left Center Forward; Right Center Forward",
       "matches_with_shot": 3,
+      "minutes": 274,
       "shots": 5,
       "open_play_shots": 5,
       "penalty_shots": 0,
@@ -741,13 +2941,69 @@
       "avg_non_penalty_xg_per_shot": 0.024,
       "shot_accuracy": 0.2,
       "goal_minus_xg": 0.879,
-      "avg_shot_distance": 19.98
+      "avg_shot_distance": 19.98,
+      "shots_detail": [
+        {
+          "match_id": 3939980,
+          "x": 104.6,
+          "y": 38.4,
+          "xg": 0.039,
+          "outcome": "Blocked",
+          "play_pattern": "From Free Kick",
+          "body_part": "Left Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939980,
+          "x": 103.3,
+          "y": 22.5,
+          "xg": 0.029,
+          "outcome": "Off T",
+          "play_pattern": "From Keeper",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939980,
+          "x": 96.7,
+          "y": 22.6,
+          "xg": 0.015,
+          "outcome": "Blocked",
+          "play_pattern": "From Throw In",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939988,
+          "x": 114.7,
+          "y": 23.3,
+          "xg": 0.009,
+          "outcome": "Blocked",
+          "play_pattern": "From Throw In",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3942228,
+          "x": 107.5,
+          "y": 45.4,
+          "xg": 0.029,
+          "outcome": "Goal",
+          "play_pattern": "From Free Kick",
+          "body_part": "Head",
+          "is_penalty": false
+        }
+      ],
+      "birth_date": "2000-03-04",
+      "age_source_url": "https://www.wikidata.org/wiki/Q115132592",
+      "age_match_status": "name_match_needs_review"
     },
     {
       "player": "Yeferson Julio Soteldo Martínez",
       "team": "Venezuela",
       "positions": "Left Wing",
       "matches_with_shot": 1,
+      "minutes": 280,
       "shots": 2,
       "open_play_shots": 2,
       "penalty_shots": 0,
@@ -760,13 +3016,39 @@
       "avg_non_penalty_xg_per_shot": 0.055,
       "shot_accuracy": 0.5,
       "goal_minus_xg": -0.11,
-      "avg_shot_distance": 19.1
+      "avg_shot_distance": 19.1,
+      "shots_detail": [
+        {
+          "match_id": 3939979,
+          "x": 100.3,
+          "y": 24.3,
+          "xg": 0.029,
+          "outcome": "Off T",
+          "play_pattern": "From Throw In",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939979,
+          "x": 112.2,
+          "y": 29.6,
+          "xg": 0.081,
+          "outcome": "Saved",
+          "play_pattern": "From Throw In",
+          "body_part": "Left Foot",
+          "is_penalty": false
+        }
+      ],
+      "birth_date": "1997-06-30",
+      "age_source_url": "https://www.wikidata.org/wiki/Q20976280",
+      "age_match_status": "name_match_needs_review"
     },
     {
       "player": "John Yeboah Zamora",
       "team": "Ecuador",
       "positions": "Right Wing",
       "matches_with_shot": 2,
+      "minutes": 145,
       "shots": 3,
       "open_play_shots": 3,
       "penalty_shots": 0,
@@ -779,13 +3061,49 @@
       "avg_non_penalty_xg_per_shot": 0.036,
       "shot_accuracy": 0.333,
       "goal_minus_xg": -0.107,
-      "avg_shot_distance": 19.06
+      "avg_shot_distance": 19.06,
+      "shots_detail": [
+        {
+          "match_id": 3939980,
+          "x": 113.8,
+          "y": 54.5,
+          "xg": 0.016,
+          "outcome": "Blocked",
+          "play_pattern": "Regular Play",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939972,
+          "x": 99.0,
+          "y": 33.2,
+          "xg": 0.059,
+          "outcome": "Saved",
+          "play_pattern": "From Free Kick",
+          "body_part": "Left Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939972,
+          "x": 100.7,
+          "y": 41.0,
+          "xg": 0.032,
+          "outcome": "Blocked",
+          "play_pattern": "From Throw In",
+          "body_part": "Left Foot",
+          "is_penalty": false
+        }
+      ],
+      "birth_date": "2000-06-23",
+      "age_source_url": "https://www.wikidata.org/wiki/Q58215731",
+      "age_match_status": "name_match_needs_review"
     },
     {
       "player": "Enner Remberto Valencia Lastra",
       "team": "Ecuador",
       "positions": "Center Forward; Left Center Forward",
       "matches_with_shot": 2,
+      "minutes": 273,
       "shots": 4,
       "open_play_shots": 3,
       "penalty_shots": 1,
@@ -798,13 +3116,59 @@
       "avg_non_penalty_xg_per_shot": 0.035,
       "shot_accuracy": 0.25,
       "goal_minus_xg": -0.889,
-      "avg_shot_distance": 22.14
+      "avg_shot_distance": 22.14,
+      "shots_detail": [
+        {
+          "match_id": 3939988,
+          "x": 101.8,
+          "y": 60.9,
+          "xg": 0.009,
+          "outcome": "Saved",
+          "play_pattern": "From Goal Kick",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939988,
+          "x": 97.1,
+          "y": 42.3,
+          "xg": 0.051,
+          "outcome": "Off T",
+          "play_pattern": "From Corner",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939988,
+          "x": 99.0,
+          "y": 55.2,
+          "xg": 0.046,
+          "outcome": "Blocked",
+          "play_pattern": "From Free Kick",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3942228,
+          "x": 108.1,
+          "y": 40.1,
+          "xg": 0.783,
+          "outcome": "Post",
+          "play_pattern": "Other",
+          "body_part": "Right Foot",
+          "is_penalty": true
+        }
+      ],
+      "birth_date": "1989-11-04",
+      "age_source_url": "https://www.wikidata.org/wiki/Q2843080",
+      "age_match_status": "name_match_needs_review"
     },
     {
       "player": "Ben Brereton Díaz",
       "team": "Chile",
       "positions": "Center Forward",
       "matches_with_shot": 1,
+      "minutes": 61,
       "shots": 2,
       "open_play_shots": 2,
       "penalty_shots": 0,
@@ -817,13 +3181,39 @@
       "avg_non_penalty_xg_per_shot": 0.04,
       "shot_accuracy": 0.0,
       "goal_minus_xg": -0.079,
-      "avg_shot_distance": 16.62
+      "avg_shot_distance": 16.62,
+      "shots_detail": [
+        {
+          "match_id": 3939970,
+          "x": 101.2,
+          "y": 34.0,
+          "xg": 0.052,
+          "outcome": "Blocked",
+          "play_pattern": "From Free Kick",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939970,
+          "x": 110.1,
+          "y": 30.8,
+          "xg": 0.027,
+          "outcome": "Off T",
+          "play_pattern": "Regular Play",
+          "body_part": "Head",
+          "is_penalty": false
+        }
+      ],
+      "birth_date": "1999-04-18",
+      "age_source_url": "https://www.wikidata.org/wiki/Q28606351",
+      "age_match_status": "name_match_needs_review"
     },
     {
       "player": "Miguel Ángel Borja Hernández",
       "team": "Colombia",
       "positions": "Left Center Forward; Right Center Forward",
       "matches_with_shot": 2,
+      "minutes": 35,
       "shots": 2,
       "open_play_shots": 1,
       "penalty_shots": 1,
@@ -836,13 +3226,39 @@
       "avg_non_penalty_xg_per_shot": 0.059,
       "shot_accuracy": 0.5,
       "goal_minus_xg": 0.157,
-      "avg_shot_distance": 14.46
+      "avg_shot_distance": 14.46,
+      "shots_detail": [
+        {
+          "match_id": 3942416,
+          "x": 108.0,
+          "y": 40.0,
+          "xg": 0.783,
+          "outcome": "Goal",
+          "play_pattern": "Other",
+          "body_part": "Right Foot",
+          "is_penalty": true
+        },
+        {
+          "match_id": 3943077,
+          "x": 108.5,
+          "y": 27.6,
+          "xg": 0.059,
+          "outcome": "Blocked",
+          "play_pattern": "From Throw In",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        }
+      ],
+      "birth_date": "1993-01-26",
+      "age_source_url": "https://www.wikidata.org/wiki/Q4094820",
+      "age_match_status": "name_match_needs_review"
     },
     {
       "player": "Édison Michael Flores Peralta",
       "team": "Peru",
       "positions": "Left Center Forward",
       "matches_with_shot": 2,
+      "minutes": 186,
       "shots": 2,
       "open_play_shots": 2,
       "penalty_shots": 0,
@@ -855,13 +3271,39 @@
       "avg_non_penalty_xg_per_shot": 0.029,
       "shot_accuracy": 0.0,
       "goal_minus_xg": -0.059,
-      "avg_shot_distance": 24.42
+      "avg_shot_distance": 24.42,
+      "shots_detail": [
+        {
+          "match_id": 3939970,
+          "x": 100.8,
+          "y": 56.5,
+          "xg": 0.028,
+          "outcome": "Wayward",
+          "play_pattern": "From Throw In",
+          "body_part": "Left Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939978,
+          "x": 96.5,
+          "y": 39.0,
+          "xg": 0.031,
+          "outcome": "Blocked",
+          "play_pattern": "From Corner",
+          "body_part": "Left Foot",
+          "is_penalty": false
+        }
+      ],
+      "birth_date": "1994-05-14",
+      "age_source_url": "https://www.wikidata.org/wiki/Q525788",
+      "age_match_status": "name_match_needs_review"
     },
     {
       "player": "Jorge Andrés Carrascal Guardo",
       "team": "Colombia",
       "positions": "Center Forward",
       "matches_with_shot": 1,
+      "minutes": 63,
       "shots": 1,
       "open_play_shots": 1,
       "penalty_shots": 0,
@@ -874,13 +3316,29 @@
       "avg_non_penalty_xg_per_shot": 0.058,
       "shot_accuracy": 1.0,
       "goal_minus_xg": -0.058,
-      "avg_shot_distance": 20.01
+      "avg_shot_distance": 20.01,
+      "shots_detail": [
+        {
+          "match_id": 3939991,
+          "x": 105.8,
+          "y": 54.1,
+          "xg": 0.058,
+          "outcome": "Saved",
+          "play_pattern": "Regular Play",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        }
+      ],
+      "birth_date": "1998-05-25",
+      "age_source_url": "https://www.wikidata.org/wiki/Q19362872",
+      "age_match_status": "name_match_needs_review"
     },
     {
       "player": "Sávio Moreira de Oliveira",
       "team": "Brazil",
       "positions": "Right Wing",
       "matches_with_shot": 1,
+      "minutes": 165,
       "shots": 1,
       "open_play_shots": 1,
       "penalty_shots": 0,
@@ -893,13 +3351,29 @@
       "avg_non_penalty_xg_per_shot": 0.05,
       "shot_accuracy": 0.0,
       "goal_minus_xg": -0.05,
-      "avg_shot_distance": 15.84
+      "avg_shot_distance": 15.84,
+      "shots_detail": [
+        {
+          "match_id": 3939976,
+          "x": 112.4,
+          "y": 53.9,
+          "xg": 0.05,
+          "outcome": "Wayward",
+          "play_pattern": "Regular Play",
+          "body_part": "Left Foot",
+          "is_penalty": false
+        }
+      ],
+      "birth_date": "2004-04-10",
+      "age_source_url": "https://www.wikidata.org/wiki/Q99485542",
+      "age_match_status": "name_match_needs_review"
     },
     {
       "player": "Miguel Ángel Almirón Rejala",
       "team": "Paraguay",
       "positions": "Left Wing",
       "matches_with_shot": 1,
+      "minutes": 179,
       "shots": 1,
       "open_play_shots": 1,
       "penalty_shots": 0,
@@ -912,13 +3386,29 @@
       "avg_non_penalty_xg_per_shot": 0.033,
       "shot_accuracy": 1.0,
       "goal_minus_xg": -0.033,
-      "avg_shot_distance": 28.0
+      "avg_shot_distance": 28.0,
+      "shots_detail": [
+        {
+          "match_id": 3939983,
+          "x": 93.2,
+          "y": 48.1,
+          "xg": 0.033,
+          "outcome": "Saved",
+          "play_pattern": "From Kick Off",
+          "body_part": "Left Foot",
+          "is_penalty": false
+        }
+      ],
+      "birth_date": "1994-02-10",
+      "age_source_url": "https://www.wikidata.org/wiki/Q16145667",
+      "age_match_status": "name_match_needs_review"
     },
     {
       "player": "Jhon Adolfo Arias Andrade",
       "team": "Colombia",
       "positions": "Right Wing",
       "matches_with_shot": 1,
+      "minutes": 493,
       "shots": 1,
       "open_play_shots": 1,
       "penalty_shots": 0,
@@ -931,13 +3421,29 @@
       "avg_non_penalty_xg_per_shot": 0.029,
       "shot_accuracy": 0.0,
       "goal_minus_xg": -0.029,
-      "avg_shot_distance": 26.11
+      "avg_shot_distance": 26.11,
+      "shots_detail": [
+        {
+          "match_id": 3942852,
+          "x": 97.9,
+          "y": 53.9,
+          "xg": 0.029,
+          "outcome": "Off T",
+          "play_pattern": "From Throw In",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        }
+      ],
+      "birth_date": "1997-09-21",
+      "age_source_url": "https://www.wikidata.org/wiki/Q65378670",
+      "age_match_status": "name_match_needs_review"
     },
     {
       "player": "Roberto Carlos Fernández Toro",
       "team": "Bolivia",
       "positions": "Left Wing",
       "matches_with_shot": 1,
+      "minutes": 119,
       "shots": 1,
       "open_play_shots": 1,
       "penalty_shots": 0,
@@ -950,13 +3456,29 @@
       "avg_non_penalty_xg_per_shot": 0.027,
       "shot_accuracy": 1.0,
       "goal_minus_xg": -0.027,
-      "avg_shot_distance": 28.66
+      "avg_shot_distance": 28.66,
+      "shots_detail": [
+        {
+          "match_id": 3939974,
+          "x": 91.5,
+          "y": 43.0,
+          "xg": 0.027,
+          "outcome": "Saved",
+          "play_pattern": "From Goal Kick",
+          "body_part": "Left Foot",
+          "is_penalty": false
+        }
+      ],
+      "birth_date": "1999-07-12",
+      "age_source_url": "https://www.wikidata.org/wiki/Q60841946",
+      "age_match_status": "name_match_needs_review"
     },
     {
       "player": "Darío Esteban Osorio Osorio",
       "team": "Chile",
       "positions": "Right Wing",
       "matches_with_shot": 1,
+      "minutes": 174,
       "shots": 1,
       "open_play_shots": 1,
       "penalty_shots": 0,
@@ -969,13 +3491,29 @@
       "avg_non_penalty_xg_per_shot": 0.023,
       "shot_accuracy": 0.0,
       "goal_minus_xg": -0.023,
-      "avg_shot_distance": 25.98
+      "avg_shot_distance": 25.98,
+      "shots_detail": [
+        {
+          "match_id": 3939970,
+          "x": 100.1,
+          "y": 56.7,
+          "xg": 0.023,
+          "outcome": "Blocked",
+          "play_pattern": "From Free Kick",
+          "body_part": "Left Foot",
+          "is_penalty": false
+        }
+      ],
+      "birth_date": "2004-01-24",
+      "age_source_url": "https://www.wikidata.org/wiki/Q110805295",
+      "age_match_status": "name_match_needs_review"
     },
     {
       "player": "Ángel Fabián Di María Hernández",
       "team": "Argentina",
       "positions": "Right Wing",
       "matches_with_shot": 1,
+      "minutes": 358,
       "shots": 1,
       "open_play_shots": 1,
       "penalty_shots": 0,
@@ -988,13 +3526,29 @@
       "avg_non_penalty_xg_per_shot": 0.023,
       "shot_accuracy": 1.0,
       "goal_minus_xg": -0.023,
-      "avg_shot_distance": 26.49
+      "avg_shot_distance": 26.49,
+      "shots_detail": [
+        {
+          "match_id": 3939986,
+          "x": 100.2,
+          "y": 57.6,
+          "xg": 0.023,
+          "outcome": "Saved",
+          "play_pattern": "From Goal Kick",
+          "body_part": "Left Foot",
+          "is_penalty": false
+        }
+      ],
+      "birth_date": "1988-02-14",
+      "age_source_url": "https://www.wikidata.org/wiki/Q251683",
+      "age_match_status": "name_match_needs_review"
     },
     {
       "player": "Alexis Alejandro Sánchez Sánchez",
       "team": "Chile",
       "positions": "Center Forward",
       "matches_with_shot": 1,
+      "minutes": 256,
       "shots": 1,
       "open_play_shots": 1,
       "penalty_shots": 0,
@@ -1007,13 +3561,29 @@
       "avg_non_penalty_xg_per_shot": 0.014,
       "shot_accuracy": 1.0,
       "goal_minus_xg": -0.014,
-      "avg_shot_distance": 21.26
+      "avg_shot_distance": 21.26,
+      "shots_detail": [
+        {
+          "match_id": 3939985,
+          "x": 107.1,
+          "y": 56.9,
+          "xg": 0.014,
+          "outcome": "Saved",
+          "play_pattern": "From Free Kick",
+          "body_part": "Right Foot",
+          "is_penalty": false
+        }
+      ],
+      "birth_date": "1988-12-19",
+      "age_source_url": "https://www.wikidata.org/wiki/Q180553",
+      "age_match_status": "name_match_needs_review"
     },
     {
       "player": "Carmelo Algarañaz Añez",
       "team": "Bolivia",
       "positions": "Center Forward",
       "matches_with_shot": 1,
+      "minutes": 203,
       "shots": 2,
       "open_play_shots": 2,
       "penalty_shots": 0,
@@ -1026,13 +3596,39 @@
       "avg_non_penalty_xg_per_shot": 0.006,
       "shot_accuracy": 0.5,
       "goal_minus_xg": -0.012,
-      "avg_shot_distance": 44.79
+      "avg_shot_distance": 44.79,
+      "shots_detail": [
+        {
+          "match_id": 3939982,
+          "x": 109.2,
+          "y": 20.5,
+          "xg": 0.006,
+          "outcome": "Saved",
+          "play_pattern": "From Throw In",
+          "body_part": "Left Foot",
+          "is_penalty": false
+        },
+        {
+          "match_id": 3939982,
+          "x": 53.0,
+          "y": 33.8,
+          "xg": 0.006,
+          "outcome": "Off T",
+          "play_pattern": "Regular Play",
+          "body_part": "Left Foot",
+          "is_penalty": false
+        }
+      ],
+      "birth_date": null,
+      "age_source_url": null,
+      "age_match_status": "not_found"
     },
     {
       "player": "Miguel Ángel Terceros",
       "team": "Bolivia",
       "positions": "Left Wing",
       "matches_with_shot": 1,
+      "minutes": 196,
       "shots": 1,
       "open_play_shots": 1,
       "penalty_shots": 0,
@@ -1045,13 +3641,29 @@
       "avg_non_penalty_xg_per_shot": 0.012,
       "shot_accuracy": 0.0,
       "goal_minus_xg": -0.012,
-      "avg_shot_distance": 29.79
+      "avg_shot_distance": 29.79,
+      "shots_detail": [
+        {
+          "match_id": 3939982,
+          "x": 93.1,
+          "y": 52.8,
+          "xg": 0.012,
+          "outcome": "Blocked",
+          "play_pattern": "From Throw In",
+          "body_part": "Left Foot",
+          "is_penalty": false
+        }
+      ],
+      "birth_date": "2004-04-25",
+      "age_source_url": "https://www.wikidata.org/wiki/Q113662045",
+      "age_match_status": "name_match_needs_review"
     },
     {
       "player": "Giorgian Daniel De Arrascaeta Benedetti",
       "team": "Uruguay",
       "positions": "Center Forward",
       "matches_with_shot": 1,
+      "minutes": 248,
       "shots": 1,
       "open_play_shots": 0,
       "penalty_shots": 1,
@@ -1064,7 +3676,22 @@
       "avg_non_penalty_xg_per_shot": 0,
       "shot_accuracy": 1.0,
       "goal_minus_xg": 0.217,
-      "avg_shot_distance": 11.9
+      "avg_shot_distance": 11.9,
+      "shots_detail": [
+        {
+          "match_id": 3942415,
+          "x": 108.1,
+          "y": 40.1,
+          "xg": 0.783,
+          "outcome": "Goal",
+          "play_pattern": "Other",
+          "body_part": "Right Foot",
+          "is_penalty": true
+        }
+      ],
+      "birth_date": "1994-06-01",
+      "age_source_url": "https://www.wikidata.org/wiki/Q13578003",
+      "age_match_status": "name_match_needs_review"
     }
   ]
 }

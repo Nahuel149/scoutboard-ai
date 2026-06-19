@@ -1,63 +1,52 @@
 import { players } from "@/lib/sample-data";
-import { buildForwardShotQualityReport, buildPlayerReport } from "@/lib/reports";
+import {
+  buildForwardMatchReport,
+  buildForwardShotQualityReport,
+  buildPlayerReport,
+} from "@/lib/reports";
 import { topForwardShotQualityPlayers } from "@/lib/statsbomb-forward-shot-quality";
 import { validatePlayers } from "@/lib/validation";
 
 export default function ReportsPage() {
   const issues = validatePlayers(players);
   const selectedPlayer = players[0];
-  const report = buildPlayerReport(selectedPlayer, issues);
+  const playerReport = buildPlayerReport(selectedPlayer, issues);
   const analyticsPlayer = topForwardShotQualityPlayers[0];
   const analyticsReport = buildForwardShotQualityReport(analyticsPlayer);
+  const matchReport = buildForwardMatchReport(topForwardShotQualityPlayers);
 
   return (
     <div className="pageStack">
       <div className="sectionHeader">
-        <p className="eyebrow">Report builder / レポート作成</p>
-        <h1>Draft with AI, check it like a human.</h1>
+        <p className="eyebrow">Report builder / レポート作成 / Reportes</p>
+        <h1>Write the report, then show the checks.</h1>
         <p>
-          This page does not call an AI API yet. It shows the workflow I want:
-          draft the report, check the sources, then edit the wording before
-          delivery.
+          Report exports are deliberately plain: source, method, metrics, caveats, and
+          final human review before the file leaves the desk.
         </p>
         <p className="jp">
-          まだAI APIは使っていません。まずは「下書き、出典確認、人の目での最終調整」
-          という納品前の流れを見せています。
+          出典、方法、指標、注意点を残したまま、納品前に人が確認できる形で出力します。
         </p>
         <p className="es">
-          Todavía no usa una API de IA. Primero muestra el flujo correcto:
-          borrador, revisión de fuentes y edición humana antes de entregar.
+          Exporta reportes simples, con fuente, método, métricas y límites visibles antes de entregar.
         </p>
       </div>
 
       <section className="split">
         <div className="qaPanel">
-          <p className="eyebrow">Selected report / 選択中</p>
+          <p className="eyebrow">Selected sample / 選択中</p>
           <h2>{selectedPlayer.name}</h2>
           <p>A player note that keeps source metadata and validation checks nearby.</p>
           <p className="jp">出典情報とデータ確認を近くに置いた選手レポートの下書きです。</p>
           <p className="es">Un borrador de jugador con fuentes y control de datos a la vista.</p>
         </div>
         <div className="qaPanel">
-          <p className="eyebrow">Human verification / 納品前チェック</p>
-          <h2>Before this leaves the desk</h2>
+          <p className="eyebrow">Export options / 出力</p>
+          <h2>Markdown now, PDF through print.</h2>
           <ul className="checklist">
-            <li>Check each factual claim against the source list</li>
-            <li>Make the wording fit the client, not the tool</li>
-            <li>Remove unsupported transfer or injury claims</li>
-            <li>Record the final review date</li>
-          </ul>
-          <ul className="checklist jp">
-            <li>事実関係を出典リストで確認</li>
-            <li>クライアント向けの自然な文章に調整</li>
-            <li>根拠のない移籍・怪我の話は削除</li>
-            <li>最終確認日を記録</li>
-          </ul>
-          <ul className="checklist es">
-            <li>Revisar cada dato contra la fuente</li>
-            <li>Ajustar el tono para el cliente</li>
-            <li>Quitar rumores sin respaldo</li>
-            <li>Guardar la fecha de revisión final</li>
+            <li>Markdown downloads from a server route</li>
+            <li>Printable page keeps EN, JA, and ES text readable</li>
+            <li>PDF export uses the browser print dialog</li>
           </ul>
         </div>
       </section>
@@ -67,22 +56,48 @@ export default function ReportsPage() {
           <p className="eyebrow">Synthetic player report</p>
           <h2>Source-backed player draft</h2>
         </div>
-        <pre>{report}</pre>
+        <pre>{playerReport}</pre>
       </section>
 
       <section className="reportPreview">
         <div className="sectionHeader">
-          <p className="eyebrow">Analytics report / StatsBomb Open Data</p>
+          <p className="eyebrow">Player report / StatsBomb Open Data</p>
           <h2>{analyticsPlayer.player} shot-quality note</h2>
           <p>
-            This draft connects the analytics room to report delivery. It uses old but reliable
-            open event data and keeps the limitation visible.
+            This draft connects the analytics room to delivery. It uses open event data
+            and keeps the sample limitation visible.
           </p>
-          <p className="es">
-            Este borrador conecta análisis y entrega: datos abiertos, métrica clara y revisión humana.
-          </p>
+          <p className="jp">分析画面の内容を、そのまま確認しやすいレポートに変換します。</p>
+          <p className="es">Conecta el análisis con una entrega clara: datos abiertos, métrica y revisión humana.</p>
+          <div className="reportActions">
+            <a className="primaryAction" href={`/reports/export?kind=player&player=${encodeURIComponent(analyticsPlayer.player)}`}>
+              Download Markdown
+            </a>
+            <a className="backLink" href={`/reports/print?kind=player&player=${encodeURIComponent(analyticsPlayer.player)}`}>
+              Print PDF
+            </a>
+          </div>
         </div>
         <pre>{analyticsReport}</pre>
+      </section>
+
+      <section className="reportPreview">
+        <div className="sectionHeader">
+          <p className="eyebrow">Match report / Informe de competencia</p>
+          <h2>Copa America forward ranking report</h2>
+          <p>Clean export for the full forward board, available as Markdown or print-ready PDF.</p>
+          <p className="jp">ランキング全体をMarkdownまたは印刷用PDFとして出力できます。</p>
+          <p className="es">Reporte completo del ranking, listo para Markdown o PDF desde impresión.</p>
+          <div className="reportActions">
+            <a className="primaryAction" href="/reports/export?kind=match">
+              Download Markdown
+            </a>
+            <a className="backLink" href="/reports/print?kind=match">
+              Print PDF
+            </a>
+          </div>
+        </div>
+        <pre>{matchReport}</pre>
       </section>
     </div>
   );

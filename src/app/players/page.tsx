@@ -21,6 +21,7 @@ export default function PlayersPage() {
       </div>
 
       <div className="filterBar" aria-label="Static MVP filters">
+        <Link className="backLink" href="/players/watchlist">Open Americas watchlist</Link>
         <span>Search-ready / 検索対応予定</span>
         <span>Position filter / ポジション絞り込み</span>
         <span>Source review / 出典確認</span>

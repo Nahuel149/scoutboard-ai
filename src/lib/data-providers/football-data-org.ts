@@ -21,6 +21,7 @@ export type FootballDataCompetitionMatches = {
     status: string;
     matchday?: number;
     stage?: string;
+    group?: string | null;
     homeTeam: { name: string };
     awayTeam: { name: string };
     score?: {

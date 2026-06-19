@@ -58,7 +58,20 @@ function scoreLabel(match: FootballDataMatch) {
 
 export default async function ChampionsAnalyticsPage() {
   const result = await loadChampionsLeague();
-  const matches = result.status === "ready" ? result.data.matches.slice(0, 16) : [];
+  const matches = result.status === "ready" ? result.data.matches : [];
+  const finishedMatches = matches.filter((match) => match.status === "FINISHED");
+  const scheduledMatches = matches.filter((match) => ["TIMED", "SCHEDULED"].includes(match.status));
+  const liveMatches = matches.filter((match) => ["IN_PLAY", "PAUSED"].includes(match.status));
+  const nextMatches = scheduledMatches.slice(0, 8);
+  const recentResults = [...finishedMatches].slice(-8).reverse();
+  const stageRows = [...matches.reduce((map, match) => {
+    const key = match.stage ?? "Unknown";
+    const current = map.get(key) ?? { stage: key, total: 0, played: 0 };
+    current.total += 1;
+    current.played += match.status === "FINISHED" ? 1 : 0;
+    map.set(key, current);
+    return map;
+  }, new Map<string, { stage: string; total: number; played: number }>()).values()];
   const played = result.status === "ready" ? result.data.resultSet?.played ?? 0 : 0;
   const total = result.status === "ready" ? result.data.resultSet?.count ?? result.data.matches.length : 0;
   const competitionName =
@@ -117,37 +130,97 @@ export default async function ChampionsAnalyticsPage() {
       </section>
 
       {result.status === "ready" ? (
-        <section className="tableShell">
-          <table>
-            <thead>
-              <tr>
-                <th>Date</th>
-                <th>Stage</th>
-                <th>Home</th>
-                <th>Away</th>
-                <th>Status</th>
-                <th>Score</th>
-              </tr>
-            </thead>
-            <tbody>
-              {matches.map((match) => (
-                <tr key={match.id}>
-                  <td>{formatDate(match.utcDate)}</td>
-                  <td>
-                    {match.stage ?? "TBC"}
-                    {match.matchday ? <span className="tableSubline">Matchday {match.matchday}</span> : null}
-                  </td>
-                  <td>{match.homeTeam.name}</td>
-                  <td>{match.awayTeam.name}</td>
-                  <td>
-                    <span className="pill">{match.status.toLowerCase()}</span>
-                  </td>
-                  <td>{scoreLabel(match)}</td>
+        <>
+          <section className="championsContextGrid">
+            <article className="qaPanel">
+              <p className="eyebrow">Competition state</p>
+              <h2>{liveMatches.length ? "Live matches are present." : "Live context loaded."}</h2>
+              <div className="severityGrid">
+                <span>Finished <strong>{finishedMatches.length}</strong></span>
+                <span>Scheduled <strong>{scheduledMatches.length}</strong></span>
+                <span>Live <strong>{liveMatches.length}</strong></span>
+              </div>
+              <p className="es">Datos básicos para contexto actualizado: fecha, fase, equipos, estado y resultado.</p>
+            </article>
+            <article className="qaPanel">
+              <p className="eyebrow">Stage coverage</p>
+              <div className="barList">
+                {stageRows.map((row) => (
+                  <div className="barRow" key={row.stage}>
+                    <span>{row.stage.replaceAll("_", " ").toLowerCase()}</span>
+                    <div className="barTrack">
+                      <div className="barFill" style={{ width: `${Math.max(5, Math.round((row.played / row.total) * 100))}%` }} />
+                    </div>
+                    <strong>{row.played}/{row.total}</strong>
+                  </div>
+                ))}
+              </div>
+            </article>
+          </section>
+
+          <section className="split">
+            <div className="qaPanel">
+              <p className="eyebrow">Next matches / Próximos</p>
+              <h2>Upcoming Champions fixtures</h2>
+              <div className="compactMatchList">
+                {nextMatches.map((match) => (
+                  <div className="compactMatch" key={match.id}>
+                    <span>{formatDate(match.utcDate)}</span>
+                    <strong>{match.homeTeam.name} vs {match.awayTeam.name}</strong>
+                    <small>{match.stage ?? "TBC"} · {match.group ?? "No group"}</small>
+                  </div>
+                ))}
+                {nextMatches.length === 0 && <p className="muted">No upcoming matches returned by the API.</p>}
+              </div>
+            </div>
+            <div className="qaPanel">
+              <p className="eyebrow">Latest results / Últimos</p>
+              <h2>Recent finished matches</h2>
+              <div className="compactMatchList">
+                {recentResults.map((match) => (
+                  <div className="compactMatch" key={match.id}>
+                    <span>{formatDate(match.utcDate)}</span>
+                    <strong>{match.homeTeam.name} {scoreLabel(match)} {match.awayTeam.name}</strong>
+                    <small>{match.stage ?? "TBC"} · matchday {match.matchday ?? "N/A"}</small>
+                  </div>
+                ))}
+                {recentResults.length === 0 && <p className="muted">No finished matches returned by the API.</p>}
+              </div>
+            </div>
+          </section>
+
+          <section className="tableShell">
+            <table>
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Stage</th>
+                  <th>Home</th>
+                  <th>Away</th>
+                  <th>Status</th>
+                  <th>Score</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
-        </section>
+              </thead>
+              <tbody>
+                {matches.map((match) => (
+                  <tr key={match.id}>
+                    <td>{formatDate(match.utcDate)}</td>
+                    <td>
+                      {match.stage ?? "TBC"}
+                      {match.matchday ? <span className="tableSubline">Matchday {match.matchday}</span> : null}
+                    </td>
+                    <td>{match.homeTeam.name}</td>
+                    <td>{match.awayTeam.name}</td>
+                    <td>
+                      <span className="pill">{match.status.toLowerCase()}</span>
+                    </td>
+                    <td>{scoreLabel(match)}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </section>
+        </>
       ) : (
         <section className="qaStory championsStatus">
           <div>

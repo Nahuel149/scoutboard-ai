@@ -167,6 +167,9 @@ export default function AnalyticsPage() {
           <Link className="backLink" href="/players">
             Compare with player base
           </Link>
+          <Link className="backLink" href="/analytics/forwards">
+            Open forward comparator
+          </Link>
         </aside>
       </section>
 

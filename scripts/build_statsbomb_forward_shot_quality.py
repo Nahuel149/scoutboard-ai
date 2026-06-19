@@ -70,6 +70,8 @@ def empty_player_row(player_name, team_name, position_name):
         "open_play_shots": 0,
         "total_distance": 0.0,
         "match_ids": set(),
+        "minutes": 0.0,
+        "shots_detail": [],
     }
 
 
@@ -81,13 +83,49 @@ def shot_distance(location):
     return math.dist((location[0], location[1]), (120, 40))
 
 
+def match_player_minutes(events):
+    duration = max((float(event.get("minute") or 0) for event in events), default=90.0)
+    duration = max(90.0, duration)
+    intervals = {}
+
+    for event in events:
+        if event.get("type", {}).get("name") != "Starting XI":
+            continue
+        team_name = event.get("team", {}).get("name")
+        for item in event.get("tactics", {}).get("lineup", []):
+            player_name = item.get("player", {}).get("name")
+            if team_name and player_name:
+                intervals[(player_name, team_name)] = [0.0, duration]
+
+    for event in events:
+        if event.get("type", {}).get("name") != "Substitution":
+            continue
+        team_name = event.get("team", {}).get("name")
+        player_name = event.get("player", {}).get("name")
+        replacement = event.get("substitution", {}).get("replacement", {}).get("name")
+        minute = min(float(event.get("minute") or 0), duration)
+        if team_name and player_name:
+            intervals.setdefault((player_name, team_name), [0.0, duration])[1] = minute
+        if team_name and replacement:
+            intervals[(replacement, team_name)] = [minute, duration]
+
+    return {
+        key: max(0.0, end - start)
+        for key, (start, end) in intervals.items()
+    }
+
+
 def summarize_shots(matches):
     players = {}
     team_totals = defaultdict(lambda: {"shots": 0, "xg": 0.0, "goals": 0})
+    player_minutes = defaultdict(float)
 
     for match in matches:
         match_id = match["match_id"]
         events = fetch_events(match_id)
+        minutes = match_player_minutes(events)
+        for key, value in minutes.items():
+            player_minutes[key] += value
 
         for event in events:
             if event.get("type", {}).get("name") != "Shot":
@@ -136,9 +174,26 @@ def summarize_shots(matches):
             if distance is not None:
                 row["total_distance"] += distance
 
+            location = event.get("location") or []
+            row["shots_detail"].append(
+                {
+                    "match_id": match_id,
+                    "x": round(float(location[0]), 2) if len(location) > 0 else None,
+                    "y": round(float(location[1]), 2) if len(location) > 1 else None,
+                    "xg": round(xg, 3),
+                    "outcome": outcome or "Unknown",
+                    "play_pattern": event.get("play_pattern", {}).get("name") or "Unknown",
+                    "body_part": shot.get("body_part", {}).get("name") or "Unknown",
+                    "is_penalty": is_penalty,
+                }
+            )
+
             team_totals[team_name]["shots"] += 1
             team_totals[team_name]["xg"] += xg
             team_totals[team_name]["goals"] += 1 if outcome == "Goal" else 0
+
+    for key, row in players.items():
+        row["minutes"] = player_minutes.get(key, 0.0)
 
     return players, team_totals
 
@@ -154,6 +209,7 @@ def player_output_rows(players):
                 "team": row["team"],
                 "positions": "; ".join(sorted(row["positions"])),
                 "matches_with_shot": len(row["match_ids"]),
+                "minutes": round(row["minutes"]),
                 "shots": shots,
                 "open_play_shots": row["open_play_shots"],
                 "penalty_shots": row["penalty_shots"],
@@ -169,6 +225,7 @@ def player_output_rows(players):
                 "shot_accuracy": round(row["shots_on_target"] / shots, 3) if shots else 0,
                 "goal_minus_xg": round(row["goals"] - row["xg"], 3),
                 "avg_shot_distance": round(row["total_distance"] / shots, 2) if shots else 0,
+                "shots_detail": row["shots_detail"],
             }
         )
 

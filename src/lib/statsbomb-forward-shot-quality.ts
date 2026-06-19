@@ -5,6 +5,7 @@ export type ForwardShotQualityPlayer = {
   team: string;
   positions: string;
   matches_with_shot: number;
+  minutes: number;
   shots: number;
   open_play_shots: number;
   penalty_shots: number;
@@ -18,6 +19,19 @@ export type ForwardShotQualityPlayer = {
   shot_accuracy: number;
   goal_minus_xg: number;
   avg_shot_distance: number;
+  birth_date: string | null;
+  age_source_url: string | null;
+  age_match_status: "name_match_needs_review" | "not_found";
+  shots_detail: Array<{
+    match_id: number;
+    x: number | null;
+    y: number | null;
+    xg: number;
+    outcome: string;
+    play_pattern: string;
+    body_part: string;
+    is_penalty: boolean;
+  }>;
 };
 
 export type ForwardShotQualityTeam = {
@@ -36,6 +50,11 @@ export type ForwardShotQualityData = {
     matches_url: string;
     events_url_template: string;
     note: string;
+    age_enrichment?: {
+      name: string;
+      method: string;
+      review_note: string;
+    };
   };
   summary: {
     matches: number;
