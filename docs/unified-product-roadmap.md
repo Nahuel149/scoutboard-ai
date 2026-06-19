@@ -56,6 +56,7 @@ Together they become one credible football data-analysis portfolio instead of tw
 - StatsBomb Open Data pipeline for Copa America 2024 forward shot quality.
 - New `/analytics` page showing the StatsBomb xG board inside the app.
 - Data provider adapter layer for Wikidata, StatsBomb Open Data, Football-Data.org, API-Football, and Sportmonks.
+- New `/workspace` page that turns the Sportian-style benchmark into a public-safe progressive build surface.
 
 ## Development Roadmap
 

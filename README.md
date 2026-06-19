@@ -11,6 +11,7 @@ workflow design, and client-ready reporting.
 
 - Next.js + TypeScript app shell.
 - Dashboard with sample football metrics.
+- Performance workspace page for the progressive build plan.
 - Player list and player detail pages.
 - Analytics page using StatsBomb Open Data for Copa America 2024 forward shot quality.
 - Champions League ETL demo page for Football-Data.org basic match data.

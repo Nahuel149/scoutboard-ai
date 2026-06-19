@@ -14,12 +14,12 @@ export default function DashboardPage() {
   const featureCards = [
     {
       tone: "amber",
-      kicker: "Research note / リサーチメモ",
-      title: "A simple player note, with the source checks kept beside it.",
-      titleJa: "選手メモと出典確認を同じ画面で見られるようにしました。",
-      titleEs: "Una nota de jugador con la revisión de fuentes al lado.",
-      meta: "Mateo Alvarez / River Norte",
-      href: "/players/p-001",
+      kicker: "Performance workspace / 分析デスク",
+      title: "One desk for sources, analytics, QA, and reports.",
+      titleJa: "出典、分析、QA、レポートを一つの作業デスクにまとめます。",
+      titleEs: "Una mesa para fuentes, análisis, QA y reportes.",
+      meta: "Progressive build / Roadmap",
+      href: "/workspace",
     },
     {
       tone: "blue",

@@ -114,7 +114,7 @@ a {
 
 .masthead nav {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   border-left: 1px solid rgba(5, 5, 5, 0.15);
 }
 
@@ -463,6 +463,12 @@ a {
     linear-gradient(135deg, #12224a 0%, var(--blue) 48%, var(--red) 100%);
 }
 
+.workspaceHero {
+  background:
+    linear-gradient(90deg, rgba(5, 5, 5, 0.66), rgba(5, 5, 5, 0.08)),
+    linear-gradient(135deg, #1c1b17 0%, var(--green) 42%, var(--red) 100%);
+}
+
 .analyticsStory {
   align-items: start;
 }
@@ -475,6 +481,82 @@ a {
 
 .inlineCodeBlock {
   box-shadow: none;
+}
+
+.workspaceModuleGrid {
+  display: grid;
+  gap: 14px;
+}
+
+.workspaceModule {
+  display: grid;
+  gap: 16px;
+  padding: 18px;
+  background: var(--panel);
+  border: 3px solid var(--ink);
+  box-shadow: 5px 5px 0 rgba(5, 5, 5, 0.16);
+}
+
+.workspaceModule h3 {
+  margin: 10px 0 8px;
+  font-size: 1.35rem;
+  line-height: 1.1;
+}
+
+.workspaceModule p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.workspaceModule.ready {
+  background: #f2fff4;
+}
+
+.workspaceModule.in-progress {
+  background: #fff8df;
+}
+
+.workspaceModule.blocked {
+  background: #fff3ef;
+}
+
+.moduleProof {
+  display: grid;
+  gap: 5px;
+  padding-top: 12px;
+  border-top: 2px solid rgba(5, 5, 5, 0.14);
+}
+
+.moduleProof span {
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.workspacePanel {
+  align-self: start;
+  position: sticky;
+  top: 104px;
+}
+
+.workspaceStory {
+  align-items: start;
+  background:
+    linear-gradient(90deg, #fff 0%, #fff 36%, #e8ffd7 36%, #e8ffd7 100%);
+}
+
+.providerMiniList {
+  display: grid;
+  gap: 10px;
+}
+
+.providerMiniRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px;
+  border: 2px solid var(--ink);
+  background: #fff;
 }
 
 .barList {
@@ -914,7 +996,7 @@ tbody tr:hover {
   }
 
   .masthead nav {
-    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-template-columns: repeat(6, minmax(0, 1fr));
   }
 
   .navItem {
@@ -922,7 +1004,7 @@ tbody tr:hover {
     gap: 4px;
     min-height: 58px;
     padding: 6px 2px;
-    font-size: 0.74rem;
+    font-size: 0.68rem;
   }
 
   .navLabel small {
@@ -970,6 +1052,10 @@ tbody tr:hover {
   .playerCardGrid,
   .metricGrid {
     grid-template-columns: 1fr;
+  }
+
+  .workspacePanel {
+    position: static;
   }
 
   .featureCard:nth-child(2),
