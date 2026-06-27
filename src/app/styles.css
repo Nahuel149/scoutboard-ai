@@ -469,6 +469,12 @@ a {
     linear-gradient(135deg, #1c1b17 0%, var(--green) 42%, var(--red) 100%);
 }
 
+.proofHero {
+  background:
+    linear-gradient(90deg, rgba(5, 5, 5, 0.64), rgba(5, 5, 5, 0.08)),
+    linear-gradient(135deg, #4d392f 0%, var(--amber) 44%, var(--blue) 100%);
+}
+
 .analyticsStory {
   align-items: start;
 }
@@ -1207,6 +1213,75 @@ tbody tr:hover {
   line-height: 1.65;
 }
 
+.proofFitGrid,
+.beforeAfterGrid {
+  display: grid;
+  gap: 18px;
+}
+
+.proofFitGrid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.beforeAfterGrid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.proofFitCard,
+.draftPanel {
+  border: 3px solid var(--ink);
+  background: #fff;
+  box-shadow: var(--shadow);
+}
+
+.proofFitCard {
+  display: grid;
+  gap: 12px;
+  min-height: 118px;
+  padding: 18px;
+}
+
+.proofFitCard svg {
+  color: var(--red);
+}
+
+.draftPanel {
+  display: grid;
+  gap: 12px;
+  padding: 20px;
+}
+
+.draftPanel h2 {
+  margin: 0;
+  font-size: clamp(1.45rem, 2.6vw, 2.1rem);
+  line-height: 1.08;
+}
+
+.draftPanel pre {
+  overflow: auto;
+  min-height: 420px;
+  margin: 0;
+  padding: 18px;
+  border: 3px solid var(--ink);
+  white-space: pre-wrap;
+  font-family: Georgia, "Yu Mincho", "Hiragino Mincho ProN", "Noto Serif JP", serif;
+  font-size: 0.96rem;
+  line-height: 1.65;
+}
+
+.draftPanel.flawed pre {
+  background: #fff3ef;
+}
+
+.draftPanel.corrected pre {
+  background: #f2fff4;
+}
+
+.proofStory {
+  background:
+    linear-gradient(90deg, #fff 0%, #fff 34%, #fff8df 34%, #fff8df 100%);
+}
+
 .iconButton {
   position: absolute;
   top: 20px;
@@ -1305,13 +1380,15 @@ tbody tr:hover {
   .controlDeck,
   .watchlistFilters,
   .watchlistGrid,
-  .championsContextGrid {
+  .championsContextGrid,
+  .proofFitGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .split,
   .qaStory,
-  .comparisonGrid {
+  .comparisonGrid,
+  .beforeAfterGrid {
     grid-template-columns: 1fr;
   }
 }
@@ -1387,7 +1464,8 @@ tbody tr:hover {
   .watchlistGrid,
   .championsContextGrid,
   .comparisonMetrics,
-  .watchlistCard dl {
+  .watchlistCard dl,
+  .proofFitGrid {
     grid-template-columns: 1fr;
   }
 

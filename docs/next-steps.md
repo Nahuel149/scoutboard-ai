@@ -19,6 +19,7 @@ The app should keep its main proof areas visible:
 - team/player data checks
 - source-backed reporting
 - AI-assisted drafting with human review
+- before/after proofreading and text-cleanup proof
 - QA evidence and bug-report discipline
 - multilingual delivery workflow
 
@@ -35,6 +36,10 @@ Already done:
 - Markdown report preview with multilingual notes.
 - Basic Vitest coverage for validation.
 - Real data plan in `docs/real-data-plan.md`.
+- Before/after correction proof for proofreading, AI text cleanup, and
+  instruction-compliance work.
+- Visible before/after route at `/proof/before-after`.
+- Markdown sample at `reports/samples/before-after-correction.md`.
 
 ## Data source strategy
 
@@ -180,14 +185,31 @@ data should not be copied into the repo without a terms review.
    - Latin American Spanish scouting note
    - data QA report showing before/after cleanup
 
-8. Add tests.
+8. Add before/after correction proof.
+   - status: done
+   - create `reports/samples/before-after-correction.md`
+   - create `src/lib/correction-sample.ts`
+   - create a visible route such as `/proof/before-after`
+   - include one flawed short draft and one corrected final version
+   - include a correction table with issue, original text, corrected text,
+     reason, and QA category
+   - cover realistic proofreading/text-cleanup issues: unsupported claim,
+     vague AI-like wording, duplicated sentence, inconsistent number, missing
+     source note, formatting inconsistency, and instruction-compliance issue
+   - make it proposal-ready for CrowdWorks proofreading, rewrite, AI-text
+     cleanup, and OCR/copy-paste QA jobs
+
+9. Add tests.
    - validation rules for imported rows
    - language copy smoke test
    - report builder output includes source metadata
+   - correction sample includes every required QA category
 
-9. Update README.
+10. Update README.
    - add screenshots after reviewing them
    - explain trilingual workflow
+   - mention the before/after correction sample as the proof item for
+     proofreading/text-cleanup proposals
    - link to `docs/real-data-plan.md`
    - link to this file
 
@@ -225,10 +247,16 @@ All languages:
 Suggested next commit:
 
 ```text
-Add data source review template
+Add proof navigation and README screenshots
 ```
 
 After that:
+
+```text
+Add data source review template
+```
+
+Then:
 
 ```text
 Add Wikidata Americas player import spike

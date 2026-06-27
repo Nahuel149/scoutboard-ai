@@ -97,6 +97,7 @@ The MVP should be small enough to finish but strong enough to show.
 - Data QA page showing validation issues.
 - Research report page with source-backed sections.
 - Manual "AI workflow" area showing draft, checks, and final version.
+- Before/after correction sample for proofreading and AI text cleanup.
 - README with screenshots and setup instructions.
 - At least basic tests.
 
@@ -464,6 +465,12 @@ Create these as static files in `docs/` or `reports/samples/`:
 6. `bug-report-sample.md`
    - A realistic UI/data issue report.
 
+7. `before-after-correction.md`
+   - A flawed short draft, corrected final version, and correction table.
+   - Shows proofreading, AI text cleanup, source/fact caution, formatting, and
+     instruction-compliance checks.
+   - Visible in the app at `/proof/before-after`.
+
 ## 13. README Structure
 
 The final GitHub README should include:
@@ -564,10 +571,12 @@ Output:
 - Source list
 - Manual QA checklist
 - Markdown export
+- Before/after correction sample linked from the report or proof area
 
 Done when:
 
-- We have one player report and one team/report article sample.
+- We have one player report, one team/report article sample, and one
+  before/after correction sample usable for proofreading/text-cleanup proposals.
 
 ### Milestone 5 - QA proof
 
@@ -575,12 +584,14 @@ Output:
 
 - Data QA page
 - Sample bug report
+- Before/after correction page
 - Test checklist
 - Automated tests
 
 Done when:
 
-- The project proves QA ability, not only UI work.
+- The project proves data QA, text QA/proofreading, and bug-report discipline,
+  not only UI work.
 
 ### Milestone 6 - GitHub portfolio polish
 

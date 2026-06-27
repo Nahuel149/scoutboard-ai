@@ -22,6 +22,13 @@ workflow design, and client-ready reporting.
 - StatsBomb Open Data scripts for event-level analytics examples.
 - Unit tests for validation behavior.
 
+## Proof Item Added
+
+- Before/after correction sample for proofreading, AI text cleanup, and
+  instruction-compliance jobs.
+- Visible page: `/proof/before-after`
+- Markdown sample: `reports/samples/before-after-correction.md`
+
 ## Local Setup
 
 ```powershell

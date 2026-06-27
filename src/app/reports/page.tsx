@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { players } from "@/lib/sample-data";
 import {
   buildForwardMatchReport,
@@ -48,6 +49,9 @@ export default function ReportsPage() {
             <li>Printable page keeps EN, JA, and ES text readable</li>
             <li>PDF export uses the browser print dialog</li>
           </ul>
+          <Link className="backLink" href="/proof/before-after">
+            Open before/after proof
+          </Link>
         </div>
       </section>
 
