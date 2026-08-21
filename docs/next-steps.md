@@ -41,6 +41,36 @@ Already done:
 - Visible before/after route at `/proof/before-after`.
 - Markdown sample at `reports/samples/before-after-correction.md`.
 
+Visibility note checked 2026-08-21:
+
+- GitHub repository `Nahuel149/scoutboard-ai` is private.
+- No deployed public demo URL is recorded or verified.
+- Local routes and repository files must not be described as client-viewable
+  links until a sanitized public/exported proof artifact exists.
+
+## CrowdWorks proof expansion
+
+Do these before treating bounded technical work as a primary proposal lane:
+
+1. Export or publish the existing `/proof/before-after` sample in a
+   client-viewable format.
+2. Add a synthetic CSV transformation case:
+   - input product CSV;
+   - mapping specification;
+   - output CSV;
+   - duplicate, empty, invalid-value, and UTF-8 checks;
+   - transformation script and test;
+   - manual spot-check report;
+   - visible route such as `/proof/csv-transformation`.
+3. Add one small web-fix before/after case with a screenshot, test result, and
+   client-readable handoff note.
+4. Decide with the user whether to publish a sanitized proof-only repository,
+   deploy the app, or export standalone HTML/PDF samples. Do not change the
+   current repository visibility without explicit confirmation.
+5. After those are usable, consider a fictional business-automation case and a
+   mocked AI API integration case. Do not prioritize scraping proof unless a
+   permitted target and repeated market demand justify it.
+
 ## Data source strategy
 
 ### Use first: Wikidata
