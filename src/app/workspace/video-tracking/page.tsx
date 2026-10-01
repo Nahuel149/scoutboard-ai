@@ -1,3 +1,6 @@
+import { T } from "@/app/components/language";
+import { pageTitles } from "@/lib/copy";
+import { LocalizedContent } from "@/app/components/language";
 import Link from "next/link";
 import { ArrowLeft, FileWarning, LockKeyhole, Route, Video } from "lucide-react";
 
@@ -31,17 +34,15 @@ export default function VideoTrackingPage() {
       <section className="detailHero workspaceHero">
         <div>
           <p className="eyebrow">Video and tracking / 映像・トラッキング / Video y tracking</p>
-          <h1>A real adapter contract, not fake proprietary data.</h1>
-          <p>
+          <h1><T text={pageTitles["/workspace/video-tracking"]} /></h1>
+          <p><LocalizedContent en={<>
             Professional platforms use video and tracking, but ScoutBoard AI should only connect
             those modules when licensed sources and display rights are clear.
-          </p>
-          <p className="jp">
+          </>} ja={<>
             映像やトラッキングデータは、ライセンスと表示範囲が確認できてから接続します。
-          </p>
-          <p className="es">
+          </>} es={<>
             El módulo queda preparado, pero no se inventan datos de tracking ni se suben videos sin derechos.
-          </p>
+          </>} /></p>
         </div>
         <Link className="primaryAction" href="/workspace/tasks">
           See blocked task

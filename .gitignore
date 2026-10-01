@@ -27,6 +27,9 @@ Thumbs.db
 *.jpg
 *.jpeg
 *.webp
+test-results/
+playwright-report/
+.portfolio-site/
 
 # Allow curated screenshots later only after review by moving them under docs/screenshots
 !docs/screenshots/*.png

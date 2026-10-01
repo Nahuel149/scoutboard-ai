@@ -12,6 +12,48 @@
   --shadow: 9px 9px 0 #050505;
 }
 
+.workspaceTools { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; padding: 12px 24px; background: #fff; border-bottom: 1px solid #bbb; }
+.languageControl { display: flex; flex-wrap: wrap; gap: 12px; padding: 0; border: 0; margin: 0 auto 0 0; }
+.languageControl legend { font: 12px Arial, sans-serif; }
+.languageControl label { display: flex; align-items: center; gap: 5px; font: 14px Arial, sans-serif; }
+.toolPage { font-family: Arial, "Yu Gothic", sans-serif; letter-spacing: 0; }
+.toolPage h1 { font-size: 36px; line-height: 1.2; overflow-wrap: anywhere; }
+.toolPage h2 { font-size: 23px; }
+.toolPage p { max-width: 75ch; line-height: 1.6; }
+.toolBar { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; }
+.toolPage button { display: inline-flex; gap: 8px; align-items: center; padding: 10px 14px; border: 1px solid var(--ink); border-radius: 4px; background: #fff; color: var(--ink); font: inherit; cursor: pointer; }
+.toolPage button:disabled { opacity: .5; cursor: not-allowed; }
+.toolPage button:hover:not(:disabled) { background: #e8f1f5; }
+.toolPage input[type=file] { max-width: 240px; font: 12px Arial, sans-serif; }
+.mappingGrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; }
+.mappingGrid label, .csvEditor { display: grid; gap: 8px; }
+.mappingGrid select, .mappingGrid input, .csvEditor textarea { min-width: 0; width: 100%; padding: 10px; border: 1px solid #777; border-radius: 4px; background: #fff; color: var(--ink); font: inherit; }
+.csvEditor textarea { font: 14px/1.5 Consolas, monospace; }
+.csvSample { max-width: 100%; overflow: auto; background: #fff; padding: 18px; font: 14px/1.6 Consolas, monospace; border: 1px solid #777; }
+.toolPage .tableShell { overflow-x: auto; max-width: 100%; }
+.toolPage table { font-variant-numeric: tabular-nums; }
+.toolPage td, .toolPage th { overflow-wrap: anywhere; }
+.comparePicker { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 12px; max-height: 340px; overflow-y: auto; padding: 16px; border: 1px solid #777; }
+.comparePicker label { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; font-size: 14px; }
+.comparePicker small { color: #555; }
+.comparisonChart { margin: 0; padding: 20px 0; }
+.comparisonChart > div { display: grid; grid-template-columns: minmax(130px, 1fr) minmax(100px, 3fr) 60px; align-items: center; gap: 12px; padding: 10px 0; }
+.comparisonChart meter { width: 100%; height: 26px; accent-color: #276b8f; }
+.block { display: block; margin-top: 8px; font-weight: normal; }
+.proofLinks { display: grid; gap: 20px; font-size: 20px; }
+.evidenceList { display: grid; grid-template-columns: 120px 1fr; gap: 18px; }
+.evidenceList dd { margin: 0; line-height: 1.6; }
+:focus-visible { outline: 3px solid #276b8f; outline-offset: 4px; }
+::selection { background: #c5e6f2; color: #050505; }
+@media (max-width: 700px) {
+  .workspaceTools { padding: 12px; gap: 12px; }
+  .toolPage h1 { font-size: 28px; }
+  .comparisonChart > div { grid-template-columns: minmax(95px, 1fr) minmax(60px, 1fr) 45px; font-size: 13px; }
+  .evidenceList { grid-template-columns: 1fr; gap: 8px; }
+  .masthead nav { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation: none !important; transition: none !important; } }
+
 * {
   box-sizing: border-box;
 }
@@ -114,7 +156,7 @@ a {
 
 .masthead nav {
   display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-template-columns: repeat(8, minmax(0, 1fr));
   border-left: 1px solid rgba(5, 5, 5, 0.15);
 }
 
@@ -1510,3 +1552,12 @@ tbody tr:hover {
     padding: 0;
   }
 }
+
+.sourceFooter { display: flex; flex-wrap: wrap; align-items: center; gap: 20px; padding: 24px; background: #fff; border-top: 1px solid #bbb; font: 14px/1.6 Arial, sans-serif; }
+.sourceFooter img { object-fit: contain; }
+.toolPage .sectionHeader h1 { font-size: 36px; }
+.toolPage .sectionHeader p { font-family: inherit; }
+.toolPage .sectionHeader { animation: none; }
+@media (max-width: 700px) { .toolPage .sectionHeader h1 { font-size: 28px; } }
+@media (max-width: 700px) { .masthead nav { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+@media print { .workspaceTools, .sourceFooter { display: none !important; } }

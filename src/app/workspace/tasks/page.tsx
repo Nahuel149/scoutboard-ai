@@ -1,3 +1,6 @@
+import { T } from "@/app/components/language";
+import { pageTitles } from "@/lib/copy";
+import { LocalizedContent } from "@/app/components/language";
 import Link from "next/link";
 import { ArrowLeft, Bell, CircleAlert, ClipboardCheck, ListTodo } from "lucide-react";
 import { getWorkspaceTasks } from "@/lib/performance-workspace";
@@ -18,17 +21,15 @@ export default function WorkspaceTasksPage() {
       <section className="detailHero workspaceHero">
         <div>
           <p className="eyebrow">Task queue / アラート / Cola de trabajo</p>
-          <h1>Turn data gaps into visible work.</h1>
-          <p>
+          <h1><T text={pageTitles["/workspace/tasks"]} /></h1>
+          <p><LocalizedContent en={<>
             This queue keeps the workspace practical: missing tokens, incomplete league coverage,
             QA issues, report candidates, and blocked licensed-data adapters.
-          </p>
-          <p className="jp">
+          </>} ja={<>
             不足しているAPIキー、未確認データ、QA課題、レポート候補を作業キューとして表示します。
-          </p>
-          <p className="es">
+          </>} es={<>
             La cola convierte problemas de datos en tareas claras: revisar, conectar, reportar o bloquear.
-          </p>
+          </>} /></p>
         </div>
         <Link className="primaryAction" href="/workspace/data-readiness">
           Check data sources

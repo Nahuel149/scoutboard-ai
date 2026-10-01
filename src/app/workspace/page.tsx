@@ -1,3 +1,6 @@
+import { T } from "@/app/components/language";
+import { pageTitles } from "@/lib/copy";
+import { LocalizedContent } from "@/app/components/language";
 import Link from "next/link";
 import { ArrowRight, ClipboardCheck, Database, FileText, Radar, ShieldCheck } from "lucide-react";
 import { getWorkspaceSnapshot, workspaceModules, type WorkspaceModuleStatus } from "@/lib/performance-workspace";
@@ -24,17 +27,15 @@ export default function WorkspacePage() {
       <section className="detailHero workspaceHero">
         <div>
           <p className="eyebrow">Performance workspace / 分析デスク / Mesa de rendimiento</p>
-          <h1>The control room for ScoutBoard AI.</h1>
-          <p>
+          <h1><T text={pageTitles["/workspace"]} /></h1>
+          <p><LocalizedContent en={<>
             A progressive workspace inspired by professional football platforms: data
             readiness, event analytics, watchlists, QA, and report delivery in one place.
-          </p>
-          <p className="jp">
+          </>} ja={<>
             データ準備、イベント分析、選手リスト、QA、レポート作成を一つの画面にまとめる作業デスクです。
-          </p>
-          <p className="es">
+          </>} es={<>
             Una mesa de trabajo para unir fuentes, análisis, alertas de datos y reportes sin depender de una sola API.
-          </p>
+          </>} /></p>
         </div>
         <Link className="primaryAction" href="/analytics">
           Open analytics
@@ -123,12 +124,10 @@ export default function WorkspacePage() {
         <div>
           <p className="eyebrow">Data readiness / Fuente y estado</p>
           <h2>Every source has a job and a limit.</h2>
-          <p>
+          <p><LocalizedContent en={<>
             Open datasets can be committed when attribution and scope are clear. Keyed providers
             stay server-side and should not be bulk-republished without a terms review.
-          </p>
-          <p className="jp">オープンデータとAPIキー付きデータを分けて扱い、出典と利用範囲を明確にします。</p>
-          <p className="es">Separar fuentes abiertas y APIs con key evita depender de una sola fuente y protege el proyecto.</p>
+          </>} ja={<>オープンデータとAPIキー付きデータを分けて扱い、出典と利用範囲を明確にします。</>} es={<>Separar fuentes abiertas y APIs con key evita depender de una sola fuente y protege el proyecto.</>} /></p>
         </div>
         <div className="providerMiniList">
           {snapshot.providerStatuses.map((provider) => (

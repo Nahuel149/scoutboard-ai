@@ -1,3 +1,4 @@
+import { LocalizedContent } from "@/app/components/language";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, Download } from "lucide-react";
@@ -36,9 +37,7 @@ export default async function PlayerDetailPage({
         <div>
           <p className="eyebrow">{player.club}</p>
           <h1>{player.name}</h1>
-          <p>{player.researchNote}</p>
-          <p className="jp">{player.researchNoteJa}</p>
-          <p className="es">{player.researchNoteEs}</p>
+          <p><LocalizedContent en={<>{player.researchNote}</>} ja={<>{player.researchNoteJa}</>} es={<>{player.researchNoteEs}</>} /></p>
         </div>
         <div className="profileGrid">
           <span>Age / 年齢 <strong>{player.age}</strong></span>
@@ -51,9 +50,7 @@ export default async function PlayerDetailPage({
       <section className="split">
         <div className="qaPanel">
           <p className="eyebrow">Source notes / 出典メモ</p>
-          <h2>Where this note comes from</h2>
-          <p className="jp">このメモの根拠として残しておく情報です。</p>
-          <p className="es">Datos que quedan guardados como respaldo de esta nota.</p>
+          <h2><LocalizedContent en={<>Where this note comes from</>} ja={<>このメモの根拠として残しておく情報です。</>} es={<>Datos que quedan guardados como respaldo de esta nota.</>} /></h2>
           <p>{player.sourceName || "Missing source name"}</p>
           <p className="muted">{player.sourceUrl || "Missing source URL"}</p>
           <p className="muted">Last checked: {player.lastCheckedAt || "Missing"}</p>
@@ -85,9 +82,7 @@ export default async function PlayerDetailPage({
 
       <section className="sectionHeader">
         <p className="eyebrow">Open issues / 未対応の確認事項</p>
-        <h2>{playerIssues.length} validation findings</h2>
-        <p className="jp">この選手データで、まだ確認が必要な項目です。</p>
-        <p className="es">Puntos de este jugador que todavía necesitan revisión.</p>
+        <h2><LocalizedContent en={<>{playerIssues.length} validation findings</>} ja={<>この選手データで、まだ確認が必要な項目です。</>} es={<>Puntos de este jugador que todavía necesitan revisión.</>} /></h2>
       </section>
       <div className="issueList">
         {playerIssues.length === 0 ? (
@@ -123,9 +118,7 @@ export default async function PlayerDetailPage({
       <section className="reportPreview">
         <div className="sectionHeader">
           <p className="eyebrow">Markdown preview / Markdown下書き</p>
-          <h2>Player report draft</h2>
-          <p className="jp">日本語メモも含めたサンプルレポートのプレビューです。</p>
-          <p className="es">Vista previa del reporte con notas en español latinoamericano.</p>
+          <h2><LocalizedContent en={<>Player report draft</>} ja={<>日本語メモも含めたサンプルレポートのプレビューです。</>} es={<>Vista previa del reporte con notas en español latinoamericano.</>} /></h2>
         </div>
         <button className="iconButton" type="button" aria-label="Export available in next milestone">
           <Download size={18} aria-hidden="true" />

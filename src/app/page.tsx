@@ -1,3 +1,6 @@
+import { T } from "@/app/components/language";
+import { pageTitles } from "@/lib/copy";
+import { LocalizedContent } from "@/app/components/language";
 import Link from "next/link";
 import type { CSSProperties } from "react";
 import { ArrowRight, ShieldCheck, TrendingUp, Users } from "lucide-react";
@@ -46,20 +49,18 @@ export default function DashboardPage() {
       <section className="heroBand">
         <div>
           <p className="eyebrow">Portfolio MVP / ポートフォリオ</p>
-          <h1>Football research, checked before it becomes a report.</h1>
-          <p>
+          <h1><T text={pageTitles["/"]} /></h1>
+          <p><LocalizedContent en={<>
             ScoutBoard AI is a small portfolio app for football research work:
             collect the sample data, spot the weak fields, then write a report
             that still has a human review step.
-          </p>
-          <p className="jp">
+          </>} ja={<>
             サッカーの選手データを整理し、不備を確認してからレポート下書きにするための
             自作ポートフォリオです。リサーチ、データ確認、納品前チェックの流れを見せています。
-          </p>
-          <p className="es">
+          </>} es={<>
             Una app de portafolio para ordenar datos de futbolistas de América,
             detectar campos flojos y convertirlos en reportes revisados antes de entregar.
-          </p>
+          </>} /></p>
         </div>
         <Link className="primaryAction" href="/qa">
           Check the data
@@ -82,9 +83,7 @@ export default function DashboardPage() {
             </div>
             <div className="featureCaption">
               <p className="eyebrow">{card.kicker}</p>
-              <h2>{card.title}</h2>
-              <p className="jp">{card.titleJa}</p>
-              <p className="es">{card.titleEs}</p>
+              <h2><LocalizedContent en={<>{card.title}</>} ja={<>{card.titleJa}</>} es={<>{card.titleEs}</>} /></h2>
               <span>{card.meta}</span>
             </div>
           </Link>
@@ -118,9 +117,7 @@ export default function DashboardPage() {
         <div>
           <div className="sectionHeader">
             <p className="eyebrow">Player board / 選手ボード</p>
-            <h2>Who is producing chances?</h2>
-            <p className="jp">得点とアシストをまとめて、まず見るべき選手を絞ります。</p>
-            <p className="es">Goles y asistencias ayudan a decidir por dónde empezar la revisión.</p>
+            <h2><LocalizedContent en={<>Who is producing chances?</>} ja={<>得点とアシストをまとめて、まず見るべき選手を絞ります。</>} es={<>Goles y asistencias ayudan a decidir por dónde empezar la revisión.</>} /></h2>
           </div>
           <div className="tableShell">
             <table>
@@ -155,19 +152,17 @@ export default function DashboardPage() {
             <span>Warning / 注意 <strong>{summary.warning}</strong></span>
             <span>Info / 確認 <strong>{summary.info}</strong></span>
           </div>
-          <p>
+          <p><LocalizedContent en={<>
             One sample player has bad values on purpose. That makes the QA
             behavior visible: missing sources, strange numbers, and stats that
             do not line up.
-          </p>
-          <p className="jp">
+          </>} ja={<>
             不備のある選手データをあえて入れることで、出典不足、数値ミス、
             整合性の問題をどう見つけるかを見せています。
-          </p>
-          <p className="es">
+          </>} es={<>
             Un jugador de prueba tiene datos malos a propósito. Así se ve cómo el sistema marca
             fuentes faltantes, números raros y estadísticas que no cierran.
-          </p>
+          </>} /></p>
         </div>
       </section>
 

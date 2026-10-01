@@ -56,7 +56,7 @@ export const dataProviders: DataProviderMetadata[] = [
   },
 ];
 
-export function getProviderStatus(env: NodeJS.ProcessEnv = process.env): ProviderStatus[] {
+export function getProviderStatus(env: Partial<NodeJS.ProcessEnv> = process.env): ProviderStatus[] {
   return dataProviders.map((provider) => ({
     ...provider,
     status: provider.envVar && !env[provider.envVar] ? "missing-key" : "ready",

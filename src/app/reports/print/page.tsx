@@ -6,6 +6,8 @@ import {
   topForwardShotQualityPlayers,
 } from "@/lib/statsbomb-forward-shot-quality";
 import PrintButton from "./print-button";
+import { buildLocalizedForwardReport } from "@/lib/localized-reports";
+import { isLocale } from "@/lib/copy";
 
 type SearchParams = Promise<Record<string, string | string[] | undefined>>;
 
@@ -18,11 +20,12 @@ export default async function PrintableReportPage({ searchParams }: { searchPara
   const params = await searchParams;
   const kind = value(params, "kind") || "player";
   const name = value(params, "player");
+  const lang = value(params, "lang");
   const selected =
     forwardShotQualityData.players.find((player) => player.player === name) ??
     topForwardShotQualityPlayers[0];
   const report =
-    kind === "match"
+    isLocale(lang) ? buildLocalizedForwardReport(kind === "match" ? topForwardShotQualityPlayers : [selected], lang) : kind === "match"
       ? buildForwardMatchReport(topForwardShotQualityPlayers)
       : buildForwardShotQualityReport(selected);
 

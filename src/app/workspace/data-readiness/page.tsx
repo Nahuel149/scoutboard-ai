@@ -1,3 +1,6 @@
+import { T } from "@/app/components/language";
+import { pageTitles } from "@/lib/copy";
+import { LocalizedContent } from "@/app/components/language";
 import Link from "next/link";
 import { ArrowLeft, Database, KeyRound, ShieldCheck, TableProperties } from "lucide-react";
 import { getDataReadinessRows, getWorkspaceSnapshot } from "@/lib/performance-workspace";
@@ -18,17 +21,15 @@ export default function DataReadinessPage() {
       <section className="detailHero workspaceHero">
         <div>
           <p className="eyebrow">Data readiness / データ準備 / Estado de fuentes</p>
-          <h1>Every provider has a job, a rule, and a limit.</h1>
-          <p>
+          <h1><T text={pageTitles["/workspace/data-readiness"]} /></h1>
+          <p><LocalizedContent en={<>
             This board keeps ScoutBoard AI honest: open data can power committed portfolio samples,
             while API data stays server-side until terms and cache rules are clear.
-          </p>
-          <p className="jp">
+          </>} ja={<>
             各データソースの用途、APIキー状態、保存ルールを見える形にして、公開できる範囲を明確にします。
-          </p>
-          <p className="es">
+          </>} es={<>
             Esta vista separa fuentes abiertas, APIs con key y reglas de uso para no mezclar datos sin revisar.
-          </p>
+          </>} /></p>
         </div>
         <Link className="primaryAction" href="/analytics/champions">
           Check Champions demo

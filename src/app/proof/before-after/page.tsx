@@ -1,3 +1,6 @@
+import { T } from "@/app/components/language";
+import { pageTitles } from "@/lib/copy";
+import { LocalizedContent } from "@/app/components/language";
 import Link from "next/link";
 import { ArrowLeft, ClipboardCheck, FileText } from "lucide-react";
 import { correctionSample } from "@/lib/correction-sample";
@@ -23,10 +26,8 @@ export default function BeforeAfterProofPage() {
       <section className="detailHero proofHero">
         <div>
           <p className="eyebrow">Proofreading proof / 校正サンプル / Corrección</p>
-          <h1>Before and after, with the checks left visible.</h1>
-          <p>{correctionSample.scope}</p>
-          <p className="jp">{correctionSample.localizedNotes.ja}</p>
-          <p className="es">{correctionSample.localizedNotes.es}</p>
+          <h1><T text={pageTitles["/proof/before-after"]} /></h1>
+          <p><LocalizedContent en={<>{correctionSample.scope}</>} ja={<>{correctionSample.localizedNotes.ja}</>} es={<>{correctionSample.localizedNotes.es}</>} /></p>
         </div>
         <ClipboardCheck size={58} aria-hidden="true" />
       </section>
@@ -86,9 +87,7 @@ export default function BeforeAfterProofPage() {
           <h2>This is a review artifact, not a fake client sample.</h2>
         </div>
         <div>
-          <p>{correctionSample.localizedNotes.en}</p>
-          <p className="jp">{correctionSample.localizedNotes.ja}</p>
-          <p className="es">{correctionSample.localizedNotes.es}</p>
+          <p><LocalizedContent en={<>{correctionSample.localizedNotes.en}</>} ja={<>{correctionSample.localizedNotes.ja}</>} es={<>{correctionSample.localizedNotes.es}</>} /></p>
           <Link className="primaryAction" href="/reports">
             Use it in report room
           </Link>

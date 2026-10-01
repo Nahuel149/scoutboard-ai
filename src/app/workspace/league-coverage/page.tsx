@@ -1,3 +1,6 @@
+import { T } from "@/app/components/language";
+import { pageTitles } from "@/lib/copy";
+import { LocalizedContent } from "@/app/components/language";
 import Link from "next/link";
 import { ArrowLeft, Database, ListChecks, Search, ShieldAlert } from "lucide-react";
 import {
@@ -20,17 +23,15 @@ export default function LeagueCoveragePage() {
       <section className="detailHero workspaceHero">
         <div>
           <p className="eyebrow">Americas coverage / 選手DB / Cobertura americana</p>
-          <h1>League coverage before player search.</h1>
-          <p>
+          <h1><T text={pageTitles["/workspace/league-coverage"]} /></h1>
+          <p><LocalizedContent en={<>
             The watchlist should start with honest coverage. This board shows what was imported,
             where club rows are missing, and what still needs manual review.
-          </p>
-          <p className="jp">
+          </>} ja={<>
             選手検索の前に、どのリーグとクラブがどこまで取得できているかを確認します。
-          </p>
-          <p className="es">
+          </>} es={<>
             Antes de hacer scouting, revisamos cobertura por liga, clubes faltantes y estado de revisión.
-          </p>
+          </>} /></p>
         </div>
         <Link className="primaryAction" href="/players">
           Open sample players

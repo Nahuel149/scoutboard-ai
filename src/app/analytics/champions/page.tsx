@@ -1,3 +1,6 @@
+import { T } from "@/app/components/language";
+import { pageTitles } from "@/lib/copy";
+import { LocalizedContent } from "@/app/components/language";
 import Link from "next/link";
 import { ArrowLeft, CalendarDays, Database, ShieldCheck, Trophy } from "lucide-react";
 import { fetchFootballDataCompetitionMatches } from "@/lib/data-providers";
@@ -87,17 +90,15 @@ export default async function ChampionsAnalyticsPage() {
       <section className="detailHero championsHero">
         <div>
           <p className="eyebrow">Football-Data.org / Champions League / Datos actuales</p>
-          <h1>Champions League ETL demo.</h1>
-          <p>
+          <h1><T text={pageTitles["/analytics/champions"]} /></h1>
+          <p><LocalizedContent en={<>
             This page is the basic-data side of ScoutBoard AI: fixtures, results, match
             status, and competition metadata from Football-Data.org.
-          </p>
-          <p className="jp">
+          </>} ja={<>
             Football-Data.orgから試合日程、結果、ステータスを取得するETLデモです。
-          </p>
-          <p className="es">
+          </>} es={<>
             Una vista simple para mostrar partidos, resultados y estado de Champions con Football-Data.org.
-          </p>
+          </>} /></p>
         </div>
         <div className="profileGrid">
           <span>Provider <strong>Football-Data.org</strong></span>
@@ -226,16 +227,14 @@ export default async function ChampionsAnalyticsPage() {
           <div>
             <p className="eyebrow">Provider ready / Token pendiente</p>
             <h2>Football-Data.org is wired, but the local token is not configured.</h2>
-            <p>
+            <p><LocalizedContent en={<>
               Add `FOOTBALL_DATA_API_TOKEN` to `.env.local`, restart the dev server, and this
               page will render Champions League matches from the API.
-            </p>
-            <p className="jp">
+            </>} ja={<>
               `.env.local`にトークンを追加すると、このページでChampions Leagueの試合データを表示できます。
-            </p>
-            <p className="es">
+            </>} es={<>
               Cuando agreguemos el token en `.env.local`, esta pantalla va a mostrar partidos reales de Champions.
-            </p>
+            </>} /></p>
           </div>
           <div className="reportPreview inlineCodeBlock">
             <pre>{`FOOTBALL_DATA_API_TOKEN=your_local_token_here\n\nnpm run dev\n# open /analytics/champions`}</pre>

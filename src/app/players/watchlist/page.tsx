@@ -1,3 +1,6 @@
+import { T } from "@/app/components/language";
+import { pageTitles } from "@/lib/copy";
+import { LocalizedContent } from "@/app/components/language";
 import Link from "next/link";
 import { AlertTriangle, ArrowLeft, Search, ShieldCheck } from "lucide-react";
 import { loadAmericanWatchlist } from "@/lib/american-watchlist";
@@ -36,7 +39,7 @@ export default async function WatchlistPage({ searchParams }: { searchParams: Se
     <div className="pageStack">
       <Link className="backLink" href="/players"><ArrowLeft size={16} />Back to players</Link>
       <section className="detailHero workspaceHero">
-        <div><p className="eyebrow">Americas player watchlist / 選手候補 / Lista de seguimiento</p><h1>Find the record, then check the source.</h1><p>{all.length.toLocaleString()} roster records from American leagues, with uncertainty kept visible.</p><p className="jp">南北アメリカの選手データを検索し、出典と欠損項目を同時に確認できます。</p><p className="es">Buscá por país, liga, club o posición. Cada fila muestra qué sabemos y qué falta revisar.</p></div>
+        <div><p className="eyebrow">Americas player watchlist / 選手候補 / Lista de seguimiento</p><h1><T text={pageTitles["/players/watchlist"]} /></h1><p><LocalizedContent en={<>{all.length.toLocaleString()} roster records from American leagues, with uncertainty kept visible.</>} ja={<>南北アメリカの選手データを検索し、出典と欠損項目を同時に確認できます。</>} es={<>Buscá por país, liga, club o posición. Cada fila muestra qué sabemos y qué falta revisar.</>} /></p></div>
         <Search size={58} aria-hidden="true" />
       </section>
 

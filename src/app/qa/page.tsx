@@ -1,3 +1,6 @@
+import { T } from "@/app/components/language";
+import { pageTitles } from "@/lib/copy";
+import { LocalizedContent } from "@/app/components/language";
 import { players, teams } from "@/lib/sample-data";
 import { summarizeIssues, validateData } from "@/lib/validation";
 
@@ -9,14 +12,12 @@ export default function DataQaPage() {
     <div className="pageStack">
       <div className="sectionHeader">
         <p className="eyebrow">Data QA / データ確認</p>
-        <h1>Data check report</h1>
-        <p>Open findings from the player and team sample records.</p>
-        <p className="jp">
+        <h1><T text={pageTitles["/qa"]} /></h1>
+        <p><LocalizedContent en={<>Open findings from the player and team sample records.</>} ja={<>
           選手・チームのサンプルデータから見つかった未対応の確認事項です。
-        </p>
-        <p className="es">
+        </>} es={<>
           Hallazgos pendientes en los datos de muestra de jugadores y equipos.
-        </p>
+        </>} /></p>
       </div>
 
       <section className="metricGrid">
@@ -41,9 +42,7 @@ export default function DataQaPage() {
       <section className="qaStory">
         <div>
           <p className="eyebrow">Review path / 確認の流れ</p>
-          <h2>Find the issue, explain it, leave the next fix clear.</h2>
-          <p className="jp">不備を見つけて、理由と修正案まで残します。</p>
-          <p className="es">Encontrar el problema, explicar el motivo y dejar clara la corrección.</p>
+          <h2><LocalizedContent en={<>Find the issue, explain it, leave the next fix clear.</>} ja={<>不備を見つけて、理由と修正案まで残します。</>} es={<>Encontrar el problema, explicar el motivo y dejar clara la corrección.</>} /></h2>
         </div>
         <ol>
           <li>Catch strange values and missing source fields.</li>

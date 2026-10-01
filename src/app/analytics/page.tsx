@@ -1,3 +1,6 @@
+import { T } from "@/app/components/language";
+import { pageTitles } from "@/lib/copy";
+import { LocalizedContent } from "@/app/components/language";
 import Link from "next/link";
 import { ArrowRight, Database, Target, TrendingUp } from "lucide-react";
 import {
@@ -32,18 +35,16 @@ export default function AnalyticsPage() {
       <section className="detailHero analyticsHero">
         <div>
           <p className="eyebrow">Event analytics / イベント分析 / Análisis de eventos</p>
-          <h1>Shot quality for South American forwards.</h1>
-          <p>
+          <h1><T text={pageTitles["/analytics"]} /></h1>
+          <p><LocalizedContent en={<>
             This module uses StatsBomb Open Data from Copa America 2024 to turn raw shots
             into a clean xG board for forwards and wingers.
-          </p>
-          <p className="jp">
+          </>} ja={<>
             Copa America 2024のStatsBomb Open Dataを使い、FWとウイングのシュートをxGで整理します。
-          </p>
-          <p className="es">
+          </>} es={<>
             Usa datos abiertos de StatsBomb de la Copa America 2024 para medir calidad de
             remate en delanteros y extremos sudamericanos.
-          </p>
+          </>} /></p>
         </div>
         <Link className="primaryAction" href="/reports">
           Turn into report
@@ -78,16 +79,14 @@ export default function AnalyticsPage() {
         <div>
           <p className="eyebrow">Current data / Champions League / Football-Data.org</p>
           <h2>Basic Champions League ETL is now part of the analytics area.</h2>
-          <p>
+          <p><LocalizedContent en={<>
             StatsBomb covers the event-analysis demo. Football-Data.org covers the simpler
             current-data demo: fixtures, results, status, and competition metadata.
-          </p>
-          <p className="jp">
+          </>} ja={<>
             Football-Data.orgで、Champions Leagueの日程・結果・ステータスを表示する準備をしています。
-          </p>
-          <p className="es">
+          </>} es={<>
             Football-Data.org queda conectado para mostrar partidos, resultados y estado de Champions.
-          </p>
+          </>} /></p>
         </div>
         <div className="qaPanel">
           <p className="eyebrow">Provider status</p>
@@ -107,12 +106,10 @@ export default function AnalyticsPage() {
           <div className="sectionHeader">
             <p className="eyebrow">Best forward chances / FWチャンス / Mejores ocasiones</p>
             <h2>Ranked by non-penalty xG</h2>
-            <p>
+            <p><LocalizedContent en={<>
               Penalties are separated so the first read focuses on repeatable shot quality:
               location, chance volume, and open-play danger.
-            </p>
-            <p className="jp">PKを分けて、流れの中で作ったチャンスの質を見ます。</p>
-            <p className="es">Los penales quedan separados para leer mejor el peligro en jugada abierta.</p>
+            </>} ja={<>PKを分けて、流れの中で作ったチャンスの質を見ます。</>} es={<>Los penales quedan separados para leer mejor el peligro en jugada abierta.</>} /></p>
           </div>
           <div className="tableShell">
             <table>
@@ -148,17 +145,15 @@ export default function AnalyticsPage() {
         <aside className="qaPanel">
           <p className="eyebrow">Method / 方法 / Método</p>
           <h2>From events to scouting question</h2>
-          <p>
+          <p><LocalizedContent en={<>
             The script downloads matches and event JSON, filters South American teams,
             keeps forward and winger positions, then aggregates shot quality metrics.
-          </p>
-          <p className="jp">
+          </>} ja={<>
             試合とイベントJSONを取得し、南米代表のFW/ウイングだけを抽出して集計します。
-          </p>
-          <p className="es">
+          </>} es={<>
             El script descarga eventos, filtra selecciones sudamericanas y resume métricas
             de remate para atacantes.
-          </p>
+          </>} /></p>
           <div className="severityGrid">
             <span>Source <strong>{source.name}</strong></span>
             <span>Competition <strong>{source.competition}</strong></span>
@@ -176,9 +171,7 @@ export default function AnalyticsPage() {
       <section className="qaStory analyticsStory">
         <div>
           <p className="eyebrow">Team xG / チーム別xG / xG por equipo</p>
-          <h2>Where the forward shot volume came from</h2>
-          <p className="jp">国別に、FWとウイングのシュート量とxGを確認します。</p>
-          <p className="es">Lectura rápida por selección: volumen de remates y xG de atacantes.</p>
+          <h2><LocalizedContent en={<>Where the forward shot volume came from</>} ja={<>国別に、FWとウイングのシュート量とxGを確認します。</>} es={<>Lectura rápida por selección: volumen de remates y xG de atacantes.</>} /></h2>
         </div>
         <div className="barList" aria-label="Team xG bars">
           {topForwardShotQualityTeams.map((team) => (

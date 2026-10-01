@@ -1,3 +1,6 @@
+import { T } from "@/app/components/language";
+import { pageTitles } from "@/lib/copy";
+import { LocalizedContent } from "@/app/components/language";
 import Link from "next/link";
 import type { CSSProperties } from "react";
 import { players } from "@/lib/sample-data";
@@ -10,14 +13,12 @@ export default function PlayersPage() {
     <div className="pageStack">
       <div className="sectionHeader">
         <p className="eyebrow">Research table / 選手リサーチ</p>
-        <h1>Players</h1>
-        <p>Small sample records for scouting notes, data checks, and report drafts.</p>
-        <p className="jp">
+        <h1><T text={pageTitles["/players"]} /></h1>
+        <p><LocalizedContent en={<>Small sample records for scouting notes, data checks, and report drafts.</>} ja={<>
           スカウティングメモ、データ確認、レポート下書きに使うサンプル選手データです。
-        </p>
-        <p className="es">
+        </>} es={<>
           Registros de muestra para notas de scouting, control de datos y borradores de reporte.
-        </p>
+        </>} /></p>
       </div>
 
       <div className="filterBar" aria-label="Static MVP filters">
@@ -43,9 +44,7 @@ export default function PlayersPage() {
               <div className="miniArticleBody">
                 <p className="eyebrow">{player.club}</p>
                 <h2>{player.name}</h2>
-                <p>{player.researchNote}</p>
-                <p className="jp">{player.researchNoteJa}</p>
-                <p className="es">{player.researchNoteEs}</p>
+                <p><LocalizedContent en={<>{player.researchNote}</>} ja={<>{player.researchNoteJa}</>} es={<>{player.researchNoteEs}</>} /></p>
                 <div>
                   <span className={playerIssues.length ? "pill danger" : "pill"}>
                     {playerIssues.length} issues / 不備 / errores

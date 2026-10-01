@@ -2,6 +2,32 @@
 
 This file is the working plan for the next build phase.
 
+## Delivery update: 2026-10-01
+
+Completed in this phase:
+
+- `/import`: CSV upload, mapping, preview, corrections, accepted-row download
+  and QA report download. Uses Papa Parse and stays in the browser.
+- `/teams` and `/teams/[id]`: imported club groups, filters, source links and
+  import dates. Counts are coverage, not confirmed complete squads.
+- Persistent EN/JA/ES selector, localized main-page titles and existing
+  translation blocks; new tools and tournament report exports support all three.
+  Legacy technical tables still retain some English schema/provider labels.
+- `/analytics/compare`: two to four forwards, tournament context and localized exports.
+- `/proof`, `/proof/csv-transformation`, `/qa/evidence`: visible portfolio cases.
+- Reviewed screenshots, case study, CSV review and regression bug report.
+- Public static portfolio sample and GitHub Pages workflow, using shared data logic.
+- Browser tests for CSV downloads, language persistence, comparisons, clubs,
+  mobile layouts and the public sample.
+
+Existing source-review template and Wikidata import scripts were already present.
+The immediate-task list below is historical and should not be repeated as new work.
+
+Remaining product work: refresh roster claims with club-source evidence, extend
+language coverage to remaining legacy controls/tables, and configure live API
+providers when current competition data is required. The public sample is a
+browser demo; the full Next.js server app needs a separate server deployment.
+
 ## Product direction
 
 ScoutBoard AI should become a trilingual football research and data QA portfolio app:
@@ -41,10 +67,11 @@ Already done:
 - Visible before/after route at `/proof/before-after`.
 - Markdown sample at `reports/samples/before-after-correction.md`.
 
-Visibility note checked 2026-08-21:
+Visibility note checked 2026-10-01:
 
-- GitHub repository `Nahuel149/scoutboard-ai` is private.
-- No deployed public demo URL is recorded or verified.
+- GitHub API reports repository `Nahuel149/scoutboard-ai` as public.
+- Public portfolio sample is configured through GitHub Pages; check the workflow
+  and HTTP result before describing a deployment as verified.
 - Local routes and repository files must not be described as client-viewable
   links until a sanitized public/exported proof artifact exists.
 
@@ -277,10 +304,10 @@ All languages:
 Suggested next commit:
 
 ```text
-Add proof navigation and README screenshots
+Refresh club-source evidence and complete legacy control translations
 ```
 
-After that:
+Already present:
 
 ```text
 Add data source review template

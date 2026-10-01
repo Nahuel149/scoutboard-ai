@@ -2,6 +2,14 @@
 
 ## 1. Purpose
 
+Delivery status, 2026-10-01: CSV import and review, team directory/detail,
+persistent language selection, forward comparisons, localized reports and QA
+evidence are implemented. Reviewed screenshots and the case study are in docs/.
+A static GitHub Pages portfolio sample shares CSV/report logic with the main app.
+The full server app has not been deployed as part of that static sample.
+Current club claims still require independent source review; legacy technical
+controls retain some English labels. See docs/next-steps.md for remaining work.
+
 Build a football/soccer research and QA dashboard that proves multiple marketable skills in one project:
 
 - Full-stack development

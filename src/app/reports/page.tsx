@@ -1,4 +1,8 @@
+import { T } from "@/app/components/language";
+import { pageTitles } from "@/lib/copy";
+import { LocalizedContent } from "@/app/components/language";
 import Link from "next/link";
+import { LocalizedReportBuilder } from "./localized-builder";
 import { players } from "@/lib/sample-data";
 import {
   buildForwardMatchReport,
@@ -20,26 +24,23 @@ export default function ReportsPage() {
     <div className="pageStack">
       <div className="sectionHeader">
         <p className="eyebrow">Report builder / レポート作成 / Reportes</p>
-        <h1>Write the report, then show the checks.</h1>
-        <p>
+        <h1><T text={pageTitles["/reports"]} /></h1>
+        <p><LocalizedContent en={<>
           Report exports are deliberately plain: source, method, metrics, caveats, and
           final human review before the file leaves the desk.
-        </p>
-        <p className="jp">
+        </>} ja={<>
           出典、方法、指標、注意点を残したまま、納品前に人が確認できる形で出力します。
-        </p>
-        <p className="es">
+        </>} es={<>
           Exporta reportes simples, con fuente, método, métricas y límites visibles antes de entregar.
-        </p>
+        </>} /></p>
       </div>
 
+      <LocalizedReportBuilder />
       <section className="split">
         <div className="qaPanel">
           <p className="eyebrow">Selected sample / 選択中</p>
           <h2>{selectedPlayer.name}</h2>
-          <p>A player note that keeps source metadata and validation checks nearby.</p>
-          <p className="jp">出典情報とデータ確認を近くに置いた選手レポートの下書きです。</p>
-          <p className="es">Un borrador de jugador con fuentes y control de datos a la vista.</p>
+          <p><LocalizedContent en={<>A player note that keeps source metadata and validation checks nearby.</>} ja={<>出典情報とデータ確認を近くに置いた選手レポートの下書きです。</>} es={<>Un borrador de jugador con fuentes y control de datos a la vista.</>} /></p>
         </div>
         <div className="qaPanel">
           <p className="eyebrow">Export options / 出力</p>
@@ -67,12 +68,10 @@ export default function ReportsPage() {
         <div className="sectionHeader">
           <p className="eyebrow">Player report / StatsBomb Open Data</p>
           <h2>{analyticsPlayer.player} shot-quality note</h2>
-          <p>
+          <p><LocalizedContent en={<>
             This draft connects the analytics room to delivery. It uses open event data
             and keeps the sample limitation visible.
-          </p>
-          <p className="jp">分析画面の内容を、そのまま確認しやすいレポートに変換します。</p>
-          <p className="es">Conecta el análisis con una entrega clara: datos abiertos, métrica y revisión humana.</p>
+          </>} ja={<>分析画面の内容を、そのまま確認しやすいレポートに変換します。</>} es={<>Conecta el análisis con una entrega clara: datos abiertos, métrica y revisión humana.</>} /></p>
           <div className="reportActions">
             <a className="primaryAction" href={`/reports/export?kind=player&player=${encodeURIComponent(analyticsPlayer.player)}`}>
               Download Markdown
@@ -89,9 +88,7 @@ export default function ReportsPage() {
         <div className="sectionHeader">
           <p className="eyebrow">Match report / Informe de competencia</p>
           <h2>Copa America forward ranking report</h2>
-          <p>Clean export for the full forward board, available as Markdown or print-ready PDF.</p>
-          <p className="jp">ランキング全体をMarkdownまたは印刷用PDFとして出力できます。</p>
-          <p className="es">Reporte completo del ranking, listo para Markdown o PDF desde impresión.</p>
+          <p><LocalizedContent en={<>Clean export for the full forward board, available as Markdown or print-ready PDF.</>} ja={<>ランキング全体をMarkdownまたは印刷用PDFとして出力できます。</>} es={<>Reporte completo del ranking, listo para Markdown o PDF desde impresión.</>} /></p>
           <div className="reportActions">
             <a className="primaryAction" href="/reports/export?kind=match">
               Download Markdown

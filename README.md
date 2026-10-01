@@ -2,12 +2,28 @@
 
 Americas football scouting database, event analytics, data QA, and report generator portfolio app.
 
+[Public portfolio sample](https://nahuel149.github.io/scoutboard-ai/)
+includes browser CSV checks, club coverage, forward comparisons and downloadable
+text-review evidence. The full Next.js app is available through local setup below.
+
 ScoutBoard AI is a self-created portfolio project that demonstrates practical
 full-stack development, football research structure, public-data ETL,
 event-level football analytics, spreadsheet-style data QA, AI-assisted writing
 workflow design, and client-ready reporting.
 
 ## Current MVP
+
+![CSV checks and reviewed output](docs/screenshots/csv-import.png)
+
+- Browser-only CSV upload, column mapping, correction preview and clean export.
+- Club directory and roster claim pages, with sources and import dates.
+- Persistent English/Japanese/Latin American Spanish language selection.
+- Two-to-four forward comparison and localized Markdown/print reports.
+- Public portfolio sample built for GitHub Pages, without API credentials.
+- QA evidence page, documented regression and browser workflow tests.
+
+See [the case study](docs/portfolio-case-study.md) and
+[the current source review](docs/source-review-2026-10-01.md).
 
 - Next.js + TypeScript app shell.
 - Dashboard with sample football metrics.
@@ -43,6 +59,8 @@ Then open `http://localhost:3000`.
 ```powershell
 npm test
 npm run build
+npm run portfolio:build
+npm run test:e2e
 ```
 
 ## Data And Source Policy
