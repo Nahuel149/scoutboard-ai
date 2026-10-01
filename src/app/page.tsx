@@ -1,3 +1,4 @@
+import { UI } from "@/app/components/ui-text";
 import { T } from "@/app/components/language";
 import { pageTitles } from "@/lib/copy";
 import { LocalizedContent } from "@/app/components/language";
@@ -48,7 +49,7 @@ export default function DashboardPage() {
     <div className="pageStack">
       <section className="heroBand">
         <div>
-          <p className="eyebrow">Portfolio MVP / ポートフォリオ</p>
+          <p className="eyebrow"><UI text="Portfolio MVP / ポートフォリオ" /></p>
           <h1><T text={pageTitles["/"]} /></h1>
           <p><LocalizedContent en={<>
             ScoutBoard AI is a small portfolio app for football research work:
@@ -63,8 +64,7 @@ export default function DashboardPage() {
           </>} /></p>
         </div>
         <Link className="primaryAction" href="/qa">
-          Check the data
-          <ArrowRight size={18} aria-hidden="true" />
+          <UI text="Check the data" /><ArrowRight size={18} aria-hidden="true" />
         </Link>
       </section>
 
@@ -93,22 +93,22 @@ export default function DashboardPage() {
       <section className="metricGrid" aria-label="Project metrics">
         <article className="metric">
           <Users size={20} aria-hidden="true" />
-          <span>Players / 選手 / Jugadores</span>
+          <span><UI text="Players / 選手 / Jugadores" /></span>
           <strong>{players.length}</strong>
         </article>
         <article className="metric">
           <TrendingUp size={20} aria-hidden="true" />
-          <span>Teams / チーム / Equipos</span>
+          <span><UI text="Teams / チーム / Equipos" /></span>
           <strong>{teams.length}</strong>
         </article>
         <article className="metric">
           <ShieldCheck size={20} aria-hidden="true" />
-          <span>Checked score / 確認スコア / Revisión</span>
+          <span><UI text="Checked score / 確認スコア / Revisión" /></span>
           <strong>{completeness}%</strong>
         </article>
         <article className="metric alert">
           <ShieldCheck size={20} aria-hidden="true" />
-          <span>Open issues / 未対応 / Pendientes</span>
+          <span><UI text="Open issues / 未対応 / Pendientes" /></span>
           <strong>{summary.total}</strong>
         </article>
       </section>
@@ -116,16 +116,16 @@ export default function DashboardPage() {
       <section className="split">
         <div>
           <div className="sectionHeader">
-            <p className="eyebrow">Player board / 選手ボード</p>
+            <p className="eyebrow"><UI text="Player board / 選手ボード" /></p>
             <h2><LocalizedContent en={<>Who is producing chances?</>} ja={<>得点とアシストをまとめて、まず見るべき選手を絞ります。</>} es={<>Goles y asistencias ayudan a decidir por dónde empezar la revisión.</>} /></h2>
           </div>
           <div className="tableShell">
             <table>
               <thead>
                 <tr>
-                  <th>Name / 選手</th>
-                  <th>Club / 所属</th>
-                  <th>Pos / 位置</th>
+                  <th><UI text="Name / 選手" /></th>
+                  <th><UI text="Club / 所属" /></th>
+                  <th><UI text="Pos / 位置" /></th>
                   <th>G+A</th>
                 </tr>
               </thead>
@@ -136,7 +136,7 @@ export default function DashboardPage() {
                       <Link href={`/players/${player.id}`}>{player.name}</Link>
                     </td>
                     <td>{player.club}</td>
-                    <td>{player.position}</td>
+                    <td><UI text={player.position} /></td>
                     <td>{player.goals + player.assists}</td>
                   </tr>
                 ))}
@@ -145,12 +145,12 @@ export default function DashboardPage() {
           </div>
         </div>
         <div className="qaPanel">
-          <p className="eyebrow">QA summary / 確認結果</p>
-          <h2>The data check finds the row a human would worry about.</h2>
+          <p className="eyebrow"><UI text="QA summary / 確認結果" /></p>
+          <h2><UI text="The data check finds the row a human would worry about." /></h2>
           <div className="severityGrid">
-            <span>Critical / 重要 <strong>{summary.critical}</strong></span>
-            <span>Warning / 注意 <strong>{summary.warning}</strong></span>
-            <span>Info / 確認 <strong>{summary.info}</strong></span>
+            <span><UI text="Critical / 重要" />{" "}<strong>{summary.critical}</strong></span>
+            <span><UI text="Warning / 注意" />{" "}<strong>{summary.warning}</strong></span>
+            <span><UI text="Info / 確認" />{" "}<strong>{summary.info}</strong></span>
           </div>
           <p><LocalizedContent en={<>
             One sample player has bad values on purpose. That makes the QA
@@ -167,12 +167,12 @@ export default function DashboardPage() {
       </section>
 
       <section className="tagMarquee" aria-label="Portfolio proof tags">
-        <span>Data QA / データ確認 / Control de datos</span>
-        <span>Research notes / リサーチメモ / Notas</span>
-        <span>Source policy / 出典ルール / Fuentes</span>
-        <span>Report drafts / 下書き / Borradores</span>
-        <span>Vitest checks / 自動テスト / Tests</span>
-        <span>Portfolio proof / 実作例 / Portafolio</span>
+        <span><UI text="Data QA / データ確認 / Control de datos" /></span>
+        <span><UI text="Research notes / リサーチメモ / Notas" /></span>
+        <span><UI text="Source policy / 出典ルール / Fuentes" /></span>
+        <span><UI text="Report drafts / 下書き / Borradores" /></span>
+        <span><UI text="Vitest checks / 自動テスト / Tests" /></span>
+        <span><UI text="Portfolio proof / 実作例 / Portafolio" /></span>
       </section>
     </div>
   );

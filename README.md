@@ -17,6 +17,8 @@ workflow design, and client-ready reporting.
 
 - Browser-only CSV upload, column mapping, correction preview and clean export.
 - Club directory and roster claim pages, with sources and import dates.
+- Evidence-gated current watchlist and a roster review queue with dated sources,
+  historical-record exclusions and 30-day confirmation expiry.
 - Persistent English/Japanese/Latin American Spanish language selection.
 - Two-to-four forward comparison and localized Markdown/print reports.
 - Public portfolio sample built for GitHub Pages, without API credentials.
@@ -34,7 +36,11 @@ See [the case study](docs/portfolio-case-study.md) and
 - Data QA page powered by reusable validation rules.
 - Report builder preview with manual human verification checklist.
 - Synthetic CSV sample data.
-- Wikidata import scripts for current-player coverage across the Americas.
+- Wikidata candidate imports across the Americas. An undated club claim is not
+  proof that a player is active or still at that club. The 2026-10-01 review
+  covers 6,757 unique player IDs and 7,295 membership rows: 4 confirmed,
+  7,077 awaiting club-source confirmation and 214 excluded. See the source review
+  for the scope, reasons and refresh command.
 - StatsBomb Open Data scripts for event-level analytics examples.
 - Unit tests for validation behavior.
 

@@ -1,0 +1,18 @@
+{
+  "checkedAt": "2026-10-01",
+  "method": "Manual inspection of first-team sections on official club pages. Evidence applies only to the named memberships, not the whole dataset.",
+  "memberships": [
+    { "playerId": "Q106687895", "clubId": "Q170703", "status": "confirmed", "url": "https://www.bocajuniors.com.ar/futbol-masculino", "section": "El Plantel / arqueros / Leandro Brey" },
+    { "playerId": "Q116196701", "clubId": "Q170703", "status": "confirmed", "url": "https://www.bocajuniors.com.ar/futbol-masculino", "section": "El Plantel / Defensores / Lautaro Di Lollo" },
+    { "playerId": "Q17635436", "clubId": "Q170703", "status": "confirmed", "url": "https://www.bocajuniors.com.ar/futbol-masculino", "section": "El Plantel / Defensores / Nicolás Figal" },
+    { "playerId": "Q110160871", "clubId": "Q80964", "status": "confirmed", "url": "https://www.palmeiras.com.br/elenco/", "section": "Futebol Profissional / Ramón Sosa" },
+    { "playerId": "Q1033783", "clubId": "Q80964", "status": "confirmed", "url": "https://www.palmeiras.com.br/elenco/", "section": "Futebol Profissional / Gustavo Gómez" },
+    { "playerId": "Q1033783", "clubId": "Q170703", "status": "contradicted", "url": "https://www.palmeiras.com.br/elenco/", "section": "Gustavo Gómez is listed in Palmeiras first team; imported Boca membership is quarantined." }
+  ],
+  "clubPages": [
+    { "clubId": "Q170703", "url": "https://www.bocajuniors.com.ar/futbol-masculino", "status": "readable", "scope": "Men's first-team roster", "checkedAt": "2026-10-01" },
+    { "clubId": "Q80964", "url": "https://www.palmeiras.com.br/elenco/", "status": "readable", "scope": "First team; separate other/loaned section must not be counted as current squad", "checkedAt": "2026-10-01" },
+    { "clubId": "Q17479", "url": "https://www.flamengo.com.br/futebol/elenco", "status": "partial", "scope": "Goalkeeper tab readable; other tabs not verified in this review", "checkedAt": "2026-10-01" },
+    { "clubId": "Q51285", "url": "https://www.riverplate.com/", "status": "unavailable", "scope": "Old cariverplate.com.ar site redirects; roster not readable in text retrieval", "checkedAt": "2026-10-01" }
+  ]
+}

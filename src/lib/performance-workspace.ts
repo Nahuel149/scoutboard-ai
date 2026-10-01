@@ -49,10 +49,10 @@ export const workspaceModules: WorkspaceModule[] = [
   },
   {
     title: "Event analytics room",
-    status: "in-progress",
+    status: "ready",
     summary: "Uses StatsBomb Open Data to analyze Copa America 2024 forward shot quality.",
     proof: `${forwardShotQualityData.summary.players} forwards, ${forwardShotQualityData.summary.total_forward_shots} shots, ${forwardShotQualityData.summary.matches} matches.`,
-    nextAction: "Add shot maps and player comparison filters.",
+    nextAction: "Review tournament sample limits before sharing comparisons.",
   },
   {
     title: "Current competition context",
@@ -63,24 +63,24 @@ export const workspaceModules: WorkspaceModule[] = [
   },
   {
     title: "Americas player watchlist",
-    status: "planned",
+    status: "ready",
     summary: "Turns imported player data into a searchable scouting board for the Americas.",
     proof: "Wikidata imports and league coverage summaries already exist under data/imported and data/analytics.",
-    nextAction: "Build a league coverage page and wire imported JSON into search.",
+    nextAction: "Review unverified memberships against official club sources.",
   },
   {
     title: "Report room",
-    status: "in-progress",
+    status: "ready",
     summary: "Turns checked data and analytics into English, Japanese, and Latin American Spanish report drafts.",
     proof: "Report builder and manual QA checklist already exist.",
-    nextAction: "Connect the report draft to StatsBomb and Football-Data.org insights.",
+    nextAction: "Review source metadata and final wording before export.",
   },
   {
     title: "Video and tracking adapter",
     status: "blocked",
     summary: "Reserved for licensed video/tracking providers. Nothing proprietary should be faked or committed.",
     proof: "Open event data can stand in for tactical analysis until licensed media is available.",
-    nextAction: "Add a placeholder adapter spec, not a fake video dataset.",
+    nextAction: "Review the licensed adapter contract before connecting media.",
   },
 ];
 
@@ -185,8 +185,8 @@ export function getWorkspaceTasks(): WorkspaceTask[] {
     area: "Analytics to report",
     title: `${topForward.player} is ready for a scouting note`,
     detail: `${topForward.non_penalty_xg.toFixed(2)} non-penalty xG from ${topForward.shots} shots in the StatsBomb sample.`,
-    nextAction: "Connect the report builder to analytics rows so this can become a sourced note.",
-    href: "/analytics",
+    nextAction: "Open the report builder and review the tournament context.",
+    href: "/reports",
   });
 
   tasks.push({

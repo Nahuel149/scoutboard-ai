@@ -1,4 +1,6 @@
 "use client";
+import { UI } from "@/app/components/ui-text";
+
 
 import { useMemo, useState } from "react";
 import type { ForwardShotQualityPlayer } from "@/lib/statsbomb-forward-shot-quality";
@@ -43,15 +45,15 @@ function PlayerPanel({ player }: { player: ForwardShotQualityPlayer }) {
       </div>
       <ShotMap player={player} />
       <div className="comparisonMetrics">
-        <span><small>Age / Edad / 年齢</small><strong>{model.age ?? "N/A"}</strong></span>
-        <span><small>Minutes / Minutos</small><strong>{player.minutes}</strong></span>
-        <span><small>NP xG</small><strong>{n(player.non_penalty_xg)}</strong></span>
-        <span><small>NP xG / 90</small><strong>{n(model.npxgPer90)}</strong></span>
-        <span><small>Shots / Tiros</small><strong>{player.shots}</strong></span>
-        <span><small>xG / shot</small><strong>{n(player.avg_non_penalty_xg_per_shot, 3)}</strong></span>
+        <span><small><UI text="Age / Edad / 年齢" /></small><strong>{model.age ?? "N/A"}</strong></span>
+        <span><small><UI text="Minutes / Minutos" /></small><strong>{player.minutes}</strong></span>
+        <span><small><UI text="NP xG" /></small><strong>{n(player.non_penalty_xg)}</strong></span>
+        <span><small><UI text="NP xG / 90" /></small><strong>{n(model.npxgPer90)}</strong></span>
+        <span><small><UI text="Shots / Tiros" /></small><strong>{player.shots}</strong></span>
+        <span><small><UI text="xG / shot" /></small><strong>{n(player.avg_non_penalty_xg_per_shot, 3)}</strong></span>
       </div>
       <p className="dataFootnote">
-        Age match: {player.age_match_status.replaceAll("_", " ")}. Sample reliability: {n(model.sampleReliability * 100, 0)}%.
+        <UI text="Age match:" />{player.age_match_status.replaceAll("_", " ")}<UI text=". Sample reliability:" />{" "}{n(model.sampleReliability * 100, 0)}%.
       </p>
     </article>
   );
@@ -83,16 +85,16 @@ export default function ForwardComparator({ players }: { players: ForwardShotQua
   return (
     <>
       <section className="controlDeck" aria-label="Forward filters">
-        <label>League / Liga / リーグ<select disabled><option>Copa America 2024</option></select></label>
-        <label>Team / País / 国<select value={team} onChange={(event) => setTeam(event.target.value)}><option value="all">All teams</option>{teams.map((item) => <option key={item}>{item}</option>)}</select></label>
-        <label>Position / Posición / 位置<select value={position} onChange={(event) => setPosition(event.target.value)}><option value="all">All attacking roles</option><option value="center">Centre forwards</option><option value="wing">Wingers</option></select></label>
-        <label>Age / Edad / 年齢<select value={ageBand} onChange={(event) => setAgeBand(event.target.value)}><option value="all">All known ages</option><option value="u23">23 or younger</option><option value="24-28">24 to 28</option><option value="29+">29 or older</option></select></label>
+        <label><UI text="League / Liga / リーグ" /><select disabled><option>Copa America 2024</option></select></label>
+        <label><UI text="Team / País / 国" /><select value={team} onChange={(event) => setTeam(event.target.value)}><option value="all"><UI text="All teams" /></option>{teams.map((item) => <option key={item}>{item}</option>)}</select></label>
+        <label><UI text="Position / Posición / 位置" /><select value={position} onChange={(event) => setPosition(event.target.value)}><option value="all"><UI text="All attacking roles" /></option><option value="center"><UI text="Centre forwards" /></option><option value="wing"><UI text="Wingers" /></option></select></label>
+        <label><UI text="Age / Edad / 年齢" /><select value={ageBand} onChange={(event) => setAgeBand(event.target.value)}><option value="all"><UI text="All known ages" /></option><option value="u23"><UI text="23 or younger" /></option><option value="24-28"><UI text="24 to 28" /></option><option value="29+"><UI text="29 or older" /></option></select></label>
       </section>
 
       <section className="comparisonPicker">
-        <label>Player A<select value={leftName} onChange={(event) => setLeftName(event.target.value)}>{players.map((player) => <option key={`a-${player.player}`} value={player.player}>{player.player}</option>)}</select></label>
+        <label><UI text="Player A" /><select value={leftName} onChange={(event) => setLeftName(event.target.value)}>{players.map((player) => <option key={`a-${player.player}`} value={player.player}>{player.player}</option>)}</select></label>
         <span>VS</span>
-        <label>Player B<select value={rightName} onChange={(event) => setRightName(event.target.value)}>{players.map((player) => <option key={`b-${player.player}`} value={player.player}>{player.player}</option>)}</select></label>
+        <label><UI text="Player B" /><select value={rightName} onChange={(event) => setRightName(event.target.value)}>{players.map((player) => <option key={`b-${player.player}`} value={player.player}>{player.player}</option>)}</select></label>
       </section>
 
       <section className="comparisonGrid">
@@ -102,7 +104,7 @@ export default function ForwardComparator({ players }: { players: ForwardShotQua
 
       <section className="tableShell">
         <table>
-          <thead><tr><th>Rank</th><th>Player</th><th>Age</th><th>Role</th><th>Min</th><th>NP xG/90</th><th>Shots/90</th><th>xG/shot</th><th>Scout score</th></tr></thead>
+          <thead><tr><th><UI text="Rank" /></th><th><UI text="Player" /></th><th><UI text="Age" /></th><th><UI text="Role" /></th><th><UI text="Min" /></th><th><UI text="NP xG/90" /></th><th><UI text="Shots/90" /></th><th><UI text="xG/shot" /></th><th><UI text="Scout score" /></th></tr></thead>
           <tbody>{ranked.map(({ player, model }, index) => (
             <tr key={`${player.player}-${player.team}`}>
               <td>{index + 1}</td><td><strong>{player.player}</strong><span className="tableSubline">{player.team}</span></td>
@@ -110,7 +112,7 @@ export default function ForwardComparator({ players }: { players: ForwardShotQua
             </tr>
           ))}</tbody>
         </table>
-        {ranked.length === 0 && <p className="emptyState">No players match these filters.</p>}
+        {ranked.length === 0 && <p className="emptyState"><UI text="No players match these filters." /></p>}
       </section>
     </>
   );

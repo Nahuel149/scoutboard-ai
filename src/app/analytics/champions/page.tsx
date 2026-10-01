@@ -1,3 +1,4 @@
+import { UI } from "@/app/components/ui-text";
 import { T } from "@/app/components/language";
 import { pageTitles } from "@/lib/copy";
 import { LocalizedContent } from "@/app/components/language";
@@ -84,12 +85,11 @@ export default async function ChampionsAnalyticsPage() {
     <div className="pageStack">
       <Link className="backLink" href="/analytics">
         <ArrowLeft size={16} aria-hidden="true" />
-        Back to analytics
-      </Link>
+        <UI text="Back to analytics" /></Link>
 
       <section className="detailHero championsHero">
         <div>
-          <p className="eyebrow">Football-Data.org / Champions League / Datos actuales</p>
+          <p className="eyebrow"><UI text="Football-Data.org / Champions League / Datos actuales" /></p>
           <h1><T text={pageTitles["/analytics/champions"]} /></h1>
           <p><LocalizedContent en={<>
             This page is the basic-data side of ScoutBoard AI: fixtures, results, match
@@ -101,31 +101,31 @@ export default async function ChampionsAnalyticsPage() {
           </>} /></p>
         </div>
         <div className="profileGrid">
-          <span>Provider <strong>Football-Data.org</strong></span>
-          <span>Competition <strong>{competitionName}</strong></span>
-          <span>Status <strong>{result.status === "ready" ? "Connected" : "Needs token"}</strong></span>
+          <span><UI text="Provider" />{" "}<strong>Football-Data.org</strong></span>
+          <span><UI text="Competition" />{" "}<strong>{competitionName}</strong></span>
+          <span><UI text="Status" />{" "}<strong>{result.status === "ready" ? "Connected" : "Needs token"}</strong></span>
         </div>
       </section>
 
       <section className="metricGrid">
         <article className="metric">
           <Trophy size={20} aria-hidden="true" />
-          <span>Competition</span>
+          <span><UI text="Competition" /></span>
           <strong>{result.status === "ready" ? result.data.competition?.code ?? "CL" : "CL"}</strong>
         </article>
         <article className="metric">
           <CalendarDays size={20} aria-hidden="true" />
-          <span>Matches loaded</span>
+          <span><UI text="Matches loaded" /></span>
           <strong>{total}</strong>
         </article>
         <article className="metric">
           <ShieldCheck size={20} aria-hidden="true" />
-          <span>Played</span>
+          <span><UI text="Played" /></span>
           <strong>{played}</strong>
         </article>
         <article className={result.status === "ready" ? "metric" : "metric alert"}>
           <Database size={20} aria-hidden="true" />
-          <span>Provider state</span>
+          <span><UI text="Provider state" /></span>
           <strong>{result.status === "ready" ? "Live" : "Config"}</strong>
         </article>
       </section>
@@ -134,17 +134,16 @@ export default async function ChampionsAnalyticsPage() {
         <>
           <section className="championsContextGrid">
             <article className="qaPanel">
-              <p className="eyebrow">Competition state</p>
+              <p className="eyebrow"><UI text="Competition state" /></p>
               <h2>{liveMatches.length ? "Live matches are present." : "Live context loaded."}</h2>
               <div className="severityGrid">
-                <span>Finished <strong>{finishedMatches.length}</strong></span>
-                <span>Scheduled <strong>{scheduledMatches.length}</strong></span>
-                <span>Live <strong>{liveMatches.length}</strong></span>
+                <span><UI text="Finished" />{" "}<strong>{finishedMatches.length}</strong></span>
+                <span><UI text="Scheduled" />{" "}<strong>{scheduledMatches.length}</strong></span>
+                <span><UI text="Live" />{" "}<strong>{liveMatches.length}</strong></span>
               </div>
-              <p className="es">Datos básicos para contexto actualizado: fecha, fase, equipos, estado y resultado.</p>
             </article>
             <article className="qaPanel">
-              <p className="eyebrow">Stage coverage</p>
+              <p className="eyebrow"><UI text="Stage coverage" /></p>
               <div className="barList">
                 {stageRows.map((row) => (
                   <div className="barRow" key={row.stage}>
@@ -161,8 +160,8 @@ export default async function ChampionsAnalyticsPage() {
 
           <section className="split">
             <div className="qaPanel">
-              <p className="eyebrow">Next matches / Próximos</p>
-              <h2>Upcoming Champions fixtures</h2>
+              <p className="eyebrow"><UI text="Next matches / Próximos" /></p>
+              <h2><UI text="Upcoming Champions fixtures" /></h2>
               <div className="compactMatchList">
                 {nextMatches.map((match) => (
                   <div className="compactMatch" key={match.id}>
@@ -171,21 +170,21 @@ export default async function ChampionsAnalyticsPage() {
                     <small>{match.stage ?? "TBC"} · {match.group ?? "No group"}</small>
                   </div>
                 ))}
-                {nextMatches.length === 0 && <p className="muted">No upcoming matches returned by the API.</p>}
+                {nextMatches.length === 0 && <p className="muted"><UI text="No upcoming matches returned by the API." /></p>}
               </div>
             </div>
             <div className="qaPanel">
-              <p className="eyebrow">Latest results / Últimos</p>
-              <h2>Recent finished matches</h2>
+              <p className="eyebrow"><UI text="Latest results / Últimos" /></p>
+              <h2><UI text="Recent finished matches" /></h2>
               <div className="compactMatchList">
                 {recentResults.map((match) => (
                   <div className="compactMatch" key={match.id}>
                     <span>{formatDate(match.utcDate)}</span>
                     <strong>{match.homeTeam.name} {scoreLabel(match)} {match.awayTeam.name}</strong>
-                    <small>{match.stage ?? "TBC"} · matchday {match.matchday ?? "N/A"}</small>
+                    <small>{match.stage ?? "TBC"} {" "}<UI text="· matchday" />{" "}{match.matchday ?? "N/A"}</small>
                   </div>
                 ))}
-                {recentResults.length === 0 && <p className="muted">No finished matches returned by the API.</p>}
+                {recentResults.length === 0 && <p className="muted"><UI text="No finished matches returned by the API." /></p>}
               </div>
             </div>
           </section>
@@ -194,12 +193,12 @@ export default async function ChampionsAnalyticsPage() {
             <table>
               <thead>
                 <tr>
-                  <th>Date</th>
-                  <th>Stage</th>
-                  <th>Home</th>
-                  <th>Away</th>
-                  <th>Status</th>
-                  <th>Score</th>
+                  <th><UI text="Date" /></th>
+                  <th><UI text="Stage" /></th>
+                  <th><UI text="Home" /></th>
+                  <th><UI text="Away" /></th>
+                  <th><UI text="Status" /></th>
+                  <th><UI text="Score" /></th>
                 </tr>
               </thead>
               <tbody>
@@ -208,7 +207,7 @@ export default async function ChampionsAnalyticsPage() {
                     <td>{formatDate(match.utcDate)}</td>
                     <td>
                       {match.stage ?? "TBC"}
-                      {match.matchday ? <span className="tableSubline">Matchday {match.matchday}</span> : null}
+                      {match.matchday ? <span className="tableSubline"><UI text="Matchday" />{" "}{match.matchday}</span> : null}
                     </td>
                     <td>{match.homeTeam.name}</td>
                     <td>{match.awayTeam.name}</td>
@@ -225,8 +224,8 @@ export default async function ChampionsAnalyticsPage() {
       ) : (
         <section className="qaStory championsStatus">
           <div>
-            <p className="eyebrow">Provider ready / Token pendiente</p>
-            <h2>Football-Data.org is wired, but the local token is not configured.</h2>
+            <p className="eyebrow"><UI text="Provider ready / Token pendiente" /></p>
+            <h2><UI text="Football-Data.org is wired, but the local token is not configured." /></h2>
             <p><LocalizedContent en={<>
               Add `FOOTBALL_DATA_API_TOKEN` to `.env.local`, restart the dev server, and this
               page will render Champions League matches from the API.
@@ -243,15 +242,10 @@ export default async function ChampionsAnalyticsPage() {
       )}
 
       <section className="qaPanel">
-        <p className="eyebrow">Scope / Alcance</p>
-        <h2>Basic current-data demo, not xG.</h2>
+        <p className="eyebrow"><UI text="Scope / Alcance" /></p>
+        <h2><UI text="Basic current-data demo, not xG." /></h2>
         <p>
-          This provider is useful for updated competition context. Advanced shot quality and
-          event-level xG stay in the StatsBomb Open Data module.
-        </p>
-        <p className="es">
-          Sirve para contexto actualizado de competencia. El xG y eventos detallados siguen en el módulo StatsBomb.
-        </p>
+          <UI text="This provider is useful for updated competition context. Advanced shot quality and event-level xG stay in the StatsBomb Open Data module." /></p>
       </section>
     </div>
   );

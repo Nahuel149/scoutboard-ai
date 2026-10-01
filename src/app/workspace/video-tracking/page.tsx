@@ -1,3 +1,4 @@
+import { UI } from "@/app/components/ui-text";
 import { T } from "@/app/components/language";
 import { pageTitles } from "@/lib/copy";
 import { LocalizedContent } from "@/app/components/language";
@@ -28,12 +29,11 @@ export default function VideoTrackingPage() {
     <div className="pageStack">
       <Link className="backLink" href="/workspace">
         <ArrowLeft size={16} aria-hidden="true" />
-        Back to workspace
-      </Link>
+        <UI text="Back to workspace" /></Link>
 
       <section className="detailHero workspaceHero">
         <div>
-          <p className="eyebrow">Video and tracking / 映像・トラッキング / Video y tracking</p>
+          <p className="eyebrow"><UI text="Video and tracking / 映像・トラッキング / Video y tracking" /></p>
           <h1><T text={pageTitles["/workspace/video-tracking"]} /></h1>
           <p><LocalizedContent en={<>
             Professional platforms use video and tracking, but ScoutBoard AI should only connect
@@ -45,97 +45,86 @@ export default function VideoTrackingPage() {
           </>} /></p>
         </div>
         <Link className="primaryAction" href="/workspace/tasks">
-          See blocked task
-        </Link>
+          <UI text="See blocked task" /></Link>
       </section>
 
       <section className="metricGrid">
         <article className="metric alert">
           <LockKeyhole size={20} aria-hidden="true" />
-          <span>Current status</span>
-          <strong>Blocked</strong>
+          <span><UI text="Current status" /></span>
+          <strong><UI text="Blocked" /></strong>
         </article>
         <article className="metric">
           <Video size={20} aria-hidden="true" />
-          <span>Video files committed</span>
+          <span><UI text="Video files committed" /></span>
           <strong>0</strong>
         </article>
         <article className="metric">
           <Route size={20} aria-hidden="true" />
-          <span>Tracking datasets</span>
+          <span><UI text="Tracking datasets" /></span>
           <strong>0</strong>
         </article>
         <article className="metric">
           <FileWarning size={20} aria-hidden="true" />
-          <span>Rights review</span>
-          <strong>Needed</strong>
+          <span><UI text="Rights review" /></span>
+          <strong><UI text="Needed" /></strong>
         </article>
       </section>
 
       <section className="split">
         <div>
           <div className="sectionHeader">
-            <p className="eyebrow">Adapter contract</p>
-            <h2>What must be true before this module becomes active</h2>
+            <p className="eyebrow"><UI text="Adapter contract" /></p>
+            <h2><UI text="What must be true before this module becomes active" /></h2>
             <p>
-              The portfolio can show the product thinking now, while keeping the actual data
-              boundary conservative and public-safe.
-            </p>
+              <UI text="The portfolio can show the product thinking now, while keeping the actual data boundary conservative and public-safe." /></p>
           </div>
           <div className="workspaceModuleGrid">
             {adapterRequirements.map((item) => (
               <article className="workspaceModule blocked" key={item.title}>
-                <span className="pill danger">Required</span>
-                <h3>{item.title}</h3>
-                <p>{item.detail}</p>
+                <span className="pill danger"><UI text="Required" /></span>
+                <h3><UI text={item.title} /></h3>
+                <p><UI text={item.detail} /></p>
               </article>
             ))}
           </div>
         </div>
 
         <aside className="qaPanel workspacePanel">
-          <p className="eyebrow">Safe demo alternative</p>
-          <h2>Use event data until licensed media exists.</h2>
+          <p className="eyebrow"><UI text="Safe demo alternative" /></p>
+          <h2><UI text="Use event data until licensed media exists." /></h2>
           <p>
-            StatsBomb Open Data already gives timestamps, locations, event types, and players.
-            That is enough to demonstrate tactical analysis without video rights risk.
-          </p>
+            <UI text="StatsBomb Open Data already gives timestamps, locations, event types, and players. That is enough to demonstrate tactical analysis without video rights risk." /></p>
           <div className="profileGrid">
-            <span>Open event source <strong>StatsBomb</strong></span>
-            <span>Video storage <strong>None</strong></span>
-            <span>Tracking storage <strong>None</strong></span>
-            <span>Export rule <strong>Notes only</strong></span>
+            <span><UI text="Open event source" />{" "}<strong>StatsBomb</strong></span>
+            <span><UI text="Video storage" />{" "}<strong><UI text="None" /></strong></span>
+            <span><UI text="Tracking storage" />{" "}<strong><UI text="None" /></strong></span>
+            <span><UI text="Export rule" />{" "}<strong><UI text="Notes only" /></strong></span>
           </div>
           <Link className="backLink" href="/analytics">
-            Use event analytics
-          </Link>
+            <UI text="Use event analytics" /></Link>
         </aside>
       </section>
 
       <section className="qaStory workspaceStory">
         <div>
-          <p className="eyebrow">Portfolio message</p>
-          <h2>Knowing what not to store is part of the product.</h2>
+          <p className="eyebrow"><UI text="Portfolio message" /></p>
+          <h2><UI text="Knowing what not to store is part of the product." /></h2>
           <p>
-            This page makes the boundary explicit: ScoutBoard AI can be ready for enterprise-style
-            data later without pretending that restricted video or tracking data is available now.
-          </p>
-          <p className="es">
-            Mostrar límites claros también demuestra criterio técnico y respeto por licencias.
-          </p>
+            <UI text="This page makes the boundary explicit: ScoutBoard AI can be ready for enterprise-style data later without pretending that restricted video or tracking data is available now." /></p>
         </div>
         <div className="providerMiniList">
           <div className="providerMiniRow">
-            <span>Commit raw video</span>
-            <strong>Blocked</strong>
+            <span><UI text="Commit raw video" /></span>
+            <strong><UI text="Blocked" /></strong>
           </div>
           <div className="providerMiniRow">
-            <span>Store tracking files</span>
-            <strong>Only if licensed</strong>
+            <span><UI text="Store tracking files" /></span>
+            <strong><UI text="Only if licensed" /></strong>
           </div>
           <div className="providerMiniRow">
-            <span>Write timestamp notes</span>
-            <strong>Allowed</strong>
+            <span><UI text="Write timestamp notes" /></span>
+            <strong><UI text="Allowed" /></strong>
           </div>
         </div>
       </section>

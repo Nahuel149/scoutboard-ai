@@ -1,3 +1,4 @@
+import { UI } from "@/app/components/ui-text";
 import { T } from "@/app/components/language";
 import { pageTitles } from "@/lib/copy";
 import { LocalizedContent } from "@/app/components/language";
@@ -20,12 +21,11 @@ export default function BeforeAfterProofPage() {
     <div className="pageStack">
       <Link className="backLink" href="/reports">
         <ArrowLeft size={16} aria-hidden="true" />
-        Back to reports
-      </Link>
+        <UI text="Back to reports" /></Link>
 
       <section className="detailHero proofHero">
         <div>
-          <p className="eyebrow">Proofreading proof / 校正サンプル / Corrección</p>
+          <p className="eyebrow"><UI text="Proofreading proof / 校正サンプル / Corrección" /></p>
           <h1><T text={pageTitles["/proof/before-after"]} /></h1>
           <p><LocalizedContent en={<>{correctionSample.scope}</>} ja={<>{correctionSample.localizedNotes.ja}</>} es={<>{correctionSample.localizedNotes.es}</>} /></p>
         </div>
@@ -43,13 +43,13 @@ export default function BeforeAfterProofPage() {
 
       <section className="beforeAfterGrid">
         <article className="draftPanel flawed">
-          <p className="eyebrow">Before / 修正前 / Antes</p>
-          <h2>Flawed draft</h2>
+          <p className="eyebrow"><UI text="Before / 修正前 / Antes" /></p>
+          <h2><UI text="Flawed draft" /></h2>
           <pre>{correctionSample.flawedDraft}</pre>
         </article>
         <article className="draftPanel corrected">
-          <p className="eyebrow">After / 修正後 / Después</p>
-          <h2>Corrected final</h2>
+          <p className="eyebrow"><UI text="After / 修正後 / Después" /></p>
+          <h2><UI text="Corrected final" /></h2>
           <pre>{correctionSample.correctedFinal}</pre>
         </article>
       </section>
@@ -58,11 +58,11 @@ export default function BeforeAfterProofPage() {
         <table>
           <thead>
             <tr>
-              <th>QA category</th>
-              <th>Issue</th>
-              <th>Original</th>
-              <th>Correction</th>
-              <th>Reason</th>
+              <th><UI text="QA category" /></th>
+              <th><UI text="Issue" /></th>
+              <th><UI text="Original" /></th>
+              <th><UI text="Correction" /></th>
+              <th><UI text="Reason" /></th>
             </tr>
           </thead>
           <tbody>
@@ -83,14 +83,13 @@ export default function BeforeAfterProofPage() {
 
       <section className="qaStory proofStory">
         <div>
-          <p className="eyebrow">Delivery note / 納品前チェック</p>
-          <h2>This is a review artifact, not a fake client sample.</h2>
+          <p className="eyebrow"><UI text="Delivery note / 納品前チェック" /></p>
+          <h2><UI text="This is a review artifact, not a fake client sample." /></h2>
         </div>
         <div>
           <p><LocalizedContent en={<>{correctionSample.localizedNotes.en}</>} ja={<>{correctionSample.localizedNotes.ja}</>} es={<>{correctionSample.localizedNotes.es}</>} /></p>
           <Link className="primaryAction" href="/reports">
-            Use it in report room
-          </Link>
+            <UI text="Use it in report room" /></Link>
         </div>
       </section>
     </div>

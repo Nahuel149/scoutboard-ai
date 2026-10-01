@@ -38,3 +38,27 @@ test("public portfolio sample: CSV, teams, comparison and language", async ({ pa
   await page.setViewportSize({ width: 390, height: 844 }); expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   await page.getByRole("button", { name: "制作事例" }).click(); await page.screenshot({ path: "docs/screenshots/public-portfolio-mobile.png", fullPage: true });
 });
+
+test("current watchlist is evidence-gated and historical records stay in review", async ({ page }) => {
+  await page.goto("/players/watchlist");
+  await expect(page.getByRole("heading", { name: "Leandro Brey" })).toBeVisible();
+  await expect(page.getByText("Ernesto Imparato", { exact: true })).toHaveCount(0);
+  await page.goto("/workspace/roster-review?status=excluded&q=Ernesto%20Imparato");
+  await expect(page.locator("tbody")).toContainText("Ernesto Imparato");
+  await expect(page.locator("tbody a").first()).toHaveAttribute("href", /wikidata/);
+  await page.getByRole("radio", { name: "Español" }).check();
+  await expect(page.getByRole("heading", { name: "Revisión de planteles" })).toBeVisible();
+  await page.getByRole("radio", { name: "日本語" }).check();
+  await expect(page.getByRole("heading", { name: "所属情報の確認" })).toBeVisible();
+  await page.setViewportSize({ width: 390, height: 844 });
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+  await page.screenshot({ path: "docs/screenshots/roster-review-mobile.png", fullPage: true });
+});
+
+test("public roster review exposes verified sources and honest coverage", async ({ page }) => {
+  await page.goto("http://127.0.0.1:3101");
+  await page.getByRole("button", { name: "Roster review" }).click();
+  await expect(page.locator("main")).toContainText("Confirmed memberships: 4");
+  await expect(page.locator("main")).toContainText("Excluded records: 214");
+  await expect(page.locator("tbody a").first()).toHaveAttribute("href", "https://www.bocajuniors.com.ar/futbol-masculino");
+});

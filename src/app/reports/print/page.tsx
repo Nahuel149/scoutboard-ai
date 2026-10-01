@@ -1,3 +1,4 @@
+import { UI } from "@/app/components/ui-text";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { buildForwardMatchReport, buildForwardShotQualityReport } from "@/lib/reports";
@@ -34,8 +35,7 @@ export default async function PrintableReportPage({ searchParams }: { searchPara
       <div className="printToolbar">
         <Link className="backLink" href="/reports">
           <ArrowLeft size={16} aria-hidden="true" />
-          Back to reports
-        </Link>
+          <UI text="Back to reports" /></Link>
         <PrintButton />
       </div>
       <article className="printPaper">

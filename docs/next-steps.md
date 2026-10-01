@@ -12,7 +12,8 @@ Completed in this phase:
   import dates. Counts are coverage, not confirmed complete squads.
 - Persistent EN/JA/ES selector, localized main-page titles and existing
   translation blocks; new tools and tournament report exports support all three.
-  Legacy technical tables still retain some English schema/provider labels.
+  Legacy controls, QA messages and provider-status descriptions now use a shared
+  translation catalog. Proper names and technical identifiers remain unchanged.
 - `/analytics/compare`: two to four forwards, tournament context and localized exports.
 - `/proof`, `/proof/csv-transformation`, `/qa/evidence`: visible portfolio cases.
 - Reviewed screenshots, case study, CSV review and regression bug report.
@@ -23,10 +24,27 @@ Completed in this phase:
 Existing source-review template and Wikidata import scripts were already present.
 The immediate-task list below is historical and should not be repeated as new work.
 
-Remaining product work: refresh roster claims with club-source evidence, extend
-language coverage to remaining legacy controls/tables, and configure live API
+Remaining product work: confirm the remaining roster claims with club-source
+evidence and configure live API
 providers when current competition data is required. The public sample is a
 browser demo; the full Next.js server app needs a separate server deployment.
+
+## Roster quality delivery: 2026-10-01
+
+- Refreshed Wikidata metadata for 6,757 unique players and 290 clubs; no failed IDs.
+- Reviewed 7,295 imported membership rows: 4 confirmed, 7,077 unverified,
+  214 excluded from usable lists. Counts are memberships, not unique people.
+- `/players/watchlist` defaults to club-confirmed memberships. Unverified claims
+  remain searchable but are not described as current squads.
+- `/workspace/roster-review` includes excluded records, reasons and source dates.
+- Official evidence expires after 30 days without a new review. Wikidata import
+  dates cannot renew that evidence. The static demo reevaluates on each build;
+  it is not an automatic live roster monitor.
+- Discovered website links for 247 clubs are research starting points, not
+  confirmations that those club rosters are complete or current.
+- Next bounded data task: confirm one complete club roster from its official
+  first-team page, resolve identities and loans, then repeat club by club.
+  A league-wide current-roster claim remains blocked until this is complete.
 
 ## Product direction
 

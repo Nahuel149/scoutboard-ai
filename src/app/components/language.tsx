@@ -13,5 +13,5 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
 export function useLanguage() { return useContext(Language); }
 export function T({ text }: { text: Copy }) { const { locale } = useLanguage(); return <>{text[locale]}</>; }
 export function LocalizedContent({ en, ja, es }: { en: React.ReactNode; ja: React.ReactNode; es: React.ReactNode }) { const { locale } = useLanguage(); return <>{({ en, ja, es })[locale]}</>; }
-export function LanguageControl() { const { locale, setLocale } = useLanguage(); return <fieldset className="languageControl"><legend>Language / 言語 / Idioma</legend>{(["en", "ja", "es"] as const).map(value => <label key={value}><input type="radio" name="language" checked={locale === value} onChange={() => setLocale(value)} />{value === "ja" ? "日本語" : value === "es" ? "Español" : "English"}</label>)}</fieldset>; }
+export function LanguageControl() { const { locale, setLocale } = useLanguage(); return <fieldset className="languageControl"><legend>{({ en: "Language", ja: "言語", es: "Idioma" })[locale]}</legend>{(["en", "ja", "es"] as const).map(value => <label key={value}><input type="radio" name="language" checked={locale === value} onChange={() => setLocale(value)} />{value === "ja" ? "日本語" : value === "es" ? "Español" : "English"}</label>)}</fieldset>; }
 export { copy };

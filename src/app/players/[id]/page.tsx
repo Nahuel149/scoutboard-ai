@@ -1,4 +1,5 @@
-import { LocalizedContent } from "@/app/components/language";
+import { UI } from "@/app/components/ui-text";
+import { LocalizedContent, T } from "@/app/components/language";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, Download } from "lucide-react";
@@ -30,8 +31,7 @@ export default async function PlayerDetailPage({
     <div className="pageStack">
       <Link className="backLink" href="/players">
         <ArrowLeft size={16} aria-hidden="true" />
-        Players / 選手リスト
-      </Link>
+        <UI text="Players / 選手リスト" /></Link>
 
       <section className="detailHero">
         <div>
@@ -40,75 +40,53 @@ export default async function PlayerDetailPage({
           <p><LocalizedContent en={<>{player.researchNote}</>} ja={<>{player.researchNoteJa}</>} es={<>{player.researchNoteEs}</>} /></p>
         </div>
         <div className="profileGrid">
-          <span>Age / 年齢 <strong>{player.age}</strong></span>
-          <span>Position / 位置 <strong>{player.position}</strong></span>
-          <span>Foot / 利き足 <strong>{player.preferredFoot}</strong></span>
-          <span>Value / 評価額 <strong>EUR {player.marketValueEur.toLocaleString()}</strong></span>
+          <span><UI text="Age / 年齢" />{" "}<strong>{player.age}</strong></span>
+          <span><UI text="Position / 位置" />{" "}<strong><UI text={player.position} /></strong></span>
+          <span><UI text="Foot / 利き足" />{" "}<strong>{player.preferredFoot}</strong></span>
+          <span><UI text="Value / 評価額" />{" "}<strong>EUR {player.marketValueEur.toLocaleString()}</strong></span>
         </div>
       </section>
 
       <section className="split">
         <div className="qaPanel">
-          <p className="eyebrow">Source notes / 出典メモ</p>
+          <p className="eyebrow"><UI text="Source notes / 出典メモ" /></p>
           <h2><LocalizedContent en={<>Where this note comes from</>} ja={<>このメモの根拠として残しておく情報です。</>} es={<>Datos que quedan guardados como respaldo de esta nota.</>} /></h2>
           <p>{player.sourceName || "Missing source name"}</p>
           <p className="muted">{player.sourceUrl || "Missing source URL"}</p>
-          <p className="muted">Last checked: {player.lastCheckedAt || "Missing"}</p>
+          <p className="muted"><UI text="Last checked:" />{" "}{player.lastCheckedAt || "Missing"}</p>
         </div>
 
         <div className="qaPanel">
-          <p className="eyebrow">Delivery checklist / 納品前チェック</p>
-          <h2>Before export</h2>
+          <p className="eyebrow"><UI text="Delivery checklist / 納品前チェック" /></p>
+          <h2><UI text="Before export" /></h2>
           <ul className="checklist">
-            <li>Confirm source metadata</li>
-            <li>Review data warnings</li>
-            <li>Separate facts from scouting opinion</li>
-            <li>Human-edit final wording</li>
-          </ul>
-          <ul className="checklist jp">
-            <li>出典情報を確認</li>
-            <li>データ不備を確認</li>
-            <li>事実とスカウト所感を分ける</li>
-            <li>最後は人の目で文章を整える</li>
-          </ul>
-          <ul className="checklist es">
-            <li>Confirmar fuente y fecha de revisión</li>
-            <li>Revisar alertas de datos</li>
-            <li>Separar datos de opinión de scouting</li>
-            <li>Editar el texto final a mano</li>
+            <li><UI text="Confirm source metadata" /></li>
+            <li><UI text="Review data warnings" /></li>
+            <li><UI text="Separate facts from scouting opinion" /></li>
+            <li><UI text="Human-edit final wording" /></li>
           </ul>
         </div>
       </section>
 
       <section className="sectionHeader">
-        <p className="eyebrow">Open issues / 未対応の確認事項</p>
+        <p className="eyebrow"><UI text="Open issues / 未対応の確認事項" /></p>
         <h2><LocalizedContent en={<>{playerIssues.length} validation findings</>} ja={<>この選手データで、まだ確認が必要な項目です。</>} es={<>Puntos de este jugador que todavía necesitan revisión.</>} /></h2>
       </section>
       <div className="issueList">
         {playerIssues.length === 0 ? (
           <p className="emptyState">
-            No validation issues for this player.
-            <span className="jp tableSubline">この選手データには未対応の不備はありません。</span>
-            <span className="es tableSubline">No hay errores abiertos para este jugador.</span>
+            <UI text="No validation issues for this player." />
           </p>
         ) : (
           playerIssues.map((issue) => (
             <article key={issue.id} className="issueItem">
-              <span className={`pill ${issue.severity}`}>{issue.severity}</span>
-              <strong>{issue.field}</strong>
+              <span className={`pill ${issue.severity}`}><UI text={issue.severity} /></span>
+              <strong><UI text={issue.field} /></strong>
               <p>
-                {issue.message}
-                {issue.messageJa ? <span className="jp tableSubline">{issue.messageJa}</span> : null}
-                {issue.messageEs ? <span className="es tableSubline">{issue.messageEs}</span> : null}
+                <T text={{ en: issue.message, ja: issue.messageJa ?? issue.message, es: issue.messageEs ?? issue.message }} />
               </p>
               <small>
-                {issue.suggestedFix}
-                {issue.suggestedFixJa ? (
-                  <span className="jp tableSubline">{issue.suggestedFixJa}</span>
-                ) : null}
-                {issue.suggestedFixEs ? (
-                  <span className="es tableSubline">{issue.suggestedFixEs}</span>
-                ) : null}
+                <T text={{ en: issue.suggestedFix, ja: issue.suggestedFixJa ?? issue.suggestedFix, es: issue.suggestedFixEs ?? issue.suggestedFix }} />
               </small>
             </article>
           ))
@@ -117,7 +95,7 @@ export default async function PlayerDetailPage({
 
       <section className="reportPreview">
         <div className="sectionHeader">
-          <p className="eyebrow">Markdown preview / Markdown下書き</p>
+          <p className="eyebrow"><UI text="Markdown preview / Markdown下書き" /></p>
           <h2><LocalizedContent en={<>Player report draft</>} ja={<>日本語メモも含めたサンプルレポートのプレビューです。</>} es={<>Vista previa del reporte con notas en español latinoamericano.</>} /></h2>
         </div>
         <button className="iconButton" type="button" aria-label="Export available in next milestone">

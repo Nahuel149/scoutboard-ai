@@ -4,18 +4,29 @@ const output = ".portfolio-site";
 await mkdir(output, { recursive: true });
 await build({ entryPoints: ["src/portfolio/demo.ts"], bundle: true, minify: true, outfile: `${output}/demo.js`, platform: "browser" });
 const teams = new Map();
+const reviewData = JSON.parse(await readFile("data/analytics/currentness-review.json", "utf8"));
+const compiledReview = await build({ entryPoints: ["src/lib/roster-review.ts"], bundle: true, write: false, platform: "node", format: "esm" });
+const { reviewMembership } = await import(`data:text/javascript;base64,${Buffer.from(compiledReview.outputFiles[0].text).toString("base64")}`);
+const summary = { checkedAt: reviewData.checkedAt, confirmed: 0, unverified: 0, excluded: 0, reasons: {}, memberships: [] };
 for (const name of await readdir("data/imported")) {
   if (!name.includes("division-current-players") || !name.endsWith(".json")) continue;
   const file = JSON.parse(await readFile(`data/imported/${name}`, "utf8"));
   const league = file.source.leagueSeason ?? name;
   for (const player of file.players) {
+    const review = reviewMembership(player.wikidataId, player.currentClub, player.birthDate ?? null, reviewData.players[player.wikidataId], reviewData.checkedAt.slice(0, 10), new Date().toISOString().slice(0, 10));
+    summary[review.status]++;
+    summary.reasons[review.reason] = (summary.reasons[review.reason] ?? 0) + 1;
+    if (review.status === "confirmed") summary.memberships.push({ name: player.name, club: player.currentClubName, url: review.sourceUrl, checkedAt: review.checkedAt });
+    if (review.status === "excluded") continue;
     if (!player.currentClubName) continue;
     const key = JSON.stringify([league, player.currentClubName]);
-    if (!teams.has(key)) teams.set(key, { club: player.currentClubName, league, count: 0, source: player.sourceUrl ?? "", imported: player.importedAt ?? "" });
+    if (!teams.has(key)) teams.set(key, { club: player.currentClubName, league, count: 0, source: player.sourceUrl ?? "", imported: player.importedAt ?? "", officialWebsite: reviewData.clubs[player.currentClub]?.website ?? "", confirmed: 0 });
     teams.get(key).count++;
+    if (review.status === "confirmed") teams.get(key).confirmed++;
   }
 }
 await writeFile(`${output}/teams.json`, JSON.stringify([...teams.values()]));
+await writeFile(`${output}/roster-review.json`, JSON.stringify(summary));
 await cp("reports/samples/before-after-correction.md", `${output}/before-after.md`);
 await cp("docs/screenshots", `${output}/screenshots`, { recursive: true });
 await writeFile(`${output}/.nojekyll`, "");

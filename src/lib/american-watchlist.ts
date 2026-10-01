@@ -1,9 +1,14 @@
 import "server-only";
 import { promises as fs } from "node:fs";
 import path from "node:path";
+import { reviewMembership, type CurrentnessMetadata, type RosterReview } from "./roster-review";
 
 export type WatchlistPlayer = {
   id: string;
+  wikidataId: string;
+  clubId: string;
+  review: RosterReview;
+  officialWebsite: string | null;
   name: string;
   nameJa: string | null;
   country: string;
@@ -16,13 +21,15 @@ export type WatchlistPlayer = {
   sourceLicense: string;
   importedAt: string;
   reviewStatus: string;
-  confidence: "medium" | "low";
+  confidence: "high" | "medium" | "low";
   missingFields: string[];
   note: string;
 };
 
 type ImportedPlayer = {
   id: string;
+  wikidataId?: string;
+  currentClub?: string;
   name: string;
   nameJa?: string | null;
   birthDate?: string | null;
@@ -56,7 +63,8 @@ function title(value: string) {
   return value.split("-").map((word) => word === "mls" ? "USA" : word[0]?.toUpperCase() + word.slice(1)).join(" ");
 }
 
-export async function loadAmericanWatchlist(): Promise<WatchlistPlayer[]> {
+export async function loadAmericanWatchlist(includeExcluded = false): Promise<WatchlistPlayer[]> {
+  const metadata = JSON.parse(await fs.readFile(path.join(process.cwd(), "data/analytics/currentness-review.json"), "utf8")) as { checkedAt: string; players: Record<string, CurrentnessMetadata>; clubs: Record<string, { website: string | null }> };
   const directory = path.join(process.cwd(), "data", "imported");
   const files = (await fs.readdir(directory)).filter((file) => file.includes("division-current-players") && file.endsWith(".json"));
   const rows: WatchlistPlayer[] = [];
@@ -77,8 +85,13 @@ export async function loadAmericanWatchlist(): Promise<WatchlistPlayer[]> {
         !player.nameJa && "Japanese name",
         !player.sourceUrl && "source URL",
       ].filter(Boolean) as string[];
+      const review = reviewMembership(player.wikidataId ?? player.id.replace("wikidata-", ""), player.currentClub ?? "", player.birthDate ?? null, metadata.players[player.wikidataId ?? ""], metadata.checkedAt.slice(0, 10), new Date().toISOString().slice(0, 10));
       rows.push({
         id: `${scope}-${player.id}-${index}`,
+        wikidataId: player.wikidataId ?? player.id.replace("wikidata-", ""),
+        clubId: player.currentClub ?? "",
+        review,
+        officialWebsite: /^https?:\/\//.test(metadata.clubs[player.currentClub ?? ""]?.website ?? "") ? metadata.clubs[player.currentClub ?? ""]?.website ?? null : null,
         name: player.name,
         nameJa: player.nameJa ?? null,
         country,
@@ -91,12 +104,12 @@ export async function loadAmericanWatchlist(): Promise<WatchlistPlayer[]> {
         sourceLicense: player.sourceLicense ?? "CC0",
         importedAt: player.importedAt ?? "",
         reviewStatus: player.reviewStatus ?? "needs_manual_review",
-        confidence: missingFields.includes("club") || missingFields.includes("source URL") ? "low" : "medium",
+        confidence: review.status === "confirmed" ? "high" : missingFields.includes("club") || missingFields.includes("source URL") ? "low" : "medium",
         missingFields,
         note: payload.reviewNote ?? "Roster membership can lag transfers and needs a club-source check.",
       });
     });
   }
 
-  return rows.sort((a, b) => a.name.localeCompare(b.name));
+  return rows.filter(row => includeExcluded || row.review.status !== "excluded").sort((a, b) => a.name.localeCompare(b.name));
 }

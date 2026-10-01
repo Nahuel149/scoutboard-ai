@@ -1,3 +1,4 @@
+import { UI } from "@/app/components/ui-text";
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
@@ -37,7 +38,7 @@ export default function RootLayout({
               <span className="brandMark">SB</span>
               <div>
                 <strong>ScoutBoard AI</strong>
-                <span>Football research desk / Base de scouting</span>
+                <span><UI text="Football research desk / Base de scouting" /></span>
               </div>
             </div>
             <nav aria-label="Main navigation">
@@ -62,9 +63,9 @@ export default function RootLayout({
               </Link>
             </div>
           </header>
-          <div className="workspaceTools"><LanguageControl /><Link href="/analytics/compare"><T text={copy.compare} /></Link><Link href="/proof"><T text={copy.proof} /></Link></div>
+          <div className="workspaceTools"><LanguageControl /><Link href="/analytics/compare"><T text={copy.compare} /></Link><Link href="/workspace/roster-review"><UI text="Roster review" /></Link><Link href="/proof"><T text={copy.proof} /></Link></div>
           <main className="content">{children}</main>
-          <footer className="sourceFooter"><Image unoptimized src="https://raw.githubusercontent.com/hudl/open-data/master/img/SB%20-%20Icon%20Lockup%20-%20Colour%20positive.png" width={140} height={38} alt="StatsBomb" /><span>Event data: <a href="https://github.com/hudl/open-data">StatsBomb Open Data</a> · Player identity: <a href="https://www.wikidata.org/wiki/Wikidata:Data_access">Wikidata (CC0)</a></span></footer>
+          <footer className="sourceFooter"><Image unoptimized src="https://raw.githubusercontent.com/hudl/open-data/master/img/SB%20-%20Icon%20Lockup%20-%20Colour%20positive.png" width={140} height={38} alt="StatsBomb" /><span><UI text="Event data:" />{" "}<a href="https://github.com/hudl/open-data">StatsBomb Open Data</a> {" "}<UI text="· Player identity:" />{" "}<a href="https://www.wikidata.org/wiki/Wikidata:Data_access">Wikidata (CC0)</a></span></footer>
         </div>
         </LanguageProvider>
       </body>

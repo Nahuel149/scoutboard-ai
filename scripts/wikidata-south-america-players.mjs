@@ -905,12 +905,16 @@ function hasClaim(entity, property, id) {
 }
 
 function hasCurrentTeamClaim(entity, clubId) {
+  if (entity.claims?.P570?.some(claim => claim.rank !== "deprecated")) return false;
+  if (hasClaim(entity, "P21", "Q6581072")) return false;
+  const sports = (entity.claims?.P641 ?? []).filter(claim => claim.rank !== "deprecated");
+  if (sports.length && !sports.some(claim => claim.mainsnak?.datavalue?.value?.id === "Q2736")) return false;
   return (
     entity.claims?.P54?.some((claim) => {
       const teamId = claim.mainsnak?.datavalue?.value?.id;
       const hasEndTime = Boolean(claim.qualifiers?.P582?.length);
 
-      return teamId === clubId && !hasEndTime;
+      return teamId === clubId && !hasEndTime && claim.rank !== "deprecated";
     }) ?? false
   );
 }
@@ -919,7 +923,7 @@ function hasPlausibleActiveBirthDate(entity, oldestPlausibleBirthDate) {
   const birthDate = claimValue(entity, "P569");
 
   if (!birthDate) {
-    return true;
+    return false;
   }
 
   return birthDate >= oldestPlausibleBirthDate;

@@ -1,3 +1,4 @@
+import { UI } from "@/app/components/ui-text";
 import { T } from "@/app/components/language";
 import { pageTitles } from "@/lib/copy";
 import { LocalizedContent } from "@/app/components/language";
@@ -26,7 +27,7 @@ export default function WorkspacePage() {
     <div className="pageStack">
       <section className="detailHero workspaceHero">
         <div>
-          <p className="eyebrow">Performance workspace / 分析デスク / Mesa de rendimiento</p>
+          <p className="eyebrow"><UI text="Performance workspace / 分析デスク / Mesa de rendimiento" /></p>
           <h1><T text={pageTitles["/workspace"]} /></h1>
           <p><LocalizedContent en={<>
             A progressive workspace inspired by professional football platforms: data
@@ -38,30 +39,29 @@ export default function WorkspacePage() {
           </>} /></p>
         </div>
         <Link className="primaryAction" href="/analytics">
-          Open analytics
-          <ArrowRight size={18} aria-hidden="true" />
+          <UI text="Open analytics" /><ArrowRight size={18} aria-hidden="true" />
         </Link>
       </section>
 
       <section className="metricGrid">
         <article className="metric">
           <Database size={20} aria-hidden="true" />
-          <span>Providers ready</span>
+          <span><UI text="Providers ready" /></span>
           <strong>{snapshot.providersReady}/{snapshot.providersTotal}</strong>
         </article>
         <article className="metric">
           <Radar size={20} aria-hidden="true" />
-          <span>Modules ready</span>
+          <span><UI text="Modules ready" /></span>
           <strong>{snapshot.modulesReady}/{snapshot.modulesTotal}</strong>
         </article>
         <article className="metric">
           <ShieldCheck size={20} aria-hidden="true" />
-          <span>Open QA findings</span>
+          <span><UI text="Open QA findings" /></span>
           <strong>{snapshot.openPlayerIssues}</strong>
         </article>
         <article className="metric">
           <ClipboardCheck size={20} aria-hidden="true" />
-          <span>StatsBomb shots</span>
+          <span><UI text="StatsBomb shots" /></span>
           <strong>{snapshot.statsbombSummary.total_forward_shots}</strong>
         </article>
       </section>
@@ -69,13 +69,10 @@ export default function WorkspacePage() {
       <section className="split">
         <div>
           <div className="sectionHeader">
-            <p className="eyebrow">Build queue / ロードマップ / Lista de avance</p>
-            <h2>What we build, in order</h2>
+            <p className="eyebrow"><UI text="Build queue / ロードマップ / Lista de avance" /></p>
+            <h2><UI text="What we build, in order" /></h2>
             <p>
-              Each module has to prove a real workflow: collect data, check it, analyze it,
-              and turn it into a report-ready output.
-            </p>
-            <p className="es">Cada módulo tiene que demostrar un flujo real: datos, revisión, análisis y entrega.</p>
+              <UI text="Each module has to prove a real workflow: collect data, check it, analyze it, and turn it into a report-ready output." /></p>
           </div>
 
           <div className="workspaceModuleGrid">
@@ -85,16 +82,16 @@ export default function WorkspacePage() {
                   <span className={`pill ${module.status === "blocked" ? "danger" : module.status}`}>
                     {statusLabels[module.status]}
                   </span>
-                  <h3>{module.title}</h3>
-                  <p>{module.summary}</p>
+                  <h3><UI text={module.title} /></h3>
+                  <p><UI text={module.summary} /></p>
                 </div>
                 <div className="moduleProof">
-                  <strong>Proof</strong>
-                  <span>{module.proof}</span>
+                  <strong><UI text="Proof" /></strong>
+                  <span><UI text={module.proof} /></span>
                 </div>
                 <div className="moduleProof">
-                  <strong>Next</strong>
-                  <span>{module.nextAction}</span>
+                  <strong><UI text="Next" /></strong>
+                  <span><UI text={module.nextAction} /></span>
                 </div>
               </article>
             ))}
@@ -102,28 +99,25 @@ export default function WorkspacePage() {
         </div>
 
         <aside className="qaPanel workspacePanel">
-          <p className="eyebrow">Current scouting question</p>
-          <h2>Which attackers are already producing high-quality shots?</h2>
+          <p className="eyebrow"><UI text="Current scouting question" /></p>
+          <h2><UI text="Which attackers are already producing high-quality shots?" /></h2>
           <p>
-            The first live proof uses Copa America 2024 open events. It is not current,
-            but it is reliable and good enough to demonstrate the workflow.
-          </p>
+            <UI text="The first live proof uses Copa America 2024 open events. It is not current, but it is reliable and good enough to demonstrate the workflow." /></p>
           <div className="profileGrid">
-            <span>Top forward <strong>{snapshot.topForward.player}</strong></span>
-            <span>Team <strong>{snapshot.topForward.team}</strong></span>
-            <span>NP xG <strong>{formatXg(snapshot.topForward.non_penalty_xg)}</strong></span>
-            <span>Shots <strong>{snapshot.topForward.shots}</strong></span>
+            <span><UI text="Top forward" />{" "}<strong>{snapshot.topForward.player}</strong></span>
+            <span><UI text="Team" />{" "}<strong>{snapshot.topForward.team}</strong></span>
+            <span><UI text="NP xG" />{" "}<strong>{formatXg(snapshot.topForward.non_penalty_xg)}</strong></span>
+            <span><UI text="Shots" />{" "}<strong>{snapshot.topForward.shots}</strong></span>
           </div>
           <Link className="backLink" href="/analytics">
-            See event board
-          </Link>
+            <UI text="See event board" /></Link>
         </aside>
       </section>
 
       <section className="qaStory workspaceStory">
         <div>
-          <p className="eyebrow">Data readiness / Fuente y estado</p>
-          <h2>Every source has a job and a limit.</h2>
+          <p className="eyebrow"><UI text="Data readiness / Fuente y estado" /></p>
+          <h2><UI text="Every source has a job and a limit." /></h2>
           <p><LocalizedContent en={<>
             Open datasets can be committed when attribution and scope are clear. Keyed providers
             stay server-side and should not be bulk-republished without a terms review.
@@ -137,8 +131,7 @@ export default function WorkspacePage() {
             </div>
           ))}
           <Link className="backLink" href="/workspace/data-readiness">
-            Open readiness board
-          </Link>
+            <UI text="Open readiness board" /></Link>
         </div>
       </section>
 
@@ -148,9 +141,9 @@ export default function WorkspacePage() {
             <span>DB</span>
           </div>
           <div className="miniArticleBody">
-            <p className="eyebrow">Americas database</p>
-            <h2>League coverage</h2>
-            <p>Review player rows, club coverage, and missing-club tasks before search.</p>
+            <p className="eyebrow"><UI text="Americas database" /></p>
+            <h2><UI text="League coverage" /></h2>
+            <p><UI text="Review player rows, club coverage, and missing-club tasks before search." /></p>
           </div>
         </Link>
         <Link className="miniArticleCard tone-0" href="/analytics/champions">
@@ -159,8 +152,8 @@ export default function WorkspacePage() {
           </div>
           <div className="miniArticleBody">
             <p className="eyebrow">Football-Data.org</p>
-            <h2>Champions ETL</h2>
-            <p>Basic fixtures and results demo with server-side token handling.</p>
+            <h2><UI text="Champions ETL" /></h2>
+            <p><UI text="Basic fixtures and results demo with server-side token handling." /></p>
           </div>
         </Link>
         <Link className="miniArticleCard tone-1" href="/analytics">
@@ -169,8 +162,8 @@ export default function WorkspacePage() {
           </div>
           <div className="miniArticleBody">
             <p className="eyebrow">StatsBomb Open Data</p>
-            <h2>Shot quality</h2>
-            <p>Forward xG and shot-quality board from Copa America 2024.</p>
+            <h2><UI text="Shot quality" /></h2>
+            <p><UI text="Forward xG and shot-quality board from Copa America 2024." /></p>
           </div>
         </Link>
         <Link className="miniArticleCard tone-2" href="/qa">
@@ -178,9 +171,9 @@ export default function WorkspacePage() {
             <span>QA</span>
           </div>
           <div className="miniArticleBody">
-            <p className="eyebrow">Data checks</p>
-            <h2>Validation room</h2>
-            <p>Find missing sources, strange values, and rows that need human review.</p>
+            <p className="eyebrow"><UI text="Data checks" /></p>
+            <h2><UI text="Validation room" /></h2>
+            <p><UI text="Find missing sources, strange values, and rows that need human review." /></p>
           </div>
         </Link>
         <Link className="miniArticleCard tone-1" href="/workspace/tasks">
@@ -188,9 +181,9 @@ export default function WorkspacePage() {
             <span>!</span>
           </div>
           <div className="miniArticleBody">
-            <p className="eyebrow">Alerts</p>
-            <h2>Task queue</h2>
-            <p>Turn missing keys, QA findings, and coverage gaps into visible work.</p>
+            <p className="eyebrow"><UI text="Alerts" /></p>
+            <h2><UI text="Task queue" /></h2>
+            <p><UI text="Turn missing keys, QA findings, and coverage gaps into visible work." /></p>
           </div>
         </Link>
         <Link className="miniArticleCard tone-2" href="/workspace/video-tracking">
@@ -198,9 +191,9 @@ export default function WorkspacePage() {
             <span>VT</span>
           </div>
           <div className="miniArticleBody">
-            <p className="eyebrow">Future adapter</p>
-            <h2>Video + tracking</h2>
-            <p>Show the adapter contract without faking licensed video or tracking data.</p>
+            <p className="eyebrow"><UI text="Future adapter" /></p>
+            <h2><UI text="Video + tracking" /></h2>
+            <p><UI text="Show the adapter contract without faking licensed video or tracking data." /></p>
           </div>
         </Link>
         <Link className="miniArticleCard tone-3" href="/reports">
@@ -208,9 +201,9 @@ export default function WorkspacePage() {
             <FileText size={30} aria-hidden="true" />
           </div>
           <div className="miniArticleBody">
-            <p className="eyebrow">Report builder</p>
-            <h2>Delivery draft</h2>
-            <p>Convert checked data into source-backed report drafts.</p>
+            <p className="eyebrow"><UI text="Report builder" /></p>
+            <h2><UI text="Delivery draft" /></h2>
+            <p><UI text="Convert checked data into source-backed report drafts." /></p>
           </div>
         </Link>
       </section>

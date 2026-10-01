@@ -1,3 +1,4 @@
+import { UI } from "@/app/components/ui-text";
 import { T } from "@/app/components/language";
 import { pageTitles } from "@/lib/copy";
 import { LocalizedContent } from "@/app/components/language";
@@ -34,7 +35,7 @@ export default function AnalyticsPage() {
     <div className="pageStack">
       <section className="detailHero analyticsHero">
         <div>
-          <p className="eyebrow">Event analytics / イベント分析 / Análisis de eventos</p>
+          <p className="eyebrow"><UI text="Event analytics / イベント分析 / Análisis de eventos" /></p>
           <h1><T text={pageTitles["/analytics"]} /></h1>
           <p><LocalizedContent en={<>
             This module uses StatsBomb Open Data from Copa America 2024 to turn raw shots
@@ -47,38 +48,37 @@ export default function AnalyticsPage() {
           </>} /></p>
         </div>
         <Link className="primaryAction" href="/reports">
-          Turn into report
-          <ArrowRight size={18} aria-hidden="true" />
+          <UI text="Turn into report" /><ArrowRight size={18} aria-hidden="true" />
         </Link>
       </section>
 
       <section className="metricGrid">
         <article className="metric">
           <Database size={20} aria-hidden="true" />
-          <span>Matches / 試合 / Partidos</span>
+          <span><UI text="Matches / 試合 / Partidos" /></span>
           <strong>{summary.matches}</strong>
         </article>
         <article className="metric">
           <Target size={20} aria-hidden="true" />
-          <span>Forward shots / シュート / Remates</span>
+          <span><UI text="Forward shots / シュート / Remates" /></span>
           <strong>{summary.total_forward_shots}</strong>
         </article>
         <article className="metric">
           <TrendingUp size={20} aria-hidden="true" />
-          <span>Total xG / 合計xG</span>
+          <span><UI text="Total xG / 合計xG" /></span>
           <strong>{formatNumber(summary.total_forward_xg, 1)}</strong>
         </article>
         <article className="metric">
           <Target size={20} aria-hidden="true" />
-          <span>Players / 選手 / Jugadores</span>
+          <span><UI text="Players / 選手 / Jugadores" /></span>
           <strong>{summary.players}</strong>
         </article>
       </section>
 
       <section className="qaStory championsTeaser">
         <div>
-          <p className="eyebrow">Current data / Champions League / Football-Data.org</p>
-          <h2>Basic Champions League ETL is now part of the analytics area.</h2>
+          <p className="eyebrow"><UI text="Current data / Champions League / Football-Data.org" /></p>
+          <h2><UI text="Basic Champions League ETL is now part of the analytics area." /></h2>
           <p><LocalizedContent en={<>
             StatsBomb covers the event-analysis demo. Football-Data.org covers the simpler
             current-data demo: fixtures, results, status, and competition metadata.
@@ -89,23 +89,20 @@ export default function AnalyticsPage() {
           </>} /></p>
         </div>
         <div className="qaPanel">
-          <p className="eyebrow">Provider status</p>
-          <h2>Free-tier API, server-side key</h2>
+          <p className="eyebrow"><UI text="Provider status" /></p>
+          <h2><UI text="Free-tier API, server-side key" /></h2>
           <p>
-            The page renders live data when `FOOTBALL_DATA_API_TOKEN` is available, and shows
-            a clear setup state when it is missing.
-          </p>
+            <UI text="The page renders live data when `FOOTBALL_DATA_API_TOKEN` is available, and shows a clear setup state when it is missing." /></p>
           <Link className="backLink" href="/analytics/champions">
-            Open Champions demo
-          </Link>
+            <UI text="Open Champions demo" /></Link>
         </div>
       </section>
 
       <section className="split">
         <div>
           <div className="sectionHeader">
-            <p className="eyebrow">Best forward chances / FWチャンス / Mejores ocasiones</p>
-            <h2>Ranked by non-penalty xG</h2>
+            <p className="eyebrow"><UI text="Best forward chances / FWチャンス / Mejores ocasiones" /></p>
+            <h2><UI text="Ranked by non-penalty xG" /></h2>
             <p><LocalizedContent en={<>
               Penalties are separated so the first read focuses on repeatable shot quality:
               location, chance volume, and open-play danger.
@@ -115,12 +112,12 @@ export default function AnalyticsPage() {
             <table>
               <thead>
                 <tr>
-                  <th>Player / 選手</th>
-                  <th>Team / 代表</th>
-                  <th>Shots</th>
-                  <th>NP xG</th>
-                  <th>xG/shot</th>
-                  <th>Goals-xG</th>
+                  <th><UI text="Player / 選手" /></th>
+                  <th><UI text="Team / 代表" /></th>
+                  <th><UI text="Shots" /></th>
+                  <th><UI text="NP xG" /></th>
+                  <th><UI text="xG/shot" /></th>
+                  <th><UI text="Goals-xG" /></th>
                 </tr>
               </thead>
               <tbody>
@@ -143,8 +140,8 @@ export default function AnalyticsPage() {
         </div>
 
         <aside className="qaPanel">
-          <p className="eyebrow">Method / 方法 / Método</p>
-          <h2>From events to scouting question</h2>
+          <p className="eyebrow"><UI text="Method / 方法 / Método" /></p>
+          <h2><UI text="From events to scouting question" /></h2>
           <p><LocalizedContent en={<>
             The script downloads matches and event JSON, filters South American teams,
             keeps forward and winger positions, then aggregates shot quality metrics.
@@ -155,22 +152,20 @@ export default function AnalyticsPage() {
             de remate para atacantes.
           </>} /></p>
           <div className="severityGrid">
-            <span>Source <strong>{source.name}</strong></span>
-            <span>Competition <strong>{source.competition}</strong></span>
-            <span>Scope <strong>{summary.teams} teams</strong></span>
+            <span><UI text="Source" />{" "}<strong>{source.name}</strong></span>
+            <span><UI text="Competition" />{" "}<strong>{source.competition}</strong></span>
+            <span><UI text="Scope" />{" "}<strong>{summary.teams} {" "}<UI text="teams" /></strong></span>
           </div>
           <Link className="backLink" href="/players">
-            Compare with player base
-          </Link>
+            <UI text="Compare with player base" /></Link>
           <Link className="backLink" href="/analytics/forwards">
-            Open forward comparator
-          </Link>
+            <UI text="Open forward comparator" /></Link>
         </aside>
       </section>
 
       <section className="qaStory analyticsStory">
         <div>
-          <p className="eyebrow">Team xG / チーム別xG / xG por equipo</p>
+          <p className="eyebrow"><UI text="Team xG / チーム別xG / xG por equipo" /></p>
           <h2><LocalizedContent en={<>Where the forward shot volume came from</>} ja={<>国別に、FWとウイングのシュート量とxGを確認します。</>} es={<>Lectura rápida por selección: volumen de remates y xG de atacantes.</>} /></h2>
         </div>
         <div className="barList" aria-label="Team xG bars">
@@ -196,8 +191,7 @@ export default function AnalyticsPage() {
               <p className="eyebrow">{player.team}</p>
               <h2>{player.player}</h2>
               <p>
-                {player.shots} shots, {formatNumber(player.non_penalty_xg)} non-penalty xG,
-                average distance {formatNumber(player.avg_shot_distance, 1)}m.
+                {player.shots} {" "}<UI text="shots," />{" "}{formatNumber(player.non_penalty_xg)} <UI text="non-penalty xG, average distance" />{formatNumber(player.avg_shot_distance, 1)}m.
               </p>
               <div className="sparkBar" aria-hidden="true">
                 <span style={{ width: percent(player.non_penalty_xg, maxPlayerXg) }} />

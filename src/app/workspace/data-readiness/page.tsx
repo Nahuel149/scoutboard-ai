@@ -1,3 +1,4 @@
+import { UI } from "@/app/components/ui-text";
 import { T } from "@/app/components/language";
 import { pageTitles } from "@/lib/copy";
 import { LocalizedContent } from "@/app/components/language";
@@ -15,12 +16,11 @@ export default function DataReadinessPage() {
     <div className="pageStack">
       <Link className="backLink" href="/workspace">
         <ArrowLeft size={16} aria-hidden="true" />
-        Back to workspace
-      </Link>
+        <UI text="Back to workspace" /></Link>
 
       <section className="detailHero workspaceHero">
         <div>
-          <p className="eyebrow">Data readiness / データ準備 / Estado de fuentes</p>
+          <p className="eyebrow"><UI text="Data readiness / データ準備 / Estado de fuentes" /></p>
           <h1><T text={pageTitles["/workspace/data-readiness"]} /></h1>
           <p><LocalizedContent en={<>
             This board keeps ScoutBoard AI honest: open data can power committed portfolio samples,
@@ -32,29 +32,28 @@ export default function DataReadinessPage() {
           </>} /></p>
         </div>
         <Link className="primaryAction" href="/analytics/champions">
-          Check Champions demo
-        </Link>
+          <UI text="Check Champions demo" /></Link>
       </section>
 
       <section className="metricGrid">
         <article className="metric">
           <Database size={20} aria-hidden="true" />
-          <span>Providers</span>
+          <span><UI text="Providers" /></span>
           <strong>{rows.length}</strong>
         </article>
         <article className="metric">
           <ShieldCheck size={20} aria-hidden="true" />
-          <span>Ready</span>
+          <span><UI text="Ready" /></span>
           <strong>{readyRows}</strong>
         </article>
         <article className="metric">
           <KeyRound size={20} aria-hidden="true" />
-          <span>Keyed APIs</span>
+          <span><UI text="Keyed APIs" /></span>
           <strong>{keyedProviders}</strong>
         </article>
         <article className="metric">
           <TableProperties size={20} aria-hidden="true" />
-          <span>Workspace providers</span>
+          <span><UI text="Workspace providers" /></span>
           <strong>{snapshot.providersReady}/{snapshot.providersTotal}</strong>
         </article>
       </section>
@@ -63,12 +62,12 @@ export default function DataReadinessPage() {
         <table>
           <thead>
             <tr>
-              <th>Provider</th>
-              <th>Type</th>
-              <th>Key status</th>
-              <th>Portfolio use</th>
-              <th>Cache/display rule</th>
-              <th>Next action</th>
+              <th><UI text="Provider" /></th>
+              <th><UI text="Type" /></th>
+              <th><UI text="Key status" /></th>
+              <th><UI text="Portfolio use" /></th>
+              <th><UI text="Cache/display rule" /></th>
+              <th><UI text="Next action" /></th>
             </tr>
           </thead>
           <tbody>
@@ -78,20 +77,20 @@ export default function DataReadinessPage() {
                   <a href={row.homepageUrl} rel="noreferrer" target="_blank">
                     {row.provider}
                   </a>
-                  <span className="tableSubline">{row.capabilities}</span>
+                  <span className="tableSubline"><UI text={row.capabilities} /></span>
                 </td>
-                <td>{row.sourceType}</td>
+                <td><UI text={row.sourceType} /></td>
                 <td>
                   <span className={`pill ${row.state === "needs-key" ? "warning" : ""}`}>
-                    {row.keyStatus}
+                    <UI text={row.keyStatus} />
                   </span>
                 </td>
-                <td>{row.portfolioUse}</td>
+                <td><UI text={row.portfolioUse} /></td>
                 <td>
-                  {row.cacheRule}
-                  <span className="tableSubline">{row.licenseNote}</span>
+                  <UI text={row.cacheRule} />
+                  <span className="tableSubline"><UI text={row.licenseNote} /></span>
                 </td>
-                <td>{row.nextAction}</td>
+                <td><UI text={row.nextAction} /></td>
               </tr>
             ))}
           </tbody>
@@ -100,28 +99,23 @@ export default function DataReadinessPage() {
 
       <section className="qaStory workspaceStory">
         <div>
-          <p className="eyebrow">Operating rule</p>
-          <h2>Reliable old data is better than unclear current data.</h2>
+          <p className="eyebrow"><UI text="Operating rule" /></p>
+          <h2><UI text="Reliable old data is better than unclear current data." /></h2>
           <p>
-            For portfolio proof, dated public datasets are acceptable when the date, source, and
-            limits are visible. Current APIs become useful after token setup and terms review.
-          </p>
-          <p className="es">
-            Para portafolio, datos viejos pero confiables son válidos si la fuente y la fecha están claras.
-          </p>
+            <UI text="For portfolio proof, dated public datasets are acceptable when the date, source, and limits are visible. Current APIs become useful after token setup and terms review." /></p>
         </div>
         <div className="providerMiniList">
           <div className="providerMiniRow">
-            <span>Commit open-data outputs</span>
-            <strong>Allowed</strong>
+            <span><UI text="Commit open-data outputs" /></span>
+            <strong><UI text="Allowed" /></strong>
           </div>
           <div className="providerMiniRow">
-            <span>Commit real API keys</span>
-            <strong>Never</strong>
+            <span><UI text="Commit real API keys" /></span>
+            <strong><UI text="Never" /></strong>
           </div>
           <div className="providerMiniRow">
-            <span>Bulk republish paid data</span>
-            <strong>Blocked</strong>
+            <span><UI text="Bulk republish paid data" /></span>
+            <strong><UI text="Blocked" /></strong>
           </div>
         </div>
       </section>
